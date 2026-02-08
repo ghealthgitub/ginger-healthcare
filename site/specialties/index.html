@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Medical Specialties — 28 Specialties, 800+ Treatments | Ginger Healthcare</title>
+    <meta name="description" content="Explore 28 medical specialties and 800+ treatments available through Ginger Healthcare. From cardiac surgery to fertility — find expert care abroad at affordable prices.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B2545;
+            --navy-light: #13315C;
+            --ginger: #F26522;
+            --ginger-light: #FF8A50;
+            --ginger-dark: #D9531E;
+            --teal: #0EA5A0;
+            --teal-light: #14B8B3;
+            --cream: #FFF8F0;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(11,37,69,0.05);
+            --shadow-md: 0 4px 14px rgba(11,37,69,0.08);
+            --shadow-lg: 0 10px 30px rgba(11,37,69,0.10);
+            --shadow-xl: 0 20px 50px rgba(11,37,69,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--gray-700); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; font-family: inherit; border: none; }
+
+        /* ═══════════════════════ NAVIGATION ═══════════════════════ */
+        .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; padding: 8px 0; }
+        .topbar__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .topbar a { color: rgba(255,255,255,0.85); }
+        .topbar a:hover { color: var(--ginger-light); }
+        .topbar__contact { display: flex; gap: 20px; }
+
+        nav { background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--gray-200); transition: box-shadow 0.3s; }
+        nav.scrolled { box-shadow: var(--shadow-md); }
+        .nav__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.35rem; }
+        .logo__icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--ginger), var(--ginger-dark)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; font-weight: 700; box-shadow: 0 2px 8px rgba(242,101,34,0.3); }
+        .logo__text span:first-child { color: var(--navy); }
+        .logo__text span:last-child { color: var(--ginger); }
+        .nav__links { display: flex; align-items: center; gap: 32px; }
+        .nav__link { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); padding: 4px 0; position: relative; transition: color 0.2s; }
+        .nav__link:hover { color: var(--navy); }
+        .nav__link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--ginger); transition: width 0.3s; }
+        .nav__link:hover::after { width: 100%; }
+        .nav__link--active { color: var(--ginger); }
+        .nav__link--active::after { width: 100%; }
+        .nav__link--dropdown { display: flex; align-items: center; gap: 4px; }
+        .nav__link--dropdown svg { width: 12px; height: 12px; }
+        .nav__cta { display: flex; align-items: center; gap: 12px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; transition: all 0.25s; letter-spacing: 0.01em; }
+        .btn--primary { background: var(--ginger); color: white; box-shadow: 0 2px 8px rgba(242,101,34,0.25); }
+        .btn--primary:hover { background: var(--ginger-dark); box-shadow: 0 4px 16px rgba(242,101,34,0.35); transform: translateY(-1px); }
+        .btn--outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-300); }
+        .btn--outline:hover { border-color: var(--navy); background: var(--gray-50); }
+        .btn--white { background: white; color: var(--navy); box-shadow: var(--shadow-md); }
+        .btn--white:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+        .btn--large { padding: 14px 32px; font-size: 0.95rem; border-radius: var(--radius-md); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 8px; }
+        .hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+        /* ═══════════════════════ BREADCRUMB ═══════════════════════ */
+        .breadcrumb { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); padding: 14px 0; }
+        .breadcrumb__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--gray-400); }
+        .breadcrumb a { color: var(--gray-500); transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--ginger); }
+        .breadcrumb__sep { font-size: 0.7rem; }
+        .breadcrumb__current { color: var(--navy); font-weight: 500; }
+
+        /* ═══════════════════════ PAGE HERO ═══════════════════════ */
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, #1a4a7a 100%);
+            padding: 64px 0 72px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(242,101,34,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(14,165,160,0.08) 0%, transparent 50%);
+        }
+        .page-hero__pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image:
+                radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .page-hero__inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .page-hero__content {
+            max-width: 700px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .page-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.8);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+        }
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .page-hero h1 em { font-style: normal; color: var(--ginger-light); }
+        .page-hero__desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+        .page-hero__stats {
+            display: flex;
+            gap: 40px;
+        }
+        .page-hero__stat { text-align: left; }
+        .page-hero__stat__val { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: white; }
+        .page-hero__stat__label { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══════════════════════ SEARCH & FILTER BAR ═══════════════════════ */
+        .filter-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 20px 0;
+            position: sticky;
+            top: 72px;
+            z-index: 50;
+            transition: box-shadow 0.3s;
+        }
+        .filter-bar.stuck { box-shadow: var(--shadow-md); }
+        .filter-bar__inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .filter-search {
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+        }
+        .filter-search__icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+        }
+        .filter-search input {
+            width: 100%;
+            padding: 12px 16px 12px 42px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            background: var(--gray-50);
+            transition: all 0.2s;
+        }
+        .filter-search input:focus {
+            outline: none;
+            border-color: var(--ginger);
+            box-shadow: 0 0 0 3px rgba(242,101,34,0.1);
+            background: white;
+        }
+        .filter-search input::placeholder { color: var(--gray-400); }
+        .filter-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .filter-tag {
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1.5px solid var(--gray-200);
+            background: white;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .filter-tag:hover { border-color: var(--ginger); color: var(--ginger); }
+        .filter-tag--active {
+            background: var(--ginger);
+            color: white;
+            border-color: var(--ginger);
+        }
+        .filter-tag--active:hover { background: var(--ginger-dark); border-color: var(--ginger-dark); color: white; }
+        .filter-count {
+            font-size: 0.82rem;
+            color: var(--gray-400);
+            white-space: nowrap;
+            padding: 8px 0;
+        }
+
+        /* ═══════════════════════ MAIN CONTENT ═══════════════════════ */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+        /* ═══════════════════════ POPULAR TREATMENTS STRIP ═══════════════════════ */
+        .popular-strip {
+            padding: 48px 0;
+            background: var(--cream);
+            border-bottom: 1px solid #FFE8D6;
+        }
+        .popular-strip__label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--ginger);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .popular-strip__scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .popular-strip__scroll::-webkit-scrollbar { height: 4px; }
+        .popular-strip__scroll::-webkit-scrollbar-track { background: rgba(242,101,34,0.08); border-radius: 4px; }
+        .popular-strip__scroll::-webkit-scrollbar-thumb { background: var(--ginger); border-radius: 4px; }
+        .pop-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: white;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid var(--gray-200);
+            white-space: nowrap;
+            scroll-snap-align: start;
+            transition: all 0.25s;
+            flex-shrink: 0;
+        }
+        .pop-chip:hover {
+            border-color: var(--ginger);
+            box-shadow: 0 4px 14px rgba(242,101,34,0.1);
+            transform: translateY(-2px);
+        }
+        .pop-chip__icon { font-size: 1.2rem; }
+        .pop-chip__text { min-width: 0; }
+        .pop-chip__name { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+        .pop-chip__meta { font-size: 0.72rem; color: var(--gray-400); margin-top: 1px; }
+        .pop-chip__arrow {
+            color: var(--gray-300);
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+        .pop-chip:hover .pop-chip__arrow { color: var(--ginger); }
+
+        /* ═══════════════════════ SPECIALTIES GRID ═══════════════════════ */
+        .specialties-section {
+            padding: 56px 0 80px;
+            background: var(--white);
+        }
+        .category-group {
+            margin-bottom: 48px;
+        }
+        .category-group:last-child { margin-bottom: 0; }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--gray-100);
+        }
+        .category-header__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        .cat-surgical .category-header__icon { background: #FEE2E2; }
+        .cat-medical .category-header__icon { background: #DBEAFE; }
+        .cat-diagnostic .category-header__icon { background: #D1FAE5; }
+        .cat-specialty .category-header__icon { background: #FEF3C7; }
+        .category-header__text h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .category-header__text span {
+            font-size: 0.78rem;
+            color: var(--gray-400);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-card:hover {
+            border-color: var(--ginger);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .spec-card__header {
+            padding: 24px 20px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .spec-card__icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .spec-card:nth-child(7n+1) .spec-card__icon { background: #FFF1F2; }
+        .spec-card:nth-child(7n+2) .spec-card__icon { background: #EFF6FF; }
+        .spec-card:nth-child(7n+3) .spec-card__icon { background: #F0FDF4; }
+        .spec-card:nth-child(7n+4) .spec-card__icon { background: #FFF7ED; }
+        .spec-card:nth-child(7n+5) .spec-card__icon { background: #FAF5FF; }
+        .spec-card:nth-child(7n+6) .spec-card__icon { background: #FDF4FF; }
+        .spec-card:nth-child(7n) .spec-card__icon { background: #F0FDFA; }
+        .spec-card__title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--navy);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        .spec-card__count {
+            font-size: 0.78rem;
+            color: var(--gray-400);
+        }
+        .spec-card__treatments {
+            padding: 0 20px 16px;
+            flex: 1;
+        }
+        .spec-card__treatment-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .spec-card__treatment-tag {
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            background: var(--gray-50);
+            border-radius: 50px;
+            color: var(--gray-500);
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
+        .spec-card:hover .spec-card__treatment-tag {
+            background: #FFF7ED;
+            border-color: #FFE4CC;
+            color: var(--ginger-dark);
+        }
+        .spec-card__footer {
+            padding: 14px 20px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .spec-card__countries {
+            display: flex;
+            gap: 4px;
+        }
+        .spec-card__flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gray-50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            border: 1.5px solid white;
+            box-shadow: var(--shadow-sm);
+        }
+        .spec-card__explore {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--ginger);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: all 0.25s;
+        }
+        .spec-card:hover .spec-card__explore {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ═══════════════════════ DESTINATION WIDGET ═══════════════════════ */
+        .dest-widget {
+            background: var(--gray-50);
+            padding: 56px 0;
+        }
+        .dest-widget__header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .dest-widget__label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--ginger);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .dest-widget__title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .dest-widget__grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+        .dest-mini {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px 20px;
+            text-align: center;
+            border: 1.5px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+        .dest-mini:hover {
+            border-color: var(--ginger);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .dest-mini__flag { font-size: 2.4rem; margin-bottom: 12px; }
+        .dest-mini__name { font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+        .dest-mini__meta { font-size: 0.78rem; color: var(--gray-400); margin-bottom: 16px; }
+        .dest-mini__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--ginger);
+            transition: gap 0.2s;
+        }
+        .dest-mini:hover .dest-mini__link { gap: 8px; }
+
+        /* ═══════════════════════ CTA SECTION ═══════════════════════ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--ginger), var(--ginger-dark));
+            padding: 64px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0,0,0,0.05) 0%, transparent 50%);
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; margin-bottom: 12px; }
+        .cta-section p { font-size: 1.05rem; opacity: 0.85; max-width: 540px; margin: 0 auto 28px; }
+        .cta-section__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* ═══════════════════════ FOOTER ═══════════════════════ */
+        footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+        .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer__brand .logo { margin-bottom: 16px; }
+        .footer__brand .logo__text span:first-child { color: white; }
+        .footer__brand .logo__text span:last-child { color: var(--ginger-light); }
+        .footer__desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; color: rgba(255,255,255,0.5); }
+        .footer__social { display: flex; gap: 12px; }
+        .footer__social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: background 0.2s; }
+        .footer__social a:hover { background: var(--ginger); }
+        .footer__col h4 { color: white; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+        .footer__col a { display: block; font-size: 0.85rem; padding: 5px 0; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+        .footer__col a:hover { color: var(--ginger-light); }
+        .footer__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer__bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+        .footer__bottom a { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+        .footer__bottom a:hover { color: rgba(255,255,255,0.7); }
+        .footer__legal { display: flex; gap: 24px; }
+
+        /* ═══════════════════════ RESPONSIVE ═══════════════════════ */
+        @media (max-width: 1024px) {
+            .spec-grid { grid-template-columns: repeat(3, 1fr); }
+            .dest-widget__grid { grid-template-columns: repeat(3, 1fr); }
+            .footer__grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .topbar { display: none; }
+            .nav__links { display: none; }
+            .hamburger { display: flex; }
+            .page-hero { padding: 40px 0 56px; }
+            .page-hero h1 { font-size: 2rem; }
+            .page-hero__stats { gap: 24px; flex-wrap: wrap; }
+            .filter-bar { top: 72px; }
+            .filter-bar__inner { flex-direction: column; align-items: stretch; }
+            .filter-tags { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+            .spec-grid { grid-template-columns: repeat(2, 1fr); }
+            .dest-widget__grid { grid-template-columns: repeat(2, 1fr); }
+            .footer__grid { grid-template-columns: 1fr 1fr; }
+            .footer__bottom { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .spec-grid { grid-template-columns: 1fr; }
+            .dest-widget__grid { grid-template-columns: 1fr; }
+            .page-hero__stats { gap: 16px; }
+            .page-hero__stat__val { font-size: 1.4rem; }
+        }
+
+        /* ═══════════════════════ NO-RESULTS ═══════════════════════ */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray-400);
+        }
+        .no-results__icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.4; }
+        .no-results h3 { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 8px; }
+        .no-results p { font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="topbar__inner">
+            <div class="topbar__contact">
+                <a href="/cdn-cgi/l/email-protection#ec85828a83ac8b85828b899ec284898d8098848f8d9e89">✉ <span class="__cf_email__" data-cfemail="9bf2f5fdf4dbfcf2f5fcfee9b5f3fefaf7eff3f8fae9fe">[email&#160;protected]</span></a>
+                <a href="tel:+911234567890">☎ +91 123 456 7890</a>
+                <a href="#">💬 WhatsApp</a>
+            </div>
+            <div>🌐 <a href="#" style="color:rgba(255,255,255,0.85)">English</a></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="mainNav">
+        <div class="nav__inner">
+            <a href="/" class="logo">
+                <div class="logo__icon">G</div>
+                <div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div>
+            </a>
+            <div class="nav__links">
+                <a href="/destinations/" class="nav__link nav__link--dropdown">Destinations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+                <a href="/specialties/" class="nav__link nav__link--active nav__link--dropdown">Specialties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+                <a href="/how-it-works/" class="nav__link">How It Works</a>
+                <a href="/cost-calculator/" class="nav__link">Cost Calculator</a>
+                <a href="/blog/" class="nav__link">Articles</a>
+                <a href="/testimonials/" class="nav__link">Reviews</a>
+            </div>
+            <div class="nav__cta">
+                <a href="/get-quote/" class="btn btn--primary">Get Free Quote</a>
+                <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb__inner">
+            <a href="/">Home</a>
+            <span class="breadcrumb__sep">›</span>
+            <span class="breadcrumb__current">All Specialties</span>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero__pattern"></div>
+        <div class="page-hero__inner">
+            <div class="page-hero__content">
+                <div class="page-hero__badge">📚 Comprehensive Medical Directory</div>
+                <h1>All Medical <em>Specialties</em></h1>
+                <p class="page-hero__desc">Explore 28 medical specialties and 800+ treatments available across 5 countries. Find detailed guides, compare costs, and connect with top specialists worldwide.</p>
+                <div class="page-hero__stats">
+                    <div class="page-hero__stat">
+                        <div class="page-hero__stat__val">28</div>
+                        <div class="page-hero__stat__label">Specialties</div>
+                    </div>
+                    <div class="page-hero__stat">
+                        <div class="page-hero__stat__val">800+</div>
+                        <div class="page-hero__stat__label">Treatments</div>
+                    </div>
+                    <div class="page-hero__stat">
+                        <div class="page-hero__stat__val">5</div>
+                        <div class="page-hero__stat__label">Countries</div>
+                    </div>
+                    <div class="page-hero__stat">
+                        <div class="page-hero__stat__val">100+</div>
+                        <div class="page-hero__stat__label">Verified Doctors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Bar -->
+    <div class="filter-bar" id="filterBar">
+        <div class="filter-bar__inner">
+            <div class="filter-search">
+                <svg class="filter-search__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="Search specialties or treatments (e.g. knee replacement, IVF, heart surgery...)">
+            </div>
+            <div class="filter-tags">
+                <button class="filter-tag filter-tag--active" data-filter="all">All</button>
+                <button class="filter-tag" data-filter="surgical">🔪 Surgical</button>
+                <button class="filter-tag" data-filter="medical">💊 Medical</button>
+                <button class="filter-tag" data-filter="oncology">🎗️ Oncology</button>
+                <button class="filter-tag" data-filter="specialty">⭐ Super Specialty</button>
+            </div>
+            <span class="filter-count" id="filterCount">Showing 28 specialties</span>
+        </div>
+    </div>
+
+    <!-- Popular Treatments Strip -->
+    <div class="popular-strip">
+        <div class="container">
+            <div class="popular-strip__label">🔥 Most Popular Treatments</div>
+            <div class="popular-strip__scroll">
+                <a href="/specialties/orthopedics/knee-replacement/" class="pop-chip">
+                    <span class="pop-chip__icon">🦴</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">Knee Replacement</div>
+                        <div class="pop-chip__meta">Orthopedics · From $4,500</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/cardiac-surgery/cabg/" class="pop-chip">
+                    <span class="pop-chip__icon">❤️</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">CABG (Heart Bypass)</div>
+                        <div class="pop-chip__meta">Cardiac Surgery · From $5,000</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/dermatology/hair-transplant/" class="pop-chip">
+                    <span class="pop-chip__icon">💇</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">FUE Hair Transplant</div>
+                        <div class="pop-chip__meta">Dermatology · From $1,200</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/dentistry/dental-implants/" class="pop-chip">
+                    <span class="pop-chip__icon">🦷</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">Dental Implants</div>
+                        <div class="pop-chip__meta">Dentistry · From $500</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/cosmetic-surgery/rhinoplasty/" class="pop-chip">
+                    <span class="pop-chip__icon">✨</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">Rhinoplasty</div>
+                        <div class="pop-chip__meta">Cosmetic Surgery · From $2,500</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/fertility/ivf/" class="pop-chip">
+                    <span class="pop-chip__icon">👶</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">IVF Treatment</div>
+                        <div class="pop-chip__meta">Fertility · From $3,500</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/bariatric-surgery/gastric-sleeve/" class="pop-chip">
+                    <span class="pop-chip__icon">⚖️</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">Gastric Sleeve</div>
+                        <div class="pop-chip__meta">Bariatric · From $4,000</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/hematology-bmt/bone-marrow-transplant/" class="pop-chip">
+                    <span class="pop-chip__icon">🩸</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">Bone Marrow Transplant</div>
+                        <div class="pop-chip__meta">Hematology · From $16,000</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/ophthalmology/lasik/" class="pop-chip">
+                    <span class="pop-chip__icon">👁️</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">LASIK Eye Surgery</div>
+                        <div class="pop-chip__meta">Ophthalmology · From $800</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/specialties/nephrology/kidney-transplant/" class="pop-chip">
+                    <span class="pop-chip__icon">🫘</span>
+                    <div class="pop-chip__text">
+                        <div class="pop-chip__name">Kidney Transplant</div>
+                        <div class="pop-chip__meta">Nephrology · From $13,000</div>
+                    </div>
+                    <svg class="pop-chip__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- All 28 Specialties -->
+    <section class="specialties-section" id="specialtiesGrid">
+        <div class="container">
+
+            <!-- Surgical Specialties -->
+            <div class="category-group cat-surgical" data-category="surgical">
+                <div class="category-header">
+                    <div class="category-header__icon">🔪</div>
+                    <div class="category-header__text">
+                        <h3>Surgical Specialties</h3>
+                        <span>14 specialties — Procedures requiring surgical intervention</span>
+                    </div>
+                </div>
+                <div class="spec-grid">
+
+                    <a href="/specialties/cardiac-surgery/" class="spec-card" data-cat="surgical" data-keywords="cardiac surgery heart bypass cabg valve repair aortic mitral">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">❤️</div>
+                            <div>
+                                <div class="spec-card__title">Cardiac Surgery</div>
+                                <div class="spec-card__count">15+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">CABG</span>
+                                <span class="spec-card__treatment-tag">Valve Repair</span>
+                                <span class="spec-card__treatment-tag">Aortic Surgery</span>
+                                <span class="spec-card__treatment-tag">+12</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/neurosurgery/" class="spec-card" data-cat="surgical" data-keywords="neurosurgery brain tumor spine surgery craniotomy disc herniation">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🧠</div>
+                            <div>
+                                <div class="spec-card__title">Neurosurgery</div>
+                                <div class="spec-card__count">12+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Brain Tumor</span>
+                                <span class="spec-card__treatment-tag">Spine Surgery</span>
+                                <span class="spec-card__treatment-tag">DBS</span>
+                                <span class="spec-card__treatment-tag">+9</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/orthopedics/" class="spec-card" data-cat="surgical" data-keywords="orthopedics knee replacement hip replacement spine joint fracture bone">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🦴</div>
+                            <div>
+                                <div class="spec-card__title">Orthopedics</div>
+                                <div class="spec-card__count">20+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Knee Replacement</span>
+                                <span class="spec-card__treatment-tag">Hip Replacement</span>
+                                <span class="spec-card__treatment-tag">+18</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                                <span class="spec-card__flag">🇦🇪</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/cosmetic-surgery/" class="spec-card" data-cat="surgical" data-keywords="cosmetic plastic surgery rhinoplasty liposuction tummy tuck facelift bbl breast augmentation">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">✨</div>
+                            <div>
+                                <div class="spec-card__title">Cosmetic & Plastic Surgery</div>
+                                <div class="spec-card__count">18+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Rhinoplasty</span>
+                                <span class="spec-card__treatment-tag">Liposuction</span>
+                                <span class="spec-card__treatment-tag">Facelift</span>
+                                <span class="spec-card__treatment-tag">+15</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇹🇷</span>
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/bariatric-surgery/" class="spec-card" data-cat="surgical" data-keywords="bariatric metabolic surgery weight loss gastric sleeve bypass band obesity">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">⚖️</div>
+                            <div>
+                                <div class="spec-card__title">Bariatric & Metabolic Surgery</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Gastric Sleeve</span>
+                                <span class="spec-card__treatment-tag">Gastric Bypass</span>
+                                <span class="spec-card__treatment-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/breast-surgery/" class="spec-card" data-cat="surgical" data-keywords="breast surgery mastectomy reconstruction lumpectomy augmentation reduction">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🎀</div>
+                            <div>
+                                <div class="spec-card__title">Breast Surgery</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Mastectomy</span>
+                                <span class="spec-card__treatment-tag">Reconstruction</span>
+                                <span class="spec-card__treatment-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/general-surgery/" class="spec-card" data-cat="surgical" data-keywords="general surgery hernia repair appendectomy gallbladder cholecystectomy">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🏥</div>
+                            <div>
+                                <div class="spec-card__title">General Surgery</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Hernia Repair</span>
+                                <span class="spec-card__treatment-tag">Gallbladder</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/gynecology/" class="spec-card" data-cat="surgical" data-keywords="obstetrics gynecology hysterectomy fibroid myomectomy pcos endometriosis">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🤰</div>
+                            <div>
+                                <div class="spec-card__title">Obstetrics & Gynecology</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Hysterectomy</span>
+                                <span class="spec-card__treatment-tag">Fibroid Removal</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/urology/" class="spec-card" data-cat="surgical" data-keywords="urology prostate surgery kidney stones lithotripsy bladder">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🚽</div>
+                            <div>
+                                <div class="spec-card__title">Urology</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Prostate Surgery</span>
+                                <span class="spec-card__treatment-tag">Kidney Stones</span>
+                                <span class="spec-card__treatment-tag">+7</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/ent/" class="spec-card" data-cat="surgical" data-keywords="ent ear nose throat cochlear implant tonsil sinus hearing">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">👂</div>
+                            <div>
+                                <div class="spec-card__title">ENT</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Cochlear Implant</span>
+                                <span class="spec-card__treatment-tag">Sinus Surgery</span>
+                                <span class="spec-card__treatment-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/ophthalmology/" class="spec-card" data-cat="surgical" data-keywords="ophthalmology eye lasik cataract glaucoma retina cornea vision">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">👁️</div>
+                            <div>
+                                <div class="spec-card__title">Ophthalmology</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">LASIK</span>
+                                <span class="spec-card__treatment-tag">Cataract</span>
+                                <span class="spec-card__treatment-tag">Glaucoma</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇷</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/vascular-surgery/" class="spec-card" data-cat="surgical" data-keywords="vascular surgery varicose veins aortic aneurysm bypass peripheral arterial">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🩸</div>
+                            <div>
+                                <div class="spec-card__title">Vascular Surgery</div>
+                                <div class="spec-card__count">6+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Varicose Veins</span>
+                                <span class="spec-card__treatment-tag">Aneurysm</span>
+                                <span class="spec-card__treatment-tag">+4</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/surgical-gastroenterology/" class="spec-card" data-cat="surgical" data-keywords="surgical gastroenterology liver transplant hpb hepatobiliary pancreas whipple">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🫁</div>
+                            <div>
+                                <div class="spec-card__title">Surgical Gastro, HPB & Transplant</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Liver Transplant</span>
+                                <span class="spec-card__treatment-tag">Whipple</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/dentistry/" class="spec-card" data-cat="surgical" data-keywords="dentistry dental implants veneers crowns bridges root canal teeth whitening">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🦷</div>
+                            <div>
+                                <div class="spec-card__title">Dentistry</div>
+                                <div class="spec-card__count">14+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Dental Implants</span>
+                                <span class="spec-card__treatment-tag">Veneers</span>
+                                <span class="spec-card__treatment-tag">+12</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇹🇷</span>
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Medical Specialties -->
+            <div class="category-group cat-medical" data-category="medical">
+                <div class="category-header">
+                    <div class="category-header__icon">💊</div>
+                    <div class="category-header__text">
+                        <h3>Medical Specialties</h3>
+                        <span>8 specialties — Non-surgical and interventional treatments</span>
+                    </div>
+                </div>
+                <div class="spec-grid">
+
+                    <a href="/specialties/cardiology/" class="spec-card" data-cat="medical" data-keywords="cardiology angioplasty stent pacemaker heart catheterization echocardiogram">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">💓</div>
+                            <div>
+                                <div class="spec-card__title">Cardiology</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Angioplasty</span>
+                                <span class="spec-card__treatment-tag">Pacemaker</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/neurology/" class="spec-card" data-cat="medical" data-keywords="neurology epilepsy parkinson stroke multiple sclerosis migraine neuropathy">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🧠</div>
+                            <div>
+                                <div class="spec-card__title">Neurology</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Epilepsy</span>
+                                <span class="spec-card__treatment-tag">Parkinson's</span>
+                                <span class="spec-card__treatment-tag">Stroke</span>
+                                <span class="spec-card__treatment-tag">+5</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/gastroenterology/" class="spec-card" data-cat="medical" data-keywords="gastroenterology endoscopy colonoscopy liver hepatitis ibd crohns ulcerative colitis">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🫁</div>
+                            <div>
+                                <div class="spec-card__title">Gastroenterology & Hepatobiliary</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Endoscopy</span>
+                                <span class="spec-card__treatment-tag">Colonoscopy</span>
+                                <span class="spec-card__treatment-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/dermatology/" class="spec-card" data-cat="medical" data-keywords="dermatology hair transplant skin laser acne vitiligo psoriasis fue">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🧴</div>
+                            <div>
+                                <div class="spec-card__title">Dermatology</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Hair Transplant</span>
+                                <span class="spec-card__treatment-tag">Laser Skin</span>
+                                <span class="spec-card__treatment-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇹🇷</span>
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/endocrinology/" class="spec-card" data-cat="medical" data-keywords="endocrinology diabetology thyroid surgery diabetes hormones adrenal pituitary">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🩺</div>
+                            <div>
+                                <div class="spec-card__title">Endocrinology & Diabetology</div>
+                                <div class="spec-card__count">6+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Thyroid Surgery</span>
+                                <span class="spec-card__treatment-tag">Diabetes</span>
+                                <span class="spec-card__treatment-tag">+4</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/nephrology/" class="spec-card" data-cat="medical" data-keywords="nephrology kidney transplant dialysis renal failure chronic kidney disease">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🫘</div>
+                            <div>
+                                <div class="spec-card__title">Nephrology</div>
+                                <div class="spec-card__count">6+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Kidney Transplant</span>
+                                <span class="spec-card__treatment-tag">Dialysis</span>
+                                <span class="spec-card__treatment-tag">+4</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/pulmonology/" class="spec-card" data-cat="medical" data-keywords="pulmonology sleep medicine lung transplant asthma copd sleep apnea respiratory">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🌬️</div>
+                            <div>
+                                <div class="spec-card__title">Pulmonology & Sleep Medicine</div>
+                                <div class="spec-card__count">6+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Lung Transplant</span>
+                                <span class="spec-card__treatment-tag">COPD</span>
+                                <span class="spec-card__treatment-tag">+4</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/rheumatology/" class="spec-card" data-cat="medical" data-keywords="rheumatology arthritis lupus autoimmune joint inflammation biologic therapy">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🦠</div>
+                            <div>
+                                <div class="spec-card__title">Rheumatology</div>
+                                <div class="spec-card__count">5+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Arthritis</span>
+                                <span class="spec-card__treatment-tag">Lupus</span>
+                                <span class="spec-card__treatment-tag">+3</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Oncology -->
+            <div class="category-group cat-oncology" data-category="oncology">
+                <div class="category-header">
+                    <div class="category-header__icon">🎗️</div>
+                    <div class="category-header__text">
+                        <h3>Oncology & Cancer Care</h3>
+                        <span>3 specialties — Comprehensive cancer treatment</span>
+                    </div>
+                </div>
+                <div class="spec-grid">
+
+                    <a href="/specialties/medical-oncology/" class="spec-card" data-cat="oncology" data-keywords="medical oncology chemotherapy immunotherapy targeted therapy cancer">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🎗️</div>
+                            <div>
+                                <div class="spec-card__title">Medical Oncology</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Chemotherapy</span>
+                                <span class="spec-card__treatment-tag">Immunotherapy</span>
+                                <span class="spec-card__treatment-tag">+9</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/surgical-oncology/" class="spec-card" data-cat="oncology" data-keywords="surgical oncology cancer surgery tumor removal radical whipple mastectomy">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🎗️</div>
+                            <div>
+                                <div class="spec-card__title">Surgical Oncology</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Cancer Surgery</span>
+                                <span class="spec-card__treatment-tag">Tumor Removal</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/radiation-oncology/" class="spec-card" data-cat="oncology" data-keywords="radiation oncology cyberknife radiotherapy proton therapy imrt gamma knife">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">☢️</div>
+                            <div>
+                                <div class="spec-card__title">Radiation Oncology</div>
+                                <div class="spec-card__count">6+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">CyberKnife</span>
+                                <span class="spec-card__treatment-tag">IMRT</span>
+                                <span class="spec-card__treatment-tag">Proton</span>
+                                <span class="spec-card__treatment-tag">+3</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇸🇬</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Super Specialty -->
+            <div class="category-group cat-specialty" data-category="specialty">
+                <div class="category-header">
+                    <div class="category-header__icon">⭐</div>
+                    <div class="category-header__text">
+                        <h3>Super Specialties</h3>
+                        <span>3 specialties — Advanced & niche treatments</span>
+                    </div>
+                </div>
+                <div class="spec-grid">
+
+                    <a href="/specialties/hematology-bmt/" class="spec-card" data-cat="specialty" data-keywords="hematology bmt bone marrow transplant stem cell leukemia lymphoma thalassemia sickle cell">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🩸</div>
+                            <div>
+                                <div class="spec-card__title">Hematology & BMT</div>
+                                <div class="spec-card__count">8+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Bone Marrow Transplant</span>
+                                <span class="spec-card__treatment-tag">Stem Cell</span>
+                                <span class="spec-card__treatment-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/fertility/" class="spec-card" data-cat="specialty" data-keywords="infertility ivf iui icsi fertility reproductive egg freezing surrogacy">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">👶</div>
+                            <div>
+                                <div class="spec-card__title">Infertility & IVF</div>
+                                <div class="spec-card__count">10+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">IVF</span>
+                                <span class="spec-card__treatment-tag">IUI</span>
+                                <span class="spec-card__treatment-tag">ICSI</span>
+                                <span class="spec-card__treatment-tag">+8</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                                <span class="spec-card__flag">🇹🇭</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                    <a href="/specialties/interventional-neuroradiology/" class="spec-card" data-cat="specialty" data-keywords="interventional neuroradiology brain aneurysm coiling embolization avm stroke">
+                        <div class="spec-card__header">
+                            <div class="spec-card__icon">🧠</div>
+                            <div>
+                                <div class="spec-card__title">Interventional Neuroradiology</div>
+                                <div class="spec-card__count">5+ treatments</div>
+                            </div>
+                        </div>
+                        <div class="spec-card__treatments">
+                            <div class="spec-card__treatment-list">
+                                <span class="spec-card__treatment-tag">Brain Aneurysm</span>
+                                <span class="spec-card__treatment-tag">Embolization</span>
+                                <span class="spec-card__treatment-tag">+3</span>
+                            </div>
+                        </div>
+                        <div class="spec-card__footer">
+                            <div class="spec-card__countries">
+                                <span class="spec-card__flag">🇮🇳</span>
+                            </div>
+                            <span class="spec-card__explore">Explore →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <div class="no-results__icon">🔍</div>
+                <h3>No specialties match your search</h3>
+                <p>Try a different search term or clear filters</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Destination Widget -->
+    <section class="dest-widget">
+        <div class="container">
+            <div class="dest-widget__header">
+                <div class="dest-widget__label">Get Treated In</div>
+                <h2 class="dest-widget__title">Choose Your Destination</h2>
+            </div>
+            <div class="dest-widget__grid">
+                <a href="/destinations/india/" class="dest-mini">
+                    <div class="dest-mini__flag">🇮🇳</div>
+                    <div class="dest-mini__name">India</div>
+                    <div class="dest-mini__meta">28 specialties · 800+ treatments</div>
+                    <span class="dest-mini__link">Explore India →</span>
+                </a>
+                <a href="/destinations/turkey/" class="dest-mini">
+                    <div class="dest-mini__flag">🇹🇷</div>
+                    <div class="dest-mini__name">Turkey</div>
+                    <div class="dest-mini__meta">20 specialties · 500+ treatments</div>
+                    <span class="dest-mini__link">Explore Turkey →</span>
+                </a>
+                <a href="/destinations/thailand/" class="dest-mini">
+                    <div class="dest-mini__flag">🇹🇭</div>
+                    <div class="dest-mini__name">Thailand</div>
+                    <div class="dest-mini__meta">18 specialties · 400+ treatments</div>
+                    <span class="dest-mini__link">Explore Thailand →</span>
+                </a>
+                <a href="/destinations/uae/" class="dest-mini">
+                    <div class="dest-mini__flag">🇦🇪</div>
+                    <div class="dest-mini__name">UAE</div>
+                    <div class="dest-mini__meta">15 specialties · 300+ treatments</div>
+                    <span class="dest-mini__link">Explore UAE →</span>
+                </a>
+                <a href="/destinations/singapore/" class="dest-mini">
+                    <div class="dest-mini__flag">🇸🇬</div>
+                    <div class="dest-mini__name">Singapore</div>
+                    <div class="dest-mini__meta">15 specialties · 300+ treatments</div>
+                    <span class="dest-mini__link">Explore Singapore →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Not Sure Which Specialty You Need?</h2>
+            <p>Share your medical reports and our team will guide you to the right specialist — completely free.</p>
+            <div class="cta-section__actions">
+                <a href="/get-quote/" class="btn btn--white btn--large">Get Free Assessment</a>
+                <a href="/book-consultation/" class="btn btn--large" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">Talk to a Care Manager</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="logo">
+                        <div class="logo__icon">G</div>
+                        <div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div>
+                    </div>
+                    <p class="footer__desc">Ginger Healthcare is a medical tourism company based in New Delhi, India. We guide, advise, and assist international patients seeking world-class medical treatment at affordable prices.</p>
+                    <div class="footer__social">
+                        <a href="#">f</a><a href="#">in</a><a href="#">tw</a><a href="#">yt</a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4>Destinations</h4>
+                    <a href="/destinations/india/">🇮🇳 India</a>
+                    <a href="/destinations/turkey/">🇹🇷 Turkey</a>
+                    <a href="/destinations/thailand/">🇹🇭 Thailand</a>
+                    <a href="/destinations/uae/">🇦🇪 UAE</a>
+                    <a href="/destinations/singapore/">🇸🇬 Singapore</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Top Specialties</h4>
+                    <a href="/specialties/cardiac-surgery/">Cardiac Surgery</a>
+                    <a href="/specialties/orthopedics/">Orthopedics</a>
+                    <a href="/specialties/cosmetic-surgery/">Cosmetic Surgery</a>
+                    <a href="/specialties/dentistry/">Dentistry</a>
+                    <a href="/specialties/fertility/">Fertility & IVF</a>
+                    <a href="/specialties/neurosurgery/">Neurosurgery</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Tools</h4>
+                    <a href="/cost-calculator/">Cost Calculator</a>
+                    <a href="/get-quote/">Get Free Quote</a>
+                    <a href="/book-consultation/">Book Consultation</a>
+                    <a href="/compare-hospitals/">Compare Hospitals</a>
+                    <a href="/doctors/">Find Doctors</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Company</h4>
+                    <a href="/about/">About Us</a>
+                    <a href="/how-it-works/">How It Works</a>
+                    <a href="/testimonials/">Testimonials</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/contact/">Contact Us</a>
+                    <a href="/partners/">Partner With Us</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Ginger Healthcare. All rights reserved. Based in New Delhi, India.</p>
+                <div class="footer__legal">
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/disclaimer/">Medical Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Sticky nav shadow
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
+
+        // Filter bar sticky shadow
+        const filterBar = document.getElementById('filterBar');
+        const filterObserver = new IntersectionObserver(
+            ([e]) => filterBar.classList.toggle('stuck', e.intersectionRatio < 1),
+            { threshold: [1], rootMargin: '-73px 0px 0px 0px' }
+        );
+        filterObserver.observe(filterBar);
+
+        // Search + Filter functionality
+        const searchInput = document.getElementById('searchInput');
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const specCards = document.querySelectorAll('.spec-card');
+        const categoryGroups = document.querySelectorAll('.category-group');
+        const filterCount = document.getElementById('filterCount');
+        const noResults = document.getElementById('noResults');
+        let activeFilter = 'all';
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visible = 0;
+
+            specCards.forEach(card => {
+                const keywords = (card.dataset.keywords || '').toLowerCase();
+                const title = card.querySelector('.spec-card__title').textContent.toLowerCase();
+                const cat = card.dataset.cat;
+
+                const matchesSearch = !query || keywords.includes(query) || title.includes(query);
+                const matchesFilter = activeFilter === 'all' || cat === activeFilter;
+
+                const show = matchesSearch && matchesFilter;
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            // Show/hide category groups
+            categoryGroups.forEach(group => {
+                const cards = group.querySelectorAll('.spec-card');
+                const anyVisible = [...cards].some(c => c.style.display !== 'none');
+                group.style.display = anyVisible ? '' : 'none';
+            });
+
+            filterCount.textContent = `Showing ${visible} specialt${visible === 1 ? 'y' : 'ies'}`;
+            noResults.style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                filterTags.forEach(t => t.classList.remove('filter-tag--active'));
+                tag.classList.add('filter-tag--active');
+                activeFilter = tag.dataset.filter;
+                applyFilters();
+            });
+        });
+
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.05 });
+
+        specCards.forEach((el, i) => {
+            el.style.opacity =

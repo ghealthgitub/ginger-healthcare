@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Free Quote | Ginger Healthcare</title>
+    <meta name="description" content="Get a personalised medical treatment quote from top hospitals in India, Turkey, Thailand, UAE & Singapore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--teal-light:#14B8B3;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--success:#10b981;--error:#EF4444;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.10);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;min-height:100vh;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}select,input,textarea{font-family:inherit}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar a:hover{color:var(--ginger-light)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--large{padding:16px 36px;font-size:1rem;border-radius:var(--radius-md)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .hero{position:relative;overflow:hidden;padding:56px 0 44px;text-align:center}
+        .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .hero__inner{max-width:700px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hero__icon{font-size:2.2rem;margin-bottom:8px;display:block}
+        .hero h1{font-family:var(--font-display);font-size:2.4rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:6px}
+        .hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.6}
+        .hero__badges{display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap}
+        .hero__badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:50px;font-size:.82rem;color:rgba(255,255,255,.6)}
+        .form-wrap{max-width:860px;margin:-28px auto 0;padding:0 24px;position:relative;z-index:2}
+        .form-card{background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);overflow:hidden;border:1px solid var(--gray-200)}
+        .form-body{padding:40px 48px}
+        .steps-bar{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:36px}
+        .step-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--gray-400);background:var(--gray-100);border:2px solid var(--gray-200);transition:all .35s;position:relative;z-index:1;flex-shrink:0}
+        .step-dot.active{background:var(--ginger);color:#fff;border-color:var(--ginger);box-shadow:0 3px 12px rgba(242,101,34,.3)}
+        .step-dot.completed{background:var(--teal);color:#fff;border-color:var(--teal)}
+        .step-dot.completed::after{content:'✓';font-size:.75rem}.step-dot.completed span{display:none}
+        .step-line{width:40px;height:3px;background:var(--gray-200);transition:background .35s;margin:0 -2px;z-index:0;border-radius:3px;flex-shrink:0}.step-line.completed{background:var(--teal)}
+        .form-section{display:none;animation:slideIn .35s ease}.form-section.active{display:block}
+        @keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        .section-title{font-family:var(--font-display);font-size:1.5rem;color:var(--navy);margin-bottom:6px;text-align:center}
+        .section-desc{font-size:.95rem;color:var(--gray-500);text-align:center;margin-bottom:24px}
+        .fg{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+        .fi{display:flex;flex-direction:column;gap:5px}.fi--full{grid-column:span 2}
+        .fi__label{font-size:.9rem;font-weight:600;color:var(--navy)}.fi__label .req{color:var(--error);margin-left:2px}.fi__label small{font-weight:400;color:var(--gray-400)}
+        .fi__input,.fi__select,.fi__textarea{padding:12px 16px;border:2px solid var(--gray-200);border-radius:var(--radius-md);font-size:.95rem;color:var(--gray-700);background:var(--white);transition:border-color .2s;width:100%}
+        .fi__input:focus,.fi__select:focus,.fi__textarea:focus{outline:none;border-color:var(--ginger)}
+        .fi__textarea{min-height:110px;resize:vertical}
+        .fi__hint{font-size:.75rem;color:var(--gray-400);margin-top:2px}
+        .fi__error{font-size:.75rem;color:var(--error);display:none;margin-top:2px}
+        .fi.has-error .fi__input,.fi.has-error .fi__select,.fi.has-error .fi__textarea{border-color:var(--error)}.fi.has-error .fi__error{display:block}
+        .sub-label{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:10px}.sub-label small{font-weight:400;color:var(--gray-400)}.sub-label .req{color:var(--error)}
+        .who-toggle{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+        .who-card{border:2px solid var(--gray-200);border-radius:var(--radius-lg);padding:22px 16px;cursor:pointer;transition:all .25s;text-align:center;background:var(--white)}
+        .who-card:hover{border-color:var(--ginger);background:var(--cream);transform:translateY(-2px)}
+        .who-card.selected{border-color:var(--ginger);background:var(--cream);box-shadow:0 4px 16px rgba(242,101,34,.12)}
+        .who-card__icon{font-size:2rem;margin-bottom:6px;display:block}
+        .who-card__name{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--navy)}
+        .who-card__desc{font-size:.82rem;color:var(--gray-500);margin-top:3px}
+        .name-row{display:grid;grid-template-columns:100px 1fr 1fr 1fr;gap:12px;margin-bottom:18px}
+        .cond{display:none;animation:slideIn .3s ease}.cond.show{display:block}
+        .cond-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+        /* PHONE — fixed layout: ISD+number on one full row */
+        .phone-wrap{margin-bottom:18px}
+        .phone-inner{display:flex;gap:0}
+        .phone-inner .isd-sel{width:130px;border-radius:var(--radius-md) 0 0 var(--radius-md);border-right:none;font-size:.85rem;padding:12px 8px;border:2px solid var(--gray-200);background:var(--gray-50);color:var(--navy);font-weight:600;flex-shrink:0}
+        .phone-inner .isd-sel:focus{outline:none;border-color:var(--ginger)}
+        .phone-inner .ph-input{flex:1;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:12px 16px;border:2px solid var(--gray-200);font-size:.95rem;color:var(--gray-700);border-left:none}
+        .phone-inner .ph-input:focus{outline:none;border-color:var(--ginger)}
+        .ph-err{font-size:.75rem;color:var(--error);display:none;margin-top:4px}
+        /* Messenger section */
+        .msg-section{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;margin-bottom:22px}
+        .msg-section__title{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:10px}
+        .msg-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+        .msg-chip{padding:9px 18px;border-radius:50px;border:2px solid var(--gray-200);background:var(--white);font-size:.88rem;font-weight:600;color:var(--gray-500);transition:all .2s;display:flex;align-items:center;gap:6px;cursor:pointer}
+        .msg-chip:hover{border-color:var(--gray-400)}
+        .msg-chip.active{border-color:var(--teal);background:#F0FDF9;color:var(--teal)}
+        .msg-chip span{font-size:1.1rem}
+        .msg-num-toggle{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+        .msg-num-opt{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:.88rem;color:var(--gray-600)}
+        .msg-num-opt input{width:16px;height:16px;accent-color:var(--ginger)}
+        .msg-diff-num{display:none;animation:slideIn .3s ease;margin-top:8px}
+        .msg-diff-num.show{display:block}
+        /* DEST & SPEC */
+        .dest-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:28px}
+        .dest-card{border:2px solid var(--gray-200);border-radius:var(--radius-lg);padding:20px 8px;cursor:pointer;transition:all .25s;text-align:center;background:var(--white)}
+        .dest-card:hover{border-color:var(--ginger);background:var(--cream);transform:translateY(-2px)}
+        .dest-card.selected{border-color:var(--ginger);background:var(--cream);box-shadow:0 4px 16px rgba(242,101,34,.12)}
+        .dest-card__flag{font-size:1.8rem;margin-bottom:4px;display:block}.dest-card__name{font-weight:600;color:var(--navy);font-size:.85rem}
+        .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;max-height:380px;overflow-y:auto;padding-right:6px}
+        .spec-grid::-webkit-scrollbar{width:5px}.spec-grid::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:8px}
+        .spec-card{border:2px solid var(--gray-200);border-radius:var(--radius-md);padding:14px 8px;cursor:pointer;transition:all .2s;text-align:center;background:var(--white)}
+        .spec-card:hover{border-color:var(--ginger);background:var(--cream)}
+        .spec-card.selected{border-color:var(--ginger);background:var(--cream);box-shadow:0 2px 10px rgba(242,101,34,.1)}
+        .spec-card__icon{font-size:1.5rem;margin-bottom:3px;display:block}.spec-card__name{font-size:.82rem;font-weight:600;color:var(--navy);line-height:1.25}
+        /* UPLOAD — HIGHLIGHTED */
+        .upload-hero{background:linear-gradient(135deg,var(--cream),#FFF1E6);border:2px solid var(--ginger);border-radius:var(--radius-xl);padding:32px;margin:28px 0 22px;position:relative;overflow:hidden}
+        .upload-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(242,101,34,.08),transparent);border-radius:50%}
+        .upload-hero__title{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--navy);margin-bottom:4px;position:relative;text-align:center}
+        .upload-hero__desc{font-size:.92rem;color:var(--gray-500);margin-bottom:18px;text-align:center;position:relative}
+        .file-zone{border:2px dashed var(--ginger);border-radius:var(--radius-lg);padding:32px;text-align:center;cursor:pointer;transition:all .25s;background:var(--white);position:relative}
+        .file-zone:hover,.file-zone.dragover{background:var(--cream);border-color:var(--ginger-dark)}
+        .file-zone__icon{font-size:2.4rem;margin-bottom:8px;display:block}
+        .file-zone__text{font-size:.95rem;color:var(--gray-600)}.file-zone__text strong{color:var(--ginger)}
+        .file-zone__hint{font-size:.78rem;color:var(--gray-400);margin-top:6px}
+        .file-zone input{display:none}
+        .file-list{display:flex;flex-direction:column;gap:8px;margin-top:14px;position:relative}
+        .file-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md)}
+        .file-item__icon{font-size:1.2rem}.file-item__name{flex:1;font-size:.88rem;font-weight:500;color:var(--navy)}.file-item__size{font-size:.75rem;color:var(--gray-400)}.file-item__remove{background:none;color:var(--error);font-size:1.1rem;padding:4px;border-radius:50%}.file-item__remove:hover{background:rgba(239,68,68,.1)}
+        .upload-tip{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#FFF9E6;border:1px solid #FDE68A;border-radius:var(--radius-md);margin-top:14px;font-size:.85rem;color:#92400E;position:relative}.upload-tip span{font-size:1.2rem}
+        /* REVIEW */
+        .review-block{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:20px;margin-bottom:14px}
+        .review-block__title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}.review-block__title span{font-size:1.1rem}
+        .review-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+        .review-item{padding:6px 0}.review-item__label{font-size:.78rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.5px;font-weight:500}.review-item__value{font-size:.95rem;color:var(--navy);font-weight:600;margin-top:2px}.review-item--full{grid-column:span 2}
+        .check-row{display:flex;align-items:flex-start;gap:10px;margin:16px 0;padding:16px;background:var(--gray-50);border-radius:var(--radius-md);border:1px solid var(--gray-200)}
+        .check-row input[type=checkbox]{margin-top:3px;width:20px;height:20px;accent-color:var(--ginger);flex-shrink:0}
+        .check-row label{font-size:.88rem;color:var(--gray-600);line-height:1.5}.check-row label a{color:var(--ginger);font-weight:600}
+        .success-view{text-align:center;padding:48px 24px;display:none;animation:slideIn .5s ease}.success-view.show{display:block}
+        .success-view__icon{width:90px;height:90px;background:linear-gradient(135deg,#059669,#10b981);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:2.6rem;color:#fff;margin-bottom:20px;box-shadow:0 8px 24px rgba(16,185,129,.3)}
+        .success-view h2{font-family:var(--font-display);font-size:1.8rem;color:var(--navy);margin-bottom:8px}
+        .success-view p{font-size:1rem;color:var(--gray-500);max-width:480px;margin:0 auto 24px;line-height:1.6}
+        .success-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:560px;margin:0 auto 28px}
+        .success-step{padding:18px 12px;background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200);text-align:center}
+        .success-step__num{width:28px;height:28px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;margin-bottom:6px}
+        .success-step__text{font-size:.82rem;color:var(--gray-600);font-weight:500;line-height:1.3}
+        .btn-row{display:flex;justify-content:space-between;gap:15px;margin-top:28px}
+        .btn-back{padding:12px 26px;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;background:var(--gray-100);color:var(--gray-600);transition:all .2s}.btn-back:hover{background:var(--gray-200)}
+        .btn-next{padding:12px 28px;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;background:var(--ginger);color:#fff;margin-left:auto;transition:all .2s;box-shadow:0 2px 8px rgba(242,101,34,.2)}.btn-next:hover{background:var(--ginger-dark)}.btn-next:disabled{background:var(--gray-300);color:var(--gray-500);cursor:not-allowed;box-shadow:none}
+        .btn-submit{padding:14px 36px;border-radius:var(--radius-md);font-weight:700;font-size:1rem;background:linear-gradient(135deg,var(--teal),#0c918c);color:#fff;margin-left:auto;transition:all .2s;box-shadow:0 4px 16px rgba(14,165,160,.3)}.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(14,165,160,.35)}.btn-submit:disabled{background:var(--gray-300);color:var(--gray-500);cursor:not-allowed;box-shadow:none;transform:none}
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500);margin-top:48px}.footer a{color:var(--navy);font-weight:500}
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.hero h1{font-size:1.9rem}.form-body{padding:24px 18px}.dest-grid{grid-template-columns:repeat(3,1fr)}.spec-grid{grid-template-columns:repeat(3,1fr)}.fg,.cond-grid{grid-template-columns:1fr}.fi--full{grid-column:span 1}.name-row{grid-template-columns:90px 1fr}.review-grid{grid-template-columns:1fr}.review-item--full{grid-column:span 1}.success-steps{grid-template-columns:1fr}.topbar{display:none}.step-line{width:24px}.step-dot{width:32px;height:32px;font-size:.72rem}.hero__badges{flex-direction:column;align-items:center}.msg-chips{gap:6px}}
+        @media(max-width:480px){.dest-grid{grid-template-columns:repeat(2,1fr)}.spec-grid{grid-template-columns:repeat(2,1fr)}.step-line{width:14px}.name-row{grid-template-columns:1fr 1fr}.who-toggle{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#5831363e37183f31363f3d2a76303d39342c303b392a3d">✉ <span class="__cf_email__" data-cfemail="3950575f56795e50575e5c4b17515c58554d515a584b5c">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 <a href="#" style="color:rgba(255,255,255,.85)">English</a></div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary nav__link--active">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+    <div class="hero"><div class="hero__bg"></div><div class="hero__pattern"></div><div class="hero__orb1"></div><div class="hero__orb2"></div><div class="hero__inner"><span class="hero__icon">📋</span><h1>Get Your Free <em>Treatment Quote</em></h1><p>Share your details and our medical team will respond with a personalised quote within 24 hours</p><div class="hero__badges"><div class="hero__badge"><span>🏥</span> Quotes from 2–3 top hospitals</div><div class="hero__badge"><span>⏱️</span> Response within 24 hrs</div><div class="hero__badge"><span>🔒</span> 100% confidential</div></div></div></div>
+
+    <div class="form-wrap"><div class="form-card"><div class="form-body" id="formContent">
+        <div class="steps-bar" id="stepsBar">
+            <div class="step-dot active" id="step1"><span>1</span></div><div class="step-line" id="line1"></div>
+            <div class="step-dot" id="step2"><span>2</span></div><div class="step-line" id="line2"></div>
+            <div class="step-dot" id="step3"><span>3</span></div><div class="step-line" id="line3"></div>
+            <div class="step-dot" id="step4"><span>4</span></div><div class="step-line" id="line4"></div>
+            <div class="step-dot" id="step5"><span>5</span></div>
+        </div>
+
+        <!-- ═══ S1: ABOUT YOU ═══ -->
+        <div class="form-section active" id="section1">
+            <h2 class="section-title">👤 About You</h2>
+            <p class="section-desc">Tell us who is seeking treatment</p>
+            <div class="sub-label">Who is enquiring? <span class="req">*</span></div>
+            <div class="who-toggle" id="whoToggle">
+                <div class="who-card" data-who="self"><span class="who-card__icon">🙋</span><div class="who-card__name">For Myself</div><div class="who-card__desc">I am the patient</div></div>
+                <div class="who-card" data-who="other"><span class="who-card__icon">👨‍👩‍👧</span><div class="who-card__name">For Someone Else</div><div class="who-card__desc">Family member, friend, etc.</div></div>
+            </div>
+            <div class="cond" id="otherBlock">
+                <div class="sub-label">Your relationship to the patient <span class="req">*</span></div>
+                <div class="cond-grid"><div class="fi"><select class="fi__select" id="fRelation"><option value="">Select relationship...</option><option>Spouse / Partner</option><option>Parent</option><option>Son / Daughter</option><option>Sibling</option><option>Grandchild</option><option>Uncle / Aunt</option><option>Nephew / Niece</option><option>Cousin</option><option>Friend</option><option>Colleague</option><option>Legal Guardian</option><option>Medical Representative</option><option>Other</option></select><div class="fi__error">Please select relationship</div></div></div>
+            </div>
+            <div class="sub-label" id="nameLabel">Your Name <span class="req">*</span></div>
+            <div class="name-row">
+                <div class="fi"><select class="fi__select" id="fPrefix"><option value="Mr.">Mr.</option><option value="Mrs.">Mrs.</option><option value="Ms.">Ms.</option><option value="Dr.">Dr.</option><option value="Prof.">Prof.</option></select></div>
+                <div class="fi"><input class="fi__input" type="text" id="fFirst" placeholder="First name"><div class="fi__error">Required</div></div>
+                <div class="fi"><input class="fi__input" type="text" id="fMiddle" placeholder="Middle (optional)"></div>
+                <div class="fi"><input class="fi__input" type="text" id="fLast" placeholder="Last name"><div class="fi__error">Required</div></div>
+            </div>
+            <div class="cond" id="patientNameBlock">
+                <div class="sub-label">Patient's Name <span class="req">*</span></div>
+                <div class="name-row">
+                    <div class="fi"><select class="fi__select" id="fPPrefix"><option value="Mr.">Mr.</option><option value="Mrs.">Mrs.</option><option value="Ms.">Ms.</option><option value="Master">Master</option><option value="Baby">Baby</option></select></div>
+                    <div class="fi"><input class="fi__input" type="text" id="fPFirst" placeholder="First name"><div class="fi__error">Required</div></div>
+                    <div class="fi"><input class="fi__input" type="text" id="fPMiddle" placeholder="Middle (optional)"></div>
+                    <div class="fi"><input class="fi__input" type="text" id="fPLast" placeholder="Last name"><div class="fi__error">Required</div></div>
+                </div>
+            </div>
+            <div class="sub-label">Country <span class="req">*</span></div>
+            <div class="fg"><div class="fi fi--full"><select class="fi__select" id="fCountry"><option value="">Select your country...</option></select><div class="fi__error">Please select your country</div></div></div>
+            <div class="fg">
+                <div class="fi"><label class="fi__label">Email <span class="req">*</span></label><input class="fi__input" type="email" id="fEmail" placeholder="your@email.com"><div class="fi__error">Please enter a valid email</div></div>
+                <div class="fi"><label class="fi__label" id="ageLabel">Patient's Age (in years) <span class="req">*</span></label><select class="fi__select" id="fAge"><option value="">Select age...</option></select><div class="fi__error">Please select age</div></div>
+            </div>
+            <div class="sub-label">Phone Number <span class="req">*</span></div>
+            <div class="phone-wrap">
+                <div class="phone-inner"><select class="isd-sel" id="fISD"></select><input class="ph-input" type="tel" id="fPhone" placeholder="Enter phone number"></div>
+                <div class="ph-err" id="phoneErr">Please enter a valid phone number (min 6 digits)</div>
+            </div>
+            <div class="btn-row"><button class="btn-next" id="next1">Next — Medical Needs →</button></div>
+        </div>
+
+        <!-- ═══ S2: DESTINATION & SPECIALTY ═══ -->
+        <div class="form-section" id="section2">
+            <h2 class="section-title">🌍 Where & What</h2>
+            <p class="section-desc">Choose your preferred destination and area of treatment</p>
+            <div class="sub-label">Preferred Destination <small>(optional — we can recommend)</small></div>
+            <div class="dest-grid">
+                <div class="dest-card" data-dest="India"><span class="dest-card__flag">🇮🇳</span><div class="dest-card__name">India</div></div>
+                <div class="dest-card" data-dest="Turkey"><span class="dest-card__flag">🇹🇷</span><div class="dest-card__name">Turkey</div></div>
+                <div class="dest-card" data-dest="Thailand"><span class="dest-card__flag">🇹🇭</span><div class="dest-card__name">Thailand</div></div>
+                <div class="dest-card" data-dest="UAE"><span class="dest-card__flag">🇦🇪</span><div class="dest-card__name">UAE</div></div>
+                <div class="dest-card" data-dest="Singapore"><span class="dest-card__flag">🇸🇬</span><div class="dest-card__name">Singapore</div></div>
+                <div class="dest-card" data-dest="Not Sure"><span class="dest-card__flag">🤔</span><div class="dest-card__name">Not Sure</div></div>
+            </div>
+            <div class="sub-label">Medical Specialty <span class="req">*</span></div>
+            <div class="spec-grid" id="specGrid"></div>
+            <div class="btn-row"><button class="btn-back" id="back2">← Back</button><button class="btn-next" id="next2" disabled>Next — Medical Details →</button></div>
+        </div>
+
+        <!-- ═══ S3: MEDICAL DETAILS + UPLOAD ═══ -->
+        <div class="form-section" id="section3">
+            <h2 class="section-title" id="s3Title">📝 Medical Details</h2>
+            <p class="section-desc" id="s3Desc">Help our doctors understand the condition for an accurate quote</p>
+            <div class="fg">
+                <div class="fi"><label class="fi__label">Current Diagnosis <small>(if any)</small></label><input class="fi__input" type="text" id="fDiagnosis" placeholder="e.g. Stage 2 Breast Cancer, ACL Tear"></div>
+                <div class="fi"><label class="fi__label">Treatment / Procedure Seeking</label><input class="fi__input" type="text" id="fTreatment" placeholder="e.g. Total Knee Replacement, IVF, CABG"></div>
+                <div class="fi fi--full"><label class="fi__label" id="condLabel">Describe the medical condition <span class="req">*</span></label><textarea class="fi__textarea" id="fCondition" placeholder="Please describe the medical condition, symptoms, and any ongoing treatment..."></textarea><div class="fi__hint">The more detail you provide, the more accurate the quote will be</div><div class="fi__error">Please describe the condition (at least a few sentences)</div></div>
+                <div class="fi fi--full"><label class="fi__label" id="prevLabel">Previous Treatments / Surgeries</label><textarea class="fi__textarea" id="fPrev" rows="3" style="min-height:80px" placeholder="List any previous surgeries, treatments, or medications tried for this condition..."></textarea></div>
+                <div class="fi fi--full"><label class="fi__label">Other Medical History <small>(optional)</small></label><textarea class="fi__textarea" id="fHistory" rows="3" style="min-height:80px" placeholder="Diabetes, hypertension, heart condition, allergies, current medications, etc."></textarea></div>
+            </div>
+            <!-- UPLOAD — right after medical history -->
+            <div class="upload-hero">
+                <div class="upload-hero__title">📎 Upload Medical Reports</div>
+                <div class="upload-hero__desc">Uploading reports helps us provide a much more accurate and faster quote</div>
+                <label class="file-zone" id="fileZone">
+                    <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.dicom">
+                    <span class="file-zone__icon">📁</span>
+                    <div class="file-zone__text"><strong>Click to upload</strong> or drag files here</div>
+                    <div class="file-zone__hint">PDF, JPG, PNG, DOC, DICOM · Max 10MB each · Up to 10 files</div>
+                </label>
+                <div class="file-list" id="fileList"></div>
+                <div class="upload-tip"><span>💡</span> Upload any: blood reports, MRI/CT scans, doctor's notes, prescriptions, discharge summaries, pathology reports</div>
+            </div>
+            <div class="btn-row"><button class="btn-back" id="back3">← Back</button><button class="btn-next" id="next3">Next — Travel & Messaging →</button></div>
+        </div>
+
+        <!-- ═══ S4: TRAVEL + MESSAGING ═══ -->
+        <div class="form-section" id="section4">
+            <h2 class="section-title">✈️ Travel & Communication</h2>
+            <p class="section-desc">Help us plan your trip and stay in touch</p>
+            <div class="fg">
+                <div class="fi"><label class="fi__label">Preferred Travel Date</label><input class="fi__input" type="date" id="fDate"><div class="fi__hint">Approximate date — we'll plan around it</div></div>
+                <div class="fi"><label class="fi__label">Number of Travelers</label><select class="fi__select" id="fTravelers"><option value="1 — Patient only">1 — Patient only</option><option value="2 — Patient + 1 Attendant" selected>2 — Patient + 1 Attendant</option><option value="3 — Patient + 2 Attendants">3 — Patient + 2 Attendants</option></select></div>
+            </div>
+            <!-- MESSENGER PREFERENCES -->
+            <div class="msg-section">
+                <div class="msg-section__title">💬 I am available on: <small style="font-weight:400;color:var(--gray-400)">(select all that apply)</small></div>
+                <div class="msg-chips">
+                    <button type="button" class="msg-chip active" data-ch="whatsapp"><span>💬</span> WhatsApp</button>
+                    <button type="button" class="msg-chip" data-ch="telegram"><span>✈️</span> Telegram</button>
+                    <button type="button" class="msg-chip" data-ch="wechat"><span>🟢</span> WeChat</button>
+                </div>
+                <div class="msg-num-toggle">
+                    <label class="msg-num-opt"><input type="radio" name="msgNum" value="same" checked> I use the same number</label>
+                    <label class="msg-num-opt"><input type="radio" name="msgNum" value="diff"> I use a different number</label>
+                </div>
+                <div class="msg-diff-num" id="diffNumBlock">
+                    <div class="phone-inner" style="max-width:400px"><select class="isd-sel" id="fMsgISD"></select><input class="ph-input" type="tel" id="fMsgPhone" placeholder="Messaging number"></div>
+                </div>
+            </div>
+            <div class="fg"><div class="fi fi--full"><label class="fi__label">Anything Else? <small>(optional)</small></label><input class="fi__input" type="text" id="fNotes" placeholder="e.g. Need wheelchair, interpreter, specific doctor, second opinion only, accommodation preferences..."></div></div>
+            <div class="btn-row"><button class="btn-back" id="back4">← Back</button><button class="btn-next" id="next4">Review & Submit →</button></div>
+        </div>
+
+        <!-- ═══ S5: REVIEW + SUBMIT ═══ -->
+        <div class="form-section" id="section5">
+            <h2 class="section-title">📋 Review & Submit</h2>
+            <p class="section-desc">Please verify your details before submitting</p>
+            <div id="reviewSection"></div>
+            <div class="check-row">
+                <input type="checkbox" id="consent1">
+                <label for="consent1">I agree to the <a href="/privacy-policy/" target="_blank">Privacy Policy</a> and consent to being contacted by Ginger Healthcare. My data will be kept confidential and shared only with hospitals for quotation purposes.</label>
+            </div>
+            <div class="check-row" style="margin-top:-4px">
+                <input type="checkbox" id="consent2">
+                <label for="consent2">I understand this is an <strong>estimate request</strong> and not a confirmed booking. Final costs may vary based on medical evaluation.</label>
+            </div>
+            <div class="btn-row"><button class="btn-back" id="back5">← Back</button><button class="btn-submit" id="submitBtn" disabled>✅ Submit Inquiry</button></div>
+        </div>
+    </div>
+    <div class="success-view" id="successView">
+        <div class="success-view__icon">✓</div>
+        <h2>Thank You!</h2>
+        <p>Your inquiry has been submitted successfully. Our medical coordination team will review the case and respond within <strong>24 hours</strong>.</p>
+        <div class="success-steps">
+            <div class="success-step"><div class="success-step__num">1</div><div class="success-step__text">Our team reviews the case</div></div>
+            <div class="success-step"><div class="success-step__num">2</div><div class="success-step__text">We get quotes from 2–3 top hospitals</div></div>
+            <div class="success-step"><div class="success-step__num">3</div><div class="success-step__text">You receive a detailed quote via email & WhatsApp</div></div>
+        </div>
+        <a href="/" class="btn btn--primary btn--large">← Back to Home</a>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--gray-400)">Reference # <strong id="refId">GH-000000</strong> · Check your email for confirmation</p>
+    </div>
+    </div></div>
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p></footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+const isdData=[
+{c:"Afghanistan",d:"+93",f:"🇦🇫"},{c:"Angola",d:"+244",f:"🇦🇴"},{c:"Argentina",d:"+54",f:"🇦🇷"},{c:"Australia",d:"+61",f:"🇦🇺"},{c:"Austria",d:"+43",f:"🇦🇹"},{c:"Bahrain",d:"+973",f:"🇧🇭"},{c:"Bangladesh",d:"+880",f:"🇧🇩"},{c:"Belgium",d:"+32",f:"🇧🇪"},{c:"Bhutan",d:"+975",f:"🇧🇹"},{c:"Brazil",d:"+55",f:"🇧🇷"},{c:"Cambodia",d:"+855",f:"🇰🇭"},{c:"Cameroon",d:"+237",f:"🇨🇲"},{c:"Canada",d:"+1",f:"🇨🇦"},{c:"Chile",d:"+56",f:"🇨🇱"},{c:"China",d:"+86",f:"🇨🇳"},{c:"Colombia",d:"+57",f:"🇨🇴"},{c:"Czech Republic",d:"+420",f:"🇨🇿"},{c:"Denmark",d:"+45",f:"🇩🇰"},{c:"Egypt",d:"+20",f:"🇪🇬"},{c:"Ethiopia",d:"+251",f:"🇪🇹"},{c:"Finland",d:"+358",f:"🇫🇮"},{c:"France",d:"+33",f:"🇫🇷"},{c:"Germany",d:"+49",f:"🇩🇪"},{c:"Ghana",d:"+233",f:"🇬🇭"},{c:"Greece",d:"+30",f:"🇬🇷"},{c:"Hungary",d:"+36",f:"🇭🇺"},{c:"India",d:"+91",f:"🇮🇳"},{c:"Indonesia",d:"+62",f:"🇮🇩"},{c:"Iran",d:"+98",f:"🇮🇷"},{c:"Iraq",d:"+964",f:"🇮🇶"},{c:"Ireland",d:"+353",f:"🇮🇪"},{c:"Italy",d:"+39",f:"🇮🇹"},{c:"Japan",d:"+81",f:"🇯🇵"},{c:"Jordan",d:"+962",f:"🇯🇴"},{c:"Kazakhstan",d:"+7",f:"🇰🇿"},{c:"Kenya",d:"+254",f:"🇰🇪"},{c:"Kuwait",d:"+965",f:"🇰🇼"},{c:"Laos",d:"+856",f:"🇱🇦"},{c:"Lebanon",d:"+961",f:"🇱🇧"},{c:"Libya",d:"+218",f:"🇱🇾"},{c:"Malaysia",d:"+60",f:"🇲🇾"},{c:"Maldives",d:"+960",f:"🇲🇻"},{c:"Mongolia",d:"+976",f:"🇲🇳"},{c:"Morocco",d:"+212",f:"🇲🇦"},{c:"Mozambique",d:"+258",f:"🇲🇿"},{c:"Myanmar",d:"+95",f:"🇲🇲"},{c:"Nepal",d:"+977",f:"🇳🇵"},{c:"Netherlands",d:"+31",f:"🇳🇱"},{c:"New Zealand",d:"+64",f:"🇳🇿"},{c:"Nigeria",d:"+234",f:"🇳🇬"},{c:"Norway",d:"+47",f:"🇳🇴"},{c:"Oman",d:"+968",f:"🇴🇲"},{c:"Pakistan",d:"+92",f:"🇵🇰"},{c:"Palestine",d:"+970",f:"🇵🇸"},{c:"Peru",d:"+51",f:"🇵🇪"},{c:"Philippines",d:"+63",f:"🇵🇭"},{c:"Poland",d:"+48",f:"🇵🇱"},{c:"Portugal",d:"+351",f:"🇵🇹"},{c:"Qatar",d:"+974",f:"🇶🇦"},{c:"Romania",d:"+40",f:"🇷🇴"},{c:"Russia",d:"+7",f:"🇷🇺"},{c:"Rwanda",d:"+250",f:"🇷🇼"},{c:"Saudi Arabia",d:"+966",f:"🇸🇦"},{c:"Senegal",d:"+221",f:"🇸🇳"},{c:"Singapore",d:"+65",f:"🇸🇬"},{c:"Somalia",d:"+252",f:"🇸🇴"},{c:"South Africa",d:"+27",f:"🇿🇦"},{c:"South Korea",d:"+82",f:"🇰🇷"},{c:"Spain",d:"+34",f:"🇪🇸"},{c:"Sri Lanka",d:"+94",f:"🇱🇰"},{c:"Sudan",d:"+249",f:"🇸🇩"},{c:"Sweden",d:"+46",f:"🇸🇪"},{c:"Switzerland",d:"+41",f:"🇨🇭"},{c:"Syria",d:"+963",f:"🇸🇾"},{c:"Taiwan",d:"+886",f:"🇹🇼"},{c:"Tanzania",d:"+255",f:"🇹🇿"},{c:"Thailand",d:"+66",f:"🇹🇭"},{c:"Turkey",d:"+90",f:"🇹🇷"},{c:"UAE",d:"+971",f:"🇦🇪"},{c:"Uganda",d:"+256",f:"🇺🇬"},{c:"Ukraine",d:"+380",f:"🇺🇦"},{c:"United Kingdom",d:"+44",f:"🇬🇧"},{c:"United States",d:"+1",f:"🇺🇸"},{c:"Uzbekistan",d:"+998",f:"🇺🇿"},{c:"Vietnam",d:"+84",f:"🇻🇳"},{c:"Yemen",d:"+967",f:"🇾🇪"},{c:"Zambia",d:"+260",f:"🇿🇲"},{c:"Zimbabwe",d:"+263",f:"🇿🇼"}
+];
+const specialties=[{key:'cardiac-surgery',icon:'❤️',name:'Cardiac Surgery'},{key:'cardiology',icon:'💓',name:'Cardiology'},{key:'orthopedics',icon:'🦴',name:'Orthopedics'},{key:'neurosurgery',icon:'🧠',name:'Neurosurgery'},{key:'neurology',icon:'🧠',name:'Neurology'},{key:'medical-oncology',icon:'🎗️',name:'Medical Oncology'},{key:'surgical-oncology',icon:'🎗️',name:'Surgical Oncology'},{key:'radiation-oncology',icon:'☢️',name:'Radiation Oncology'},{key:'hematology-bmt',icon:'🩸',name:'Hematology & BMT'},{key:'surgical-gastroenterology',icon:'🫁',name:'Surgical Gastro'},{key:'gastroenterology',icon:'🫁',name:'Gastroenterology'},{key:'nephrology',icon:'🫘',name:'Nephrology'},{key:'urology',icon:'🚽',name:'Urology'},{key:'vascular-surgery',icon:'🩸',name:'Vascular Surgery'},{key:'cosmetic-surgery',icon:'✨',name:'Cosmetic Surgery'},{key:'bariatric-surgery',icon:'⚖️',name:'Bariatric Surgery'},{key:'breast-surgery',icon:'🎀',name:'Breast Surgery'},{key:'dentistry',icon:'🦷',name:'Dentistry'},{key:'dermatology',icon:'🧴',name:'Dermatology'},{key:'ophthalmology',icon:'👁️',name:'Ophthalmology'},{key:'ent',icon:'👂',name:'ENT'},{key:'fertility',icon:'👶',name:'Fertility & IVF'},{key:'gynecology',icon:'🤰',name:'OB-GYN'},{key:'pulmonology',icon:'🌬️',name:'Pulmonology'},{key:'endocrinology',icon:'🩺',name:'Endocrinology'},{key:'rheumatology',icon:'🦠',name:'Rheumatology'},{key:'general-surgery',icon:'🏥',name:'General Surgery'},{key:'interventional-neuroradiology',icon:'🧠',name:'Interventional Neuro'},{key:'not-sure',icon:'🤔',name:'Not Sure'}];
+
+// Populate dropdowns
+const cSel=document.getElementById('fCountry');
+isdData.forEach(d=>{const o=document.createElement('option');o.value=d.c;o.textContent=`${d.f} ${d.c}`;cSel.appendChild(o)});
+[document.getElementById('fISD'),document.getElementById('fMsgISD')].forEach(sel=>{
+    isdData.forEach(d=>{const o=document.createElement('option');o.value=d.d;o.textContent=`${d.f} ${d.d}`;o.dataset.country=d.c;sel.appendChild(o)});
+});
+document.getElementById('specGrid').innerHTML=specialties.map(s=>`<div class="spec-card" data-key="${s.key}" data-name="${s.name}"><span class="spec-card__icon">${s.icon}</span><div class="spec-card__name">${s.name}</div></div>`).join('');
+// Age dropdown 0-120
+const ageSel=document.getElementById('fAge');
+for(let i=0;i<=120;i++){const o=document.createElement('option');o.value=i;o.textContent=i+(i===0?' (Newborn)':'');ageSel.appendChild(o)}
+// Default date
+const dd=new Date();dd.setDate(dd.getDate()+30);document.getElementById('fDate').value=dd.toISOString().slice(0,10);
+
+// ═══ STATE ═══
+let whoIs='',selDest='',selSpec='',selSpecName='';
+let msgChannels=new Set(['whatsapp']);
+let uploadedFiles=[];
+
+// ═══ WHO TOGGLE ═══
+document.querySelectorAll('.who-card').forEach(c=>{c.addEventListener('click',()=>{
+    document.querySelectorAll('.who-card').forEach(x=>x.classList.remove('selected'));
+    c.classList.add('selected');whoIs=c.dataset.who;
+    const s=whoIs==='self';
+    document.getElementById('otherBlock').classList.toggle('show',!s);
+    document.getElementById('patientNameBlock').classList.toggle('show',!s);
+    document.getElementById('nameLabel').innerHTML=s?'Your Name <span class="req">*</span>':'Your Name (Enquirer) <span class="req">*</span>';
+    document.getElementById('ageLabel').innerHTML=s?'Your Age (in years) <span class="req">*</span>':'Patient\'s Age (in years) <span class="req">*</span>';
+    // S3 dynamic labels
+    if(s){
+        document.getElementById('s3Desc').textContent='Help our doctors understand your condition for an accurate quote';
+        document.getElementById('condLabel').innerHTML='Describe your medical condition <span class="req">*</span>';
+        document.getElementById('fCondition').placeholder='Please describe your medical condition, symptoms, and any ongoing treatment...';
+        document.getElementById('prevLabel').textContent='Your previous treatments / surgeries';
+        document.getElementById('fPrev').placeholder='List any previous surgeries, treatments, or medications you have tried...';
+    }else{
+        document.getElementById('s3Desc').textContent='Help our doctors understand the patient\'s condition for an accurate quote';
+        document.getElementById('condLabel').innerHTML='Describe the patient\'s medical condition <span class="req">*</span>';
+        document.getElementById('fCondition').placeholder='Please describe the patient\'s medical condition, symptoms, and any ongoing treatment...';
+        document.getElementById('prevLabel').textContent='Patient\'s previous treatments / surgeries';
+        document.getElementById('fPrev').placeholder='List any previous surgeries, treatments, or medications the patient has tried...';
+    }
+})});
+
+// Country → ISD sync
+document.getElementById('fCountry').addEventListener('change',function(){
+    const m=isdData.find(d=>d.c===this.value);
+    if(m){[document.getElementById('fISD'),document.getElementById('fMsgISD')].forEach(sel=>{
+        for(let i=0;i<sel.options.length;i++){if(sel.options[i].dataset.country===m.c){sel.selectedIndex=i;break}}
+    })}
+});
+
+// Messenger multi-select
+document.querySelectorAll('.msg-chip').forEach(b=>{b.addEventListener('click',()=>{
+    b.classList.toggle('active');
+    if(b.classList.contains('active'))msgChannels.add(b.dataset.ch);else msgChannels.delete(b.dataset.ch);
+})});
+// Same/different number
+document.querySelectorAll('input[name="msgNum"]').forEach(r=>{r.addEventListener('change',()=>{
+    document.getElementById('diffNumBlock').classList.toggle('show',r.value==='diff'&&r.checked);
+})});
+
+// ═══ NAVIGATION ═══
+function goTo(step){
+    document.querySelectorAll('.form-section').forEach(s=>s.classList.remove('active'));
+    const sec=document.getElementById(`section${step}`);if(sec)sec.classList.add('active');
+    for(let i=1;i<=5;i++){const dot=document.getElementById(`step${i}`),line=document.getElementById(`line${i}`);dot.classList.remove('active','completed');if(line)line.classList.remove('completed');if(i<step){dot.classList.add('completed');if(line)line.classList.add('completed')}else if(i===step)dot.classList.add('active')}
+    document.querySelector('.form-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function clearErr(el){el.closest('.fi')?.classList.remove('has-error')}
+document.querySelectorAll('#section1 .fi__input,#section1 .fi__select').forEach(el=>{el.addEventListener('input',()=>clearErr(el));el.addEventListener('change',()=>clearErr(el))});
+
+// S1 validate
+document.getElementById('next1').addEventListener('click',()=>{
+    let ok=true;
+    function chk(id,test){const el=document.getElementById(id),fi=el.closest('.fi');if(!fi)return;if(!test(el.value)){fi.classList.add('has-error');ok=false}else fi.classList.remove('has-error')}
+    if(!whoIs){document.getElementById('whoToggle').style.outline='2px solid var(--error)';document.getElementById('whoToggle').style.borderRadius='16px';ok=false}
+    else document.getElementById('whoToggle').style.outline='none';
+    chk('fFirst',v=>v.trim().length>=1);chk('fLast',v=>v.trim().length>=1);
+    chk('fCountry',v=>v!=='');chk('fEmail',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));chk('fAge',v=>v!=='');
+    const ph=document.getElementById('fPhone').value.replace(/[\s\-\(\)]/g,'');
+    if(ph.length<6||!/^\d+$/.test(ph)){document.getElementById('phoneErr').style.display='block';ok=false}
+    else document.getElementById('phoneErr').style.display='none';
+    if(whoIs==='other'){chk('fRelation',v=>v!=='');chk('fPFirst',v=>v.trim().length>=1);chk('fPLast',v=>v.trim().length>=1)}
+    if(ok)goTo(2);
+});
+
+// S2
+document.querySelectorAll('.dest-card').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.dest-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');selDest=c.dataset.dest})});
+document.querySelectorAll('.spec-card').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.spec-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');selSpec=c.dataset.key;selSpecName=c.dataset.name;document.getElementById('next2').disabled=false})});
+document.getElementById('next2').addEventListener('click',()=>goTo(3));
+document.getElementById('back2').addEventListener('click',()=>goTo(1));
+
+// S3
+document.getElementById('next3').addEventListener('click',()=>{
+    const el=document.getElementById('fCondition'),fi=el.closest('.fi');
+    if(el.value.trim().length<10){fi.classList.add('has-error');return}fi.classList.remove('has-error');goTo(4);
+});
+document.getElementById('fCondition').addEventListener('input',function(){this.closest('.fi').classList.remove('has-error')});
+document.getElementById('back3').addEventListener('click',()=>goTo(2));
+
+// S4
+document.getElementById('next4').addEventListener('click',()=>{buildReview();goTo(5)});
+document.getElementById('back4').addEventListener('click',()=>goTo(3));
+
+// FILE UPLOAD
+const fileZone=document.getElementById('fileZone'),fileInput=document.getElementById('fileInput');
+fileZone.addEventListener('click',e=>{e.preventDefault();fileInput.click()});
+fileZone.addEventListener('dragover',e=>{e.preventDefault();fileZone.classList.add('dragover')});
+fileZone.addEventListener('dragleave',()=>fileZone.classList.remove('dragover'));
+fileZone.addEventListener('drop',e=>{e.preventDefault();fileZone.classList.remove('dragover');handleFiles(e.dataTransfer.files)});
+fileInput.addEventListener('change',()=>{handleFiles(fileInput.files);fileInput.value=''});
+function handleFiles(files){Array.from(files).forEach(f=>{if(uploadedFiles.length>=10)return;if(f.size>10*1024*1024)return alert(f.name+' exceeds 10MB');uploadedFiles.push(f)});renderFiles()}
+function renderFiles(){const list=document.getElementById('fileList');if(!uploadedFiles.length){list.innerHTML='';return}list.innerHTML=uploadedFiles.map((f,i)=>{const ext=f.name.split('.').pop().toUpperCase();const icon=ext==='PDF'?'📄':['JPG','JPEG','PNG'].includes(ext)?'🖼️':'📎';const size=f.size<1024*1024?Math.round(f.size/1024)+'KB':(f.size/(1024*1024)).toFixed(1)+'MB';return`<div class="file-item"><span class="file-item__icon">${icon}</span><span class="file-item__name">${f.name}</span><span class="file-item__size">${size}</span><button class="file-item__remove" onclick="removeFile(${i})">✕</button></div>`}).join('')}
+function removeFile(i){uploadedFiles.splice(i,1);renderFiles()}
+
+// CONSENT
+document.getElementById('consent1').addEventListener('change',chkSubmit);
+document.getElementById('consent2').addEventListener('change',chkSubmit);
+function chkSubmit(){document.getElementById('submitBtn').disabled=!(document.getElementById('consent1').checked&&document.getElementById('consent2').checked)}
+
+// REVIEW
+function buildReview(){
+    const g=v=>v||'—',s=whoIs==='self';
+    const pre=document.getElementById('fPrefix').value;
+    const enq=`${pre} ${document.getElementById('fFirst').value} ${document.getElementById('fMiddle').value} ${document.getElementById('fLast').value}`.replace(/\s+/g,' ').trim();
+    let pat=enq;
+    if(!s){const pp=document.getElementById('fPPrefix').value;pat=`${pp} ${document.getElementById('fPFirst').value} ${document.getElementById('fPMiddle').value} ${document.getElementById('fPLast').value}`.replace(/\s+/g,' ').trim()}
+    const isd=document.getElementById('fISD').value,phone=isd+' '+document.getElementById('fPhone').value;
+    const channels=[...msgChannels].map(c=>c==='whatsapp'?'WhatsApp':c==='telegram'?'Telegram':'WeChat').join(', ')||'None';
+    const diffNum=document.querySelector('input[name="msgNum"][value="diff"]').checked;
+    let msgPhone='Same as phone';
+    if(diffNum){const mi=document.getElementById('fMsgISD').value;msgPhone=mi+' '+document.getElementById('fMsgPhone').value}
+    const date=document.getElementById('fDate').value?new Date(document.getElementById('fDate').value+'T00:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}):'Flexible';
+    const cond=document.getElementById('fCondition').value.trim();const condP=cond.length>140?cond.slice(0,140)+'…':cond;
+
+    let h=`<div class="review-block"><div class="review-block__title"><span>👤</span> ${s?'Patient Information':'Enquirer & Patient'}</div><div class="review-grid">`;
+    if(!s){h+=`<div class="review-item"><div class="review-item__label">Enquirer</div><div class="review-item__value">${enq}</div></div><div class="review-item"><div class="review-item__label">Relationship</div><div class="review-item__value">${g(document.getElementById('fRelation').value)}</div></div><div class="review-item"><div class="review-item__label">Patient</div><div class="review-item__value">${pat}</div></div>`}
+    else{h+=`<div class="review-item"><div class="review-item__label">Name</div><div class="review-item__value">${enq}</div></div>`}
+    h+=`<div class="review-item"><div class="review-item__label">Country</div><div class="review-item__value">${g(document.getElementById('fCountry').value)}</div></div>
+        <div class="review-item"><div class="review-item__label">Email</div><div class="review-item__value">${g(document.getElementById('fEmail').value)}</div></div>
+        <div class="review-item"><div class="review-item__label">Phone</div><div class="review-item__value">${phone}</div></div>
+        <div class="review-item"><div class="review-item__label">${s?'Age':'Patient\'s Age'}</div><div class="review-item__value">${g(document.getElementById('fAge').value)} years</div></div>
+        <div class="review-item"><div class="review-item__label">Messaging</div><div class="review-item__value">${channels} · ${msgPhone}</div></div>
+    </div></div>`;
+    h+=`<div class="review-block"><div class="review-block__title"><span>🏥</span> Medical Details</div><div class="review-grid">
+        <div class="review-item"><div class="review-item__label">Destination</div><div class="review-item__value">${selDest||'Not specified'}</div></div>
+        <div class="review-item"><div class="review-item__label">Specialty</div><div class="review-item__value">${selSpecName||'Not selected'}</div></div>
+        <div class="review-item"><div class="review-item__label">Diagnosis</div><div class="review-item__value">${g(document.getElementById('fDiagnosis').value)}</div></div>
+        <div class="review-item"><div class="review-item__label">Treatment</div><div class="review-item__value">${g(document.getElementById('fTreatment').value)}</div></div>
+        <div class="review-item review-item--full"><div class="review-item__label">Condition</div><div class="review-item__value">${condP}</div></div>
+    </div></div>`;
+    h+=`<div class="review-block"><div class="review-block__title"><span>✈️</span> Travel & Files</div><div class="review-grid">
+        <div class="review-item"><div class="review-item__label">Travel Date</div><div class="review-item__value">${date}</div></div>
+        <div class="review-item"><div class="review-item__label">Travelers</div><div class="review-item__value">${document.getElementById('fTravelers').value}</div></div>
+        <div class="review-item review-item--full"><div class="review-item__label">Uploaded Files</div><div class="review-item__value">${uploadedFiles.length?uploadedFiles.map(f=>f.name).join(', '):'No files uploaded'}</div></div>
+    </div></div>`;
+    document.getElementById('reviewSection').innerHTML=h;
+}
+document.getElementById('back5').addEventListener('click',()=>goTo(4));
+
+// SUBMIT
+document.getElementById('submitBtn').addEventListener('click',()=>{
+    const btn=document.getElementById('submitBtn');btn.textContent='Submitting...';btn.disabled=true;
+    const ref='GH-'+Date.now().toString(36).toUpperCase().slice(-6);
+    document.getElementById('refId').textContent=ref;
+    setTimeout(()=>{document.g

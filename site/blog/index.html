@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Articles | Medical Tourism Insights | Ginger Healthcare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-sm:0 1px 3px rgba(11,37,69,.06);--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.1);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+
+        /* HERO */
+        .hero{position:relative;overflow:hidden;padding:56px 0 44px;text-align:center}
+        .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .hero__inner{max-width:700px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hero__icon{font-size:2.2rem;margin-bottom:8px;display:block}
+        .hero h1{font-family:var(--font-display);font-size:2.4rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:6px}
+        .hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+        .content{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        /* FEATURED ARTICLE */
+        .featured{margin-top:40px;margin-bottom:48px}
+        .feat-card{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--gray-200);transition:transform .3s;cursor:pointer}
+        .feat-card:hover{transform:translateY(-4px)}
+        .feat-card__img{background:linear-gradient(135deg,#1a3a5c,#0B2545);position:relative;min-height:320px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .feat-card__img-icon{font-size:5rem;opacity:.9}
+        .feat-card__img-overlay{position:absolute;inset:0;background:linear-gradient(45deg,rgba(11,37,69,.3),transparent)}
+        .feat-card__badge{position:absolute;top:20px;left:20px;padding:6px 14px;background:var(--ginger);color:#fff;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:.5px;z-index:1}
+        .feat-card__body{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
+        .feat-card__cat{font-size:.82rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+        .feat-card__title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:12px}
+        .feat-card__excerpt{font-size:.95rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+        .feat-card__meta{display:flex;align-items:center;gap:16px;font-size:.82rem;color:var(--gray-400)}
+        .feat-card__meta-item{display:flex;align-items:center;gap:4px}
+        .feat-card__link{color:var(--ginger);font-weight:600;font-size:.95rem;display:inline-flex;align-items:center;gap:5px;margin-top:auto}
+        .feat-card__link:hover{color:var(--ginger-dark)}
+
+        /* SEARCH + FILTER */
+        .controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+        .search-box{display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--white);border-radius:50px;border:2px solid var(--gray-200);min-width:280px;transition:border-color .2s}
+        .search-box:focus-within{border-color:var(--ginger)}
+        .search-box span{font-size:1rem;color:var(--gray-400)}
+        .search-box input{flex:1;border:none;outline:none;font-size:.92rem;color:var(--gray-700);font-family:var(--font-body);background:transparent}
+        .cat-tabs{display:flex;flex-wrap:wrap;gap:6px}
+        .cat-tab{padding:8px 18px;border-radius:50px;border:2px solid var(--gray-200);background:var(--white);font-size:.85rem;font-weight:600;color:var(--gray-500);transition:all .2s;cursor:pointer}
+        .cat-tab:hover{border-color:var(--gray-400);color:var(--navy)}
+        .cat-tab.active{border-color:var(--ginger);background:var(--cream);color:var(--ginger)}
+
+        /* ARTICLE GRID */
+        .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+        .article-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1.5px solid var(--gray-200);transition:all .3s;cursor:pointer;display:flex;flex-direction:column}
+        .article-card:hover{border-color:var(--ginger);transform:translateY(-4px);box-shadow:var(--shadow-md)}
+        .article-card__img{height:180px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .article-card__img-icon{font-size:3.5rem;opacity:.85}
+        .article-card__cat-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:700;color:#fff;letter-spacing:.3px}
+        .article-card__body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+        .article-card__cat{font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+        .article-card__title{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--navy);line-height:1.35;margin-bottom:8px}
+        .article-card__excerpt{font-size:.88rem;color:var(--gray-500);line-height:1.6;flex:1;margin-bottom:12px}
+        .article-card__footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--gray-100);padding-top:12px;font-size:.78rem;color:var(--gray-400)}
+        .article-card__read{color:var(--ginger);font-weight:600}
+
+        /* SIDEBAR / NEWSLETTER */
+        .newsletter-bar{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-xl);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:48px;position:relative;overflow:hidden}
+        .newsletter-bar::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(242,101,34,.15),transparent);border-radius:50%}
+        .newsletter-bar__text{position:relative}
+        .newsletter-bar h3{font-family:var(--font-display);font-size:1.3rem;color:#fff;margin-bottom:4px}
+        .newsletter-bar p{color:rgba(255,255,255,.45);font-size:.92rem}
+        .newsletter-bar__form{display:flex;gap:8px;position:relative}
+        .newsletter-bar__input{padding:14px 20px;border-radius:50px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;width:280px;font-family:var(--font-body)}
+        .newsletter-bar__input::placeholder{color:rgba(255,255,255,.35)}
+        .newsletter-bar__input:focus{outline:none;border-color:var(--ginger)}
+        .newsletter-bar__btn{padding:14px 28px;border-radius:50px;background:var(--ginger);color:#fff;font-weight:700;font-size:.92rem;transition:all .2s;white-space:nowrap}.newsletter-bar__btn:hover{background:var(--ginger-dark)}
+
+        /* PAGINATION */
+        .pagination{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:48px}
+        .page-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;color:var(--gray-500);background:var(--white);border:2px solid var(--gray-200);transition:all .2s;cursor:pointer}
+        .page-btn:hover{border-color:var(--ginger);color:var(--navy)}
+        .page-btn.active{background:var(--ginger);color:#fff;border-color:var(--ginger)}
+        .page-btn.arrow{font-size:.8rem;color:var(--gray-400)}
+        .page-btn.arrow:hover{color:var(--ginger)}
+
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500);margin-top:0}.footer a{color:var(--navy);font-weight:500}
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.hero h1{font-size:1.9rem}.feat-card{grid-template-columns:1fr}.feat-card__img{min-height:200px}.feat-card__body{padding:24px}.articles-grid{grid-template-columns:1fr}.controls{flex-direction:column;align-items:stretch}.search-box{min-width:100%}.cat-tabs{justify-content:flex-start;overflow-x:auto}.newsletter-bar{flex-direction:column;text-align:center;padding:28px 20px}.newsletter-bar__form{flex-direction:column}.newsletter-bar__input{width:100%}.topbar{display:none}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#d4bdbab2bb94b3bdbab3b1a6fabcb1b5b8a0bcb7b5a6b1">✉ <span class="__cf_email__" data-cfemail="4d24232b220d2a24232a283f6325282c2139252e2c3f28">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 English</div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link nav__link--active">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+
+    <div class="hero"><div class="hero__bg"></div><div class="hero__pattern"></div><div class="hero__orb1"></div><div class="hero__orb2"></div><div class="hero__inner"><span class="hero__icon">📚</span><h1>Health & <em>Travel Insights</em></h1><p>Expert advice, patient guides, and everything you need to know about medical treatment abroad</p></div></div>
+
+    <div class="content">
+        <!-- FEATURED -->
+        <div class="featured">
+            <div class="feat-card" onclick="window.location='/blog/complete-guide-medical-tourism-india-2025/'">
+                <div class="feat-card__img" style="background:linear-gradient(135deg,#134e6f,#0B2545)">
+                    <div class="feat-card__img-overlay"></div>
+                    <div class="feat-card__badge">⭐ FEATURED</div>
+                    <span class="feat-card__img-icon">🇮🇳</span>
+                </div>
+                <div class="feat-card__body">
+                    <div class="feat-card__cat">Guide</div>
+                    <div class="feat-card__title">The Complete Guide to Medical Tourism in India (2025)</div>
+                    <div class="feat-card__excerpt">Everything you need to know — from choosing a hospital and surgeon, to visa requirements, costs, what to pack, and how to prepare for your recovery. The most comprehensive guide available.</div>
+                    <div class="feat-card__meta">
+                        <span class="feat-card__meta-item">📅 Jan 15, 2025</span>
+                        <span class="feat-card__meta-item">⏱️ 18 min read</span>
+                        <span class="feat-card__meta-item">👁️ 12.4K views</span>
+                    </div>
+                    <div class="feat-card__link" style="margin-top:16px">Read Full Guide →</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <div class="cat-tabs" id="catTabs">
+                <button class="cat-tab active" data-cat="all">All</button>
+                <button class="cat-tab" data-cat="guide">📖 Guides</button>
+                <button class="cat-tab" data-cat="specialty">🏥 Specialties</button>
+                <button class="cat-tab" data-cat="destination">🌍 Destinations</button>
+                <button class="cat-tab" data-cat="cost">💰 Costs</button>
+                <button class="cat-tab" data-cat="patient">💬 Patient Stories</button>
+                <button class="cat-tab" data-cat="tips">💡 Tips</button>
+            </div>
+            <div class="search-box"><span>🔍</span><input type="text" id="searchInput" placeholder="Search articles..."></div>
+        </div>
+
+        <!-- ARTICLES GRID -->
+        <div class="articles-grid" id="articlesGrid"></div>
+
+        <!-- NEWSLETTER -->
+        <div class="newsletter-bar">
+            <div class="newsletter-bar__text"><h3>📬 Stay Informed</h3><p>Get the latest articles, guides, and health tips delivered to your inbox</p></div>
+            <div class="newsletter-bar__form"><input class="newsletter-bar__input" type="email" placeholder="Enter your email"><button class="newsletter-bar__btn" onclick="this.textContent='✓ Subscribed!';this.style.background='var(--teal)'">Subscribe</button></div>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <button class="page-btn arrow">←</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn arrow">→</button>
+        </div>
+    </div>
+
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a></p></footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+
+const articles=[
+{cat:"specialty",slug:"heart-bypass-surgery-india-what-to-expect",title:"Heart Bypass Surgery in India: What to Expect",excerpt:"A complete walkthrough of the CABG procedure — from pre-op tests to discharge — at India's top cardiac centres.",icon:"❤️",bg:"linear-gradient(135deg,#dc2626,#991b1b)",badge:"bg:var(--ginger)",date:"Feb 2, 2025",read:"12 min",views:"8.2K"},
+{cat:"guide",slug:"medical-visa-india-step-by-step",title:"How to Get a Medical Visa for India: Step-by-Step",excerpt:"Documents needed, application process, processing times, and common mistakes to avoid when applying for your Indian medical visa.",icon:"🛂",bg:"linear-gradient(135deg,#0369a1,#0c4a6e)",badge:"bg:var(--teal)",date:"Jan 28, 2025",read:"8 min",views:"15.1K"},
+{cat:"cost",slug:"true-cost-knee-replacement-abroad",title:"The True Cost of Knee Replacement Abroad",excerpt:"Breaking down every expense — hospital package, implants, stay, flights, food — so you know exactly what to budget.",icon:"🦴",bg:"linear-gradient(135deg,#d97706,#92400e)",badge:"bg:#d97706",date:"Jan 22, 2025",read:"10 min",views:"6.7K"},
+{cat:"destination",slug:"best-hospitals-turkey-medical-tourism",title:"Top 10 Hospitals in Turkey for Medical Tourists",excerpt:"From Istanbul to Antalya — the best JCI-accredited hospitals for cosmetic surgery, oncology, and fertility treatment.",icon:"🇹🇷",bg:"linear-gradient(135deg,#dc2626,#450a0a)",badge:"bg:#dc2626",date:"Jan 18, 2025",read:"14 min",views:"9.3K"},
+{cat:"patient",slug:"james-heart-surgery-story",title:"\"I Saved $100,000 on My Heart Surgery\" — James's Story",excerpt:"A retired teacher from Ohio shares his experience getting a triple bypass in Delhi, and why he'd recommend it to anyone.",icon:"💬",bg:"linear-gradient(135deg,#7c3aed,#4c1d95)",badge:"bg:#7c3aed",date:"Jan 14, 2025",read:"7 min",views:"4.5K"},
+{cat:"tips",slug:"what-to-pack-medical-trip",title:"What to Pack for Your Medical Trip Abroad",excerpt:"The essential packing list every medical tourist needs — medications, documents, comfort items, and things most people forget.",icon:"🧳",bg:"linear-gradient(135deg,#059669,#064e3b)",badge:"bg:var(--teal)",date:"Jan 10, 2025",read:"6 min",views:"3.8K"},
+{cat:"specialty",slug:"ivf-success-rates-india-vs-world",title:"IVF Success Rates: India vs. the Rest of the World",excerpt:"How do India's top fertility clinics compare to the US, UK, and Europe? A data-driven analysis of outcomes and costs.",icon:"👶",bg:"linear-gradient(135deg,#db2777,#831843)",badge:"bg:#db2777",date:"Jan 5, 2025",read:"11 min",views:"7.1K"},
+{cat:"guide",slug:"choosing-right-hospital-abroad",title:"How to Choose the Right Hospital Abroad",excerpt:"JCI vs NABH, doctor credentials, patient reviews — the complete framework for evaluating hospitals from your home country.",icon:"🏥",bg:"linear-gradient(135deg,#0B2545,#1e3a5f)",badge:"bg:var(--navy)",date:"Dec 28, 2024",read:"9 min",views:"5.9K"},
+{cat:"cost",slug:"hidden-costs-medical-tourism",title:"5 Hidden Costs of Medical Tourism (And How to Avoid Them)",excerpt:"Pre-admission tests, extended stays, implant costs, medication, and follow-ups — the expenses nobody tells you about upfront.",icon:"💰",bg:"linear-gradient(135deg,#ca8a04,#713f12)",badge:"bg:#ca8a04",date:"Dec 20, 2024",read:"7 min",views:"8.8K"},
+{cat:"destination",slug:"medical-tourism-thailand-guide",title:"Medical Tourism in Thailand: A Complete Guide",excerpt:"From Bangkok's Bumrungrad to Phuket's cosmetic clinics — why Thailand attracts 2.5 million medical tourists annually.",icon:"🇹🇭",bg:"linear-gradient(135deg,#0891b2,#164e63)",badge:"bg:#0891b2",date:"Dec 15, 2024",read:"15 min",views:"6.2K"},
+{cat:"patient",slug:"sarah-ivf-success-india",title:"\"After 3 Failed Cycles, India Gave Us Twins\" — Sarah's Journey",excerpt:"A couple from London shares their emotional IVF journey and how they found success at a fraction of the UK cost.",icon:"💬",bg:"linear-gradient(135deg,#e11d48,#881337)",badge:"bg:#e11d48",date:"Dec 10, 2024",read:"8 min",views:"5.3K"},
+{cat:"tips",slug:"recovery-tips-after-surgery-abroad",title:"10 Recovery Tips After Surgery Abroad",excerpt:"From managing pain to staying active to handling follow-ups remotely — practical advice from patients who've been there.",icon:"🩹",bg:"linear-gradient(135deg,#2563eb,#1e3a8a)",badge:"bg:#2563eb",date:"Dec 5, 2024",read:"6 min",views:"4.1K"}
+];
+
+function renderArticles(list){
+    document.getElementById('articlesGrid').innerHTML=list.map(a=>`
+        <div class="article-card" data-cat="${a.cat}" onclick="window.location='/blog/${a.slug}/'">
+            <div class="article-card__img" style="background:${a.bg}">
+                <span class="article-card__img-icon">${a.icon}</span>
+                <div class="article-card__cat-badge" style="${a.badge}">${a.cat==='patient'?'Story':a.cat.charAt(0).toUpperCase()+a.cat.slice(1)}</div>
+            </div>
+            <div class="article-card__body">
+                <div class="article-card__cat">${a.cat==='patient'?'Patient Story':a.cat.charAt(0).toUpperCase()+a.cat.slice(1)}</div>
+                <div class="article-card__title">${a.title}</div>
+                <div class="article-card__excerpt">${a.excerpt}</div>
+                <div class="article-card__footer">
+                    <span>📅 ${a.date} · ⏱️ ${a.read}</span>
+                    <span class="article-card__read">Read →</span>
+                </div>
+            </div>
+        </div>`).join('');
+}
+renderArticles(articles);
+
+// Category filter
+document.querySelectorAll('.cat-tab').forEach(tab=>{tab.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');
+    const cat=tab.dataset.cat;
+    renderArticles(cat==='all'?articles:articles.filter(a=>a.cat===cat));
+    document.getElementById('searchInput').value='';
+})});
+
+// Search
+document.getElementById('searchInput').addEvent

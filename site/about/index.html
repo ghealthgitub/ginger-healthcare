@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ginger Healthcare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.1);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--large{padding:16px 36px;font-size:1rem;border-radius:var(--radius-md)}.btn--white{background:#fff;color:var(--navy)}.btn--white:hover{background:var(--gray-50)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .hero{position:relative;overflow:hidden;padding:72px 0 56px;text-align:center}
+        .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .hero__inner{max-width:740px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hero__icon{font-size:2.4rem;margin-bottom:10px;display:block}
+        .hero h1{font-family:var(--font-display);font-size:2.5rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:10px}
+        .hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hero p{font-size:1.08rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:600px;margin:0 auto}
+        .content{max-width:1100px;margin:0 auto;padding:0 24px}
+        .sec{padding:56px 0}
+        .sec__title{font-family:var(--font-display);font-size:1.8rem;font-weight:600;color:var(--navy);text-align:center;margin-bottom:6px}
+        .sec__desc{font-size:1rem;color:var(--gray-500);text-align:center;margin-bottom:40px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+        /* STORY */
+        .story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:56px 0}
+        .story__img{height:380px;border-radius:var(--radius-xl);background:linear-gradient(135deg,#134e6f,#0B2545);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+        .story__img-icon{font-size:5rem;opacity:.8}
+        .story__img-badge{position:absolute;bottom:20px;left:20px;padding:8px 18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);border-radius:50px;font-size:.82rem;color:rgba(255,255,255,.7);backdrop-filter:blur(8px)}
+        .story__text h2{font-family:var(--font-display);font-size:1.8rem;color:var(--navy);margin-bottom:16px;line-height:1.3}
+        .story__text h2 em{font-style:normal;color:var(--ginger)}
+        .story__text p{font-size:1rem;color:var(--gray-600);line-height:1.8;margin-bottom:14px}
+        .story__text p strong{color:var(--navy)}
+
+        /* STATS */
+        .stats-bar{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-xl);padding:8px;margin:0 0 48px}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+        .stat{text-align:center;padding:32px 16px;position:relative}
+        .stat::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,.1)}
+        .stat:last-child::after{display:none}
+        .stat__number{font-family:var(--font-display);font-size:2.6rem;font-weight:700;color:#fff;line-height:1}
+        .stat__number span{color:var(--ginger-light)}
+        .stat__label{font-size:.88rem;color:rgba(255,255,255,.5);margin-top:4px}
+
+        /* VALUES */
+        .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .value-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:32px 24px;text-align:center;transition:all .3s}
+        .value-card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .value-card__icon{width:64px;height:64px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:14px}
+        .value-card__title{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+        .value-card__desc{font-size:.92rem;color:var(--gray-500);line-height:1.6}
+
+        /* TEAM */
+        .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .team-card{text-align:center;padding:28px 16px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);transition:all .3s}
+        .team-card:hover{border-color:var(--ginger);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+        .team-card__avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:#fff}
+        .team-card__name{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:2px}
+        .team-card__role{font-size:.82rem;color:var(--ginger);font-weight:600;margin-bottom:8px}
+        .team-card__bio{font-size:.82rem;color:var(--gray-500);line-height:1.5}
+
+        /* DESTINATIONS MAP */
+        .dest-sec{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:56px 0}
+        .dest-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:800px;margin:0 auto}
+        .dest-item{text-align:center;padding:24px 12px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);transition:all .3s;cursor:default}
+        .dest-item:hover{border-color:var(--ginger);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+        .dest-item__flag{font-size:2.4rem;margin-bottom:6px;display:block}
+        .dest-item__name{font-weight:700;color:var(--navy);font-size:.95rem;margin-bottom:2px}
+        .dest-item__count{font-size:.78rem;color:var(--gray-400)}
+
+        /* CTA */
+        .cta{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-xl);padding:56px 40px;text-align:center;margin:48px 0;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(242,101,34,.15),transparent);border-radius:50%}
+        .cta::after{content:'';position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(14,165,160,.1),transparent);border-radius:50%}
+        .cta h2{font-family:var(--font-display);font-size:1.8rem;color:#fff;margin-bottom:8px;position:relative}
+        .cta p{color:rgba(255,255,255,.5);margin-bottom:24px;font-size:1rem;position:relative;max-width:500px;margin-left:auto;margin-right:auto}
+        .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500)}.footer a{color:var(--navy);font-weight:500}
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.hero h1{font-size:2rem}.story{grid-template-columns:1fr;gap:24px}.story__img{height:240px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat::after{display:none}.stat__number{font-size:2rem}.values-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.dest-grid{grid-template-columns:repeat(3,1fr)}.topbar{display:none}}
+        @media(max-width:480px){.team-grid{grid-template-columns:1fr}.dest-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#01686f676e4166686f6664732f6964606d756962607364">✉ <span class="__cf_email__" data-cfemail="056c6b636a45626c6b6260772b6d606469716d66647760">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 English</div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+
+    <div class="hero"><div class="hero__bg"></div><div class="hero__pattern"></div><div class="hero__orb1"></div><div class="hero__orb2"></div><div class="hero__inner"><span class="hero__icon">🌿</span><h1>Making World-Class Healthcare <em>Accessible to All</em></h1><p>We connect international patients with the best hospitals and doctors — handling everything from medical opinions to travel, so you can focus on getting better.</p></div></div>
+
+    <div class="content">
+        <!-- OUR STORY -->
+        <div class="story">
+            <div class="story__img">
+                <span class="story__img-icon">🏥</span>
+                <div class="story__img-badge">📍 Founded in India · Serving the world</div>
+            </div>
+            <div class="story__text">
+                <h2>Our <em>Story</em></h2>
+                <p>Ginger Healthcare was born from a simple observation: <strong>millions of people around the world are denied access to quality, affordable healthcare</strong> — not because the care doesn't exist, but because they don't know where to find it or how to access it.</p>
+                <p>We set out to change that. Today, we bridge the gap between patients in need and world-class hospitals across India, Turkey, Thailand, UAE, and Singapore. Our team of medical coordinators, doctors, and travel specialists manages every detail of the journey — from the first medical opinion to the final follow-up appointment.</p>
+                <p>We don't just book hospitals. We hold our patients' hands through the most important healthcare decisions of their lives. That's the Ginger difference.</p>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat"><div class="stat__number">5,000<span>+</span></div><div class="stat__label">Patients Assisted</div></div>
+                <div class="stat"><div class="stat__number">60<span>+</span></div><div class="stat__label">Countries Served</div></div>
+                <div class="stat"><div class="stat__number">50<span>+</span></div><div class="stat__label">Partner Hospitals</div></div>
+                <div class="stat"><div class="stat__number">97<span>%</span></div><div class="stat__label">Patient Satisfaction</div></div>
+            </div>
+        </div>
+
+        <!-- VALUES -->
+        <div class="sec" style="padding-top:8px">
+            <h2 class="sec__title">What We Stand For</h2>
+            <p class="sec__desc">These aren't corporate buzzwords — they're promises we make to every patient</p>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-card__icon" style="background:#FFF1E6">🤝</div><div class="value-card__title">Transparency First</div><div class="value-card__desc">No hidden fees, no surprise costs. We lay out every detail — hospital packages, additional expenses, and what's not included — before you make a single decision.</div></div>
+                <div class="value-card"><div class="value-card__icon" style="background:#F0FDF9">🛡️</div><div class="value-card__title">Patient Safety Above All</div><div class="value-card__desc">We only partner with JCI and NABH-accredited hospitals. Every surgeon is personally vetted. We never compromise on quality to save costs.</div></div>
+                <div class="value-card"><div class="value-card__icon" style="background:#EFF6FF">💙</div><div class="value-card__title">Compassion Always</div><div class="value-card__desc">We understand that medical travel is stressful. Our coordinators are trained to treat every patient like family — because that's what you deserve at your most vulnerable.</div></div>
+                <div class="value-card"><div class="value-card__icon" style="background:#FEF3C7">🆓</div><div class="value-card__title">100% Free for Patients</div><div class="value-card__desc">Our services are completely free. No consultation fee, no coordination charge, no commission added to your bill. You pay the hospital directly — that's it.</div></div>
+                <div class="value-card"><div class="value-card__icon" style="background:#FCE7F3">🌍</div><div class="value-card__title">Global Reach, Local Care</div><div class="value-card__desc">We serve patients from 60+ countries and understand different cultures, languages, dietary needs, and travel requirements. You'll never feel like a stranger.</div></div>
+                <div class="value-card"><div class="value-card__icon" style="background:#EDE9FE">📞</div><div class="value-card__title">24/7 Support</div><div class="value-card__desc">From the moment you contact us to months after you return home, our team is available around the clock. Your case manager is just a WhatsApp message away.</div></div>
+            </div>
+        </div>
+
+        <!-- TEAM -->
+        <div class="sec">
+            <h2 class="sec__title">Meet the Team</h2>
+            <p class="sec__desc">A dedicated team of healthcare professionals and travel specialists working together for your well-being</p>
+            <div class="team-grid">
+                <div class="team-card"><div class="team-card__avatar" style="background:linear-gradient(135deg,var(--ginger),var(--ginger-dark))">AK</div><div class="team-card__name">Dr. Arun Kumar</div><div class="team-card__role">Founder & Medical Director</div><div class="team-card__bio">15+ years in healthcare consulting. Former surgeon at Apollo Hospitals. MBBS, MS (General Surgery).</div></div>
+                <div class="team-card"><div class="team-card__avatar" style="background:linear-gradient(135deg,var(--teal),#0c918c)">PS</div><div class="team-card__name">Dr. Priya Sharma</div><div class="team-card__role">Head of Medical Review</div><div class="team-card__bio">Reviews every patient case and ensures accurate treatment plans. 12 years of clinical experience.</div></div>
+                <div class="team-card"><div class="team-card__avatar" style="background:linear-gradient(135deg,#6366F1,#4F46E5)">RM</div><div class="team-card__name">Rahul Mehta</div><div class="team-card__role">Head of Patient Experience</div><div class="team-card__bio">Manages end-to-end coordination — hospital liaison, visa, travel, and accommodation for every patient.</div></div>
+                <div class="team-card"><div class="team-card__avatar" style="background:linear-gradient(135deg,#EC4899,#DB2777)">FA</div><div class="team-card__name">Fatima Al-Rashid</div><div class="team-card__role">International Relations</div><div class="team-card__bio">Trilingual (English, Arabic, French). Specialises in patients from the Middle East and Africa.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESTINATIONS -->
+    <div class="dest-sec"><div class="content">
+        <h2 class="sec__title">Where We Operate</h2>
+        <p class="sec__desc" style="margin-bottom:32px">Five world-class medical tourism destinations, each with unique strengths</p>
+        <div class="dest-grid">
+            <div class="dest-item"><span class="dest-item__flag">🇮🇳</span><div class="dest-item__name">India</div><div class="dest-item__count">30+ hospitals</div></div>
+            <div class="dest-item"><span class="dest-item__flag">🇹🇷</span><div class="dest-item__name">Turkey</div><div class="dest-item__count">8+ hospitals</div></div>
+            <div class="dest-item"><span class="dest-item__flag">🇹🇭</span><div class="dest-item__name">Thailand</div><div class="dest-item__count">6+ hospitals</div></div>
+            <div class="dest-item"><span class="dest-item__flag">🇦🇪</span><div class="dest-item__name">UAE</div><div class="dest-item__count">5+ hospitals</div></div>
+            <div class="dest-item"><span class="dest-item__flag">🇸🇬</span><div class="dest-item__name">Singapore</div><div class="dest-item__count">4+ hospitals</div></div>
+        </div>
+    </div></div>
+
+    <div class="content">
+        <div class="cta">
+            <h2>Ready to Begin?</h2>
+            <p>Join thousands of patients who chose better healthcare — for less</p>
+            <div class="cta-btns"><a href="/get-quote/" class="btn btn--primary btn--large">📋 Get Free Quote</a><a href="/book-consultation/" class="btn btn--white btn--large">📞 Book Consultation</a></div>
+        </div>
+    </div>
+
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a></p></footer>
+<script data-

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Tourism Destinations — India, Turkey, Thailand, UAE, Singapore | Ginger Healthcare</title>
+    <meta name="description" content="Compare top medical tourism destinations. Find world-class hospitals and doctors in India, Turkey, Thailand, UAE, and Singapore. Save up to 90% on treatment costs abroad.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B2545; --navy-light: #13315C; --ginger: #F26522; --ginger-light: #FF8A50; --ginger-dark: #D9531E;
+            --teal: #0EA5A0; --teal-light: #14B8B3; --cream: #FFF8F0; --white: #FFFFFF;
+            --gray-50: #F9FAFB; --gray-100: #F3F4F6; --gray-200: #E5E7EB; --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF; --gray-500: #6B7280; --gray-600: #4B5563; --gray-700: #374151; --gray-800: #1F2937;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(11,37,69,0.05); --shadow-md: 0 4px 14px rgba(11,37,69,0.08);
+            --shadow-lg: 0 10px 30px rgba(11,37,69,0.10); --shadow-xl: 0 20px 50px rgba(11,37,69,0.12);
+            --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--gray-700); background: var(--white); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; } button { cursor: pointer; font-family: inherit; border: none; }
+
+        /* NAV */
+        .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; padding: 8px 0; }
+        .topbar__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .topbar a { color: rgba(255,255,255,0.85); } .topbar a:hover { color: var(--ginger-light); }
+        .topbar__contact { display: flex; gap: 20px; }
+        nav { background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--gray-200); transition: box-shadow 0.3s; }
+        nav.scrolled { box-shadow: var(--shadow-md); }
+        .nav__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.35rem; }
+        .logo__icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--ginger), var(--ginger-dark)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; font-weight: 700; }
+        .logo__text span:first-child { color: var(--navy); } .logo__text span:last-child { color: var(--ginger); }
+        .nav__links { display: flex; align-items: center; gap: 32px; }
+        .nav__link { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; position: relative; }
+        .nav__link:hover { color: var(--navy); }
+        .nav__link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--ginger); transition: width 0.3s; }
+        .nav__link:hover::after { width: 100%; }
+        .nav__link--active { color: var(--ginger); } .nav__link--active::after { width: 100%; }
+        .nav__cta { display: flex; align-items: center; gap: 12px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; transition: all 0.25s; }
+        .btn--primary { background: var(--ginger); color: white; box-shadow: 0 2px 8px rgba(242,101,34,0.25); }
+        .btn--primary:hover { background: var(--ginger-dark); transform: translateY(-1px); }
+        .btn--outline { background: transparent; color: var(--navy); border: 1.5px solid var(--gray-300); }
+        .btn--outline:hover { border-color: var(--navy); background: var(--gray-50); }
+        .btn--white { background: white; color: var(--navy); box-shadow: var(--shadow-md); }
+        .btn--white:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+        .btn--large { padding: 14px 32px; font-size: 0.95rem; border-radius: var(--radius-md); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 8px; }
+        .hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+        /* BREADCRUMB */
+        .breadcrumb { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); padding: 14px 0; }
+        .breadcrumb__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--gray-400); }
+        .breadcrumb a { color: var(--gray-500); } .breadcrumb a:hover { color: var(--ginger); }
+        .breadcrumb__current { color: var(--navy); font-weight: 500; }
+
+        /* HERO */
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, #1a4a7a 100%);
+            padding: 64px 0 80px; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 15% 85%, rgba(242,101,34,0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 85% 15%, rgba(14,165,160,0.1) 0%, transparent 50%);
+        }
+        .page-hero__pattern {
+            position: absolute; inset: 0; opacity: 0.03;
+            background-image: radial-gradient(circle at 25% 25%, white 1px, transparent 1px), radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .page-hero__inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .page-hero__content { animation: fadeInUp 0.6s ease-out; }
+        .page-hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 6px 16px; border-radius: 50px; font-size: 0.78rem; font-weight: 500; margin-bottom: 20px; }
+        .page-hero h1 { font-family: var(--font-display); font-size: 2.8rem; font-weight: 600; color: white; line-height: 1.15; margin-bottom: 16px; }
+        .page-hero h1 em { font-style: normal; color: var(--ginger-light); }
+        .page-hero__desc { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 32px; }
+        .page-hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        /* Hero Map Illustration */
+        .hero-map { animation: fadeInUp 0.6s 0.15s ease-out both; }
+        .hero-map__card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl);
+            padding: 28px; backdrop-filter: blur(8px); position: relative;
+        }
+        .hero-map__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .hero-map__country {
+            padding: 20px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md); text-align: center; transition: all 0.3s; cursor: pointer;
+        }
+        .hero-map__country:hover { background: rgba(255,255,255,0.1); border-color: var(--ginger); transform: translateY(-3px); }
+        .hero-map__country:nth-child(4) { grid-column: 1 / 2; }
+        .hero-map__country:last-child { grid-column: 2 / 4; }
+        .hero-map__flag { font-size: 2rem; margin-bottom: 6px; }
+        .hero-map__name { font-weight: 600; font-size: 0.9rem; color: white; margin-bottom: 2px; }
+        .hero-map__stat { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* CONTAINER */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
+        .section__label { font-size: 0.75rem; font-weight: 700; color: var(--ginger); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+        .section__title { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+        .section__desc { font-size: 1.05rem; color: var(--gray-500); max-width: 600px; line-height: 1.7; }
+        .section__header { margin-bottom: 48px; }
+        .section__header--center { text-align: center; }
+        .section__header--center .section__desc { margin: 0 auto; }
+
+        /* ═══════ COUNTRY CARDS (large immersive) ═══════ */
+        .country-cards { background: var(--gray-50); }
+        .country-cards__grid { display: flex; flex-direction: column; gap: 24px; }
+
+        .cc {
+            display: grid; grid-template-columns: 440px 1fr; border-radius: var(--radius-xl); overflow: hidden;
+            background: white; box-shadow: var(--shadow-md); transition: all 0.35s; border: 1.5px solid var(--gray-200);
+        }
+        .cc:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); border-color: var(--ginger); }
+        .cc:nth-child(even) { direction: rtl; }
+        .cc:nth-child(even) > * { direction: ltr; }
+
+        .cc__visual {
+            position: relative; overflow: hidden; min-height: 360px;
+        }
+        .cc__bg { position: absolute; inset: 0; transition: transform 0.5s; }
+        .cc:hover .cc__bg { transform: scale(1.05); }
+        .cc:nth-child(1) .cc__bg { background: linear-gradient(150deg, #FF9933 0%, #FFFFFF 35%, #138808 65%, #000080 100%); }
+        .cc:nth-child(2) .cc__bg { background: linear-gradient(150deg, #E30A17 0%, #FFFFFF 40%, #E30A17 100%); }
+        .cc:nth-child(3) .cc__bg { background: linear-gradient(150deg, #A51931 0%, #F4F5F8 40%, #2D2A4A 100%); }
+        .cc:nth-child(4) .cc__bg { background: linear-gradient(150deg, #009639 0%, #FFFFFF 35%, #CE1126 50%, #000000 100%); }
+        .cc:nth-child(5) .cc__bg { background: linear-gradient(150deg, #EF3340 0%, #FFFFFF 50%, #EF3340 100%); }
+        .cc__visual-overlay {
+            position: absolute; inset: 0; z-index: 1;
+            background: linear-gradient(135deg, rgba(11,37,69,0.7), rgba(11,37,69,0.5));
+        }
+        .cc__visual-content {
+            position: relative; z-index: 2; padding: 36px; height: 100%;
+            display: flex; flex-direction: column; justify-content: flex-end; color: white;
+        }
+        .cc__flag { font-size: 3.5rem; margin-bottom: 12px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); }
+        .cc__country-name { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+        .cc__tagline { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+
+        .cc__info { padding: 36px; display: flex; flex-direction: column; }
+        .cc__headline { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+        .cc__desc { font-size: 0.9rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 24px; }
+
+        .cc__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+        .cc__stat {
+            padding: 14px 10px; background: var(--gray-50); border-radius: var(--radius-sm); text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        .cc__stat-val { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+        .cc__stat-val--teal { color: var(--teal); }
+        .cc__stat-val--ginger { color: var(--ginger); }
+        .cc__stat-label { font-size: 0.68rem; color: var(--gray-400); margin-top: 2px; }
+
+        .cc__top-treatments { margin-bottom: 24px; }
+        .cc__top-label { font-size: 0.72rem; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+        .cc__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .cc__tag {
+            padding: 5px 12px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 50px;
+            font-size: 0.78rem; color: var(--gray-600); transition: all 0.2s;
+        }
+        .cc:hover .cc__tag { background: #FFF7ED; border-color: #FFE4CC; color: var(--ginger-dark); }
+
+        .cc__actions { display: flex; gap: 10px; margin-top: auto; }
+        .cc__btn-primary {
+            padding: 12px 24px; background: var(--ginger); color: white; font-weight: 600; font-size: 0.88rem;
+            border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 6px; transition: all 0.25s;
+            box-shadow: 0 2px 8px rgba(242,101,34,0.2);
+        }
+        .cc__btn-primary:hover { background: var(--ginger-dark); transform: translateY(-1px); }
+        .cc__btn-outline {
+            padding: 12px 24px; background: transparent; color: var(--navy); font-weight: 600; font-size: 0.88rem;
+            border-radius: var(--radius-sm); border: 1.5px solid var(--gray-300); display: inline-flex; align-items: center; gap: 6px;
+            transition: all 0.2s;
+        }
+        .cc__btn-outline:hover { border-color: var(--navy); background: var(--gray-50); }
+
+        /* ═══════ COMPARISON TABLE ═══════ */
+        .compare-section { background: white; }
+        .compare-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+        }
+        .compare-table thead th {
+            background: var(--navy); color: white; padding: 16px 18px; font-size: 0.82rem; font-weight: 600; text-align: center;
+        }
+        .compare-table thead th:first-child { text-align: left; }
+        .compare-table td { padding: 14px 18px; font-size: 0.88rem; border-bottom: 1px solid var(--gray-100); text-align: center; }
+        .compare-table td:first-child { text-align: left; font-weight: 500; color: var(--navy); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tbody tr:hover { background: var(--cream); }
+        .compare-flag { font-size: 1.3rem; display: block; margin-bottom: 2px; }
+        .cost-hl { color: var(--teal); font-weight: 600; }
+        .check { color: #10B981; font-weight: 700; }
+        .partial { color: #F59E0B; }
+
+        /* ═══════ WHY MEDICAL TOURISM ═══════ */
+        .why-travel { background: var(--navy); color: white; position: relative; overflow: hidden; }
+        .why-travel::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 0% 100%, rgba(242,101,34,0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 100% 0%, rgba(14,165,160,0.08) 0%, transparent 50%);
+        }
+        .why-travel .container { position: relative; z-index: 1; }
+        .why-travel .section__label { color: var(--ginger-light); }
+        .why-travel .section__title { color: white; }
+        .why-travel .section__desc { color: rgba(255,255,255,0.55); }
+        .reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .reason {
+            padding: 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-lg); transition: all 0.3s;
+        }
+        .reason:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+        .reason__icon {
+            width: 52px; height: 52px; border-radius: var(--radius-md); display: flex; align-items: center;
+            justify-content: center; font-size: 1.4rem; margin-bottom: 20px; background: rgba(255,255,255,0.06);
+        }
+        .reason__title { font-weight: 600; font-size: 1.05rem; margin-bottom: 10px; }
+        .reason__desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+        /* ═══════ HOW WE HELP ═══════ */
+        .how-help { background: var(--cream); }
+        .help-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+        .help-steps::before {
+            content: ''; position: absolute; top: 40px; left: 12.5%; right: 12.5%; height: 2px;
+            background: linear-gradient(90deg, var(--ginger), var(--teal)); opacity: 0.2;
+        }
+        .help-step { text-align: center; position: relative; }
+        .help-step__num {
+            width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 1.5rem; z-index: 1; position: relative;
+        }
+        .help-step:nth-child(1) .help-step__num { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); }
+        .help-step:nth-child(2) .help-step__num { background: linear-gradient(135deg, #F0FDFA, #CCFBF1); }
+        .help-step:nth-child(3) .help-step__num { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); }
+        .help-step:nth-child(4) .help-step__num { background: linear-gradient(135deg, #FDF4FF, #F3E8FF); }
+        .help-step__title { font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+        .help-step__desc { font-size: 0.84rem; color: var(--gray-500); line-height: 1.6; max-width: 220px; margin: 0 auto; }
+
+        /* ═══════ CTA ═══════ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--ginger), var(--ginger-dark));
+            padding: 64px 0; text-align: center; color: white; position: relative; overflow: hidden;
+        }
+        .cta-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; margin-bottom: 12px; }
+        .cta-section p { font-size: 1.05rem; opacity: 0.85; max-width: 540px; margin: 0 auto 28px; }
+        .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* FOOTER */
+        footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+        .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer__brand .logo { margin-bottom: 16px; }
+        .footer__brand .logo__text span:first-child { color: white; } .footer__brand .logo__text span:last-child { color: var(--ginger-light); }
+        .footer__desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; color: rgba(255,255,255,0.5); }
+        .footer__social { display: flex; gap: 12px; }
+        .footer__social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: background 0.2s; }
+        .footer__social a:hover { background: var(--ginger); }
+        .footer__col h4 { color: white; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+        .footer__col a { display: block; font-size: 0.85rem; padding: 5px 0; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+        .footer__col a:hover { color: var(--ginger-light); }
+        .footer__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer__bottom p, .footer__bottom a { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+        .footer__legal { display: flex; gap: 24px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .page-hero__inner { grid-template-columns: 1fr; gap: 36px; }
+            .cc { grid-template-columns: 1fr; } .cc:nth-child(even) { direction: ltr; }
+            .cc__visual { min-height: 240px; }
+            .reasons { grid-template-columns: repeat(2, 1fr); }
+            .help-steps { grid-template-columns: repeat(2, 1fr); } .help-steps::before { display: none; }
+            .compare-table { font-size: 0.82rem; }
+            .footer__grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .topbar { display: none; } .nav__links { display: none; } .hamburger { display: flex; }
+            .page-hero { padding: 40px 0 56px; } .page-hero h1 { font-size: 2rem; }
+            .hero-map__grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-map__country:nth-child(4) { grid-column: auto; }
+            .hero-map__country:last-child { grid-column: span 2; }
+            .cc__stats { grid-template-columns: repeat(2, 1fr); }
+            .cc__actions { flex-direction: column; }
+            .reasons { grid-template-columns: 1fr; }
+            .help-steps { grid-template-columns: 1fr 1fr; }
+            .compare-table { display: block; overflow-x: auto; }
+            .footer__grid { grid-template-columns: 1fr 1fr; }
+            .footer__bottom { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .hero-map__grid { grid-template-columns: 1fr; }
+            .hero-map__country:nth-child(4) { grid-column: auto; }
+            .hero-map__country:last-child { grid-column: auto; }
+            .help-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar"><div class="topbar__inner">
+        <div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#f79e999198b7909e99909285d99f92969b839f94968592">✉ <span class="__cf_email__" data-cfemail="d7beb9b1b897b0beb9b0b2a5f9bfb2b6bba3bfb4b6a5b2">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div>
+        <div>🌐 <a href="#" style="color:rgba(255,255,255,0.85)">English</a></div>
+    </div></div>
+
+    <!-- Nav -->
+    <nav id="mainNav"><div class="nav__inner">
+        <a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a>
+        <div class="nav__links">
+            <a href="/destinations/" class="nav__link nav__link--active">Destinations</a>
+            <a href="/specialties/" class="nav__link">Specialties</a>
+            <a href="/how-it-works/" class="nav__link">How It Works</a>
+            <a href="/cost-calculator/" class="nav__link">Cost Calculator</a>
+            <a href="/blog/" class="nav__link">Articles</a>
+            <a href="/testimonials/" class="nav__link">Reviews</a>
+        </div>
+        <div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div>
+    </div></nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb"><div class="breadcrumb__inner">
+        <a href="/">Home</a> <span>›</span>
+        <span class="breadcrumb__current">All Destinations</span>
+    </div></div>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="page-hero__pattern"></div>
+        <div class="page-hero__inner">
+            <div class="page-hero__content">
+                <div class="page-hero__badge">🌍 5 World-Class Destinations</div>
+                <h1>Where Will You Get <em>Treated?</em></h1>
+                <p class="page-hero__desc">Choose from five leading medical tourism destinations — each offering accredited hospitals, internationally trained doctors, and significant cost savings. We'll handle everything from visa to recovery.</p>
+                <div class="page-hero__actions">
+                    <a href="/get-quote/" class="btn btn--primary btn--large">Get Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#compare" class="btn btn--large" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.9);border:1.5px solid rgba(255,255,255,0.15);">Compare Countries ↓</a>
+                </div>
+            </div>
+            <div class="hero-map">
+                <div class="hero-map__card">
+                    <div class="hero-map__grid">
+                        <a href="/destinations/india/" class="hero-map__country">
+                            <span class="hero-map__flag">🇮🇳</span>
+                            <div class="hero-map__name">India</div>
+                            <div class="hero-map__stat">28 specialties · 800+ treatments</div>
+                        </a>
+                        <a href="/destinations/turkey/" class="hero-map__country">
+                            <span class="hero-map__flag">🇹🇷</span>
+                            <div class="hero-map__name">Turkey</div>
+                            <div class="hero-map__stat">20 specialties · 500+ treatments</div>
+                        </a>
+                        <a href="/destinations/thailand/" class="hero-map__country">
+                            <span class="hero-map__flag">🇹🇭</span>
+                            <div class="hero-map__name">Thailand</div>
+                            <div class="hero-map__stat">18 specialties · 400+ treatments</div>
+                        </a>
+                        <a href="/destinations/uae/" class="hero-map__country">
+                            <span class="hero-map__flag">🇦🇪</span>
+                            <div class="hero-map__name">UAE</div>
+                            <div class="hero-map__stat">15 specialties · 300+ treatments</div>
+                        </a>
+                        <a href="/destinations/singapore/" class="hero-map__country">
+                            <span class="hero-map__flag">🇸🇬</span>
+                            <div class="hero-map__name">Singapore</div>
+                            <div class="hero-map__stat">15 specialties · 300+ treatments</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Country Cards -->
+    <section class="country-cards">
+        <div class="container">
+            <div class="section__header section__header--center">
+                <div class="section__label">Our Destinations</div>
+                <h2 class="section__title">Explore Each Destination</h2>
+                <p class="section__desc">Each country offers unique advantages — from India's unmatched affordability to Singapore's cutting-edge technology.</p>
+            </div>
+
+            <div class="country-cards__grid">
+
+                <!-- India -->
+                <div class="cc">
+                    <div class="cc__visual">
+                        <div class="cc__bg"></div>
+                        <div class="cc__visual-overlay"></div>
+                        <div class="cc__visual-content">
+                            <div class="cc__flag">🇮🇳</div>
+                            <div class="cc__country-name">India</div>
+                            <div class="cc__tagline">The World's Most Affordable Healthcare Hub</div>
+                        </div>
+                    </div>
+                    <div class="cc__info">
+                        <div class="cc__headline">Save Up to 90% Without Compromising on Quality</div>
+                        <p class="cc__desc">India is the world's leading medical tourism destination, with JCI and NABH-accredited hospitals rivalling the best in the US and UK. Home to globally renowned institutions like Apollo, Fortis, Medanta, and Max Healthcare — offering everything from heart surgery to bone marrow transplants at a fraction of Western costs.</p>
+                        <div class="cc__stats">
+                            <div class="cc__stat"><div class="cc__stat-val">28</div><div class="cc__stat-label">Specialties</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">800+</div><div class="cc__stat-label">Treatments</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">15+</div><div class="cc__stat-label">Hospitals</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val cc__stat-val--teal">90%</div><div class="cc__stat-label">Avg. Savings</div></div>
+                        </div>
+                        <div class="cc__top-treatments">
+                            <div class="cc__top-label">Popular Treatments</div>
+                            <div class="cc__tags">
+                                <span class="cc__tag">Heart Bypass</span><span class="cc__tag">Knee Replacement</span><span class="cc__tag">Bone Marrow Transplant</span>
+                                <span class="cc__tag">Liver Transplant</span><span class="cc__tag">IVF</span><span class="cc__tag">Neurosurgery</span>
+                            </div>
+                        </div>
+                        <div class="cc__actions">
+                            <a href="/destinations/india/" class="cc__btn-primary">Explore India →</a>
+                            <a href="/get-quote/" class="cc__btn-outline">Get India Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Turkey -->
+                <div class="cc">
+                    <div class="cc__visual">
+                        <div class="cc__bg"></div>
+                        <div class="cc__visual-overlay"></div>
+                        <div class="cc__visual-content">
+                            <div class="cc__flag">🇹🇷</div>
+                            <div class="cc__country-name">Turkey</div>
+                            <div class="cc__tagline">Europe's Gateway to Cosmetic & Dental Excellence</div>
+                        </div>
+                    </div>
+                    <div class="cc__info">
+                        <div class="cc__headline">World Leader in Hair Transplants, Dental & Cosmetic Procedures</div>
+                        <p class="cc__desc">Turkey has emerged as the go-to destination for cosmetic, dental, and eye surgery — with Istanbul alone performing over 500,000 hair transplants yearly. JCI-accredited hospitals and clinics offer exceptional quality, with easy access from Europe, the Middle East, and Africa.</p>
+                        <div class="cc__stats">
+                            <div class="cc__stat"><div class="cc__stat-val">20</div><div class="cc__stat-label">Specialties</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">500+</div><div class="cc__stat-label">Treatments</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">10+</div><div class="cc__stat-label">Hospitals</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val cc__stat-val--teal">70%</div><div class="cc__stat-label">Avg. Savings</div></div>
+                        </div>
+                        <div class="cc__top-treatments">
+                            <div class="cc__top-label">Popular Treatments</div>
+                            <div class="cc__tags">
+                                <span class="cc__tag">Hair Transplant</span><span class="cc__tag">Dental Implants</span><span class="cc__tag">Rhinoplasty</span>
+                                <span class="cc__tag">Veneers</span><span class="cc__tag">LASIK</span><span class="cc__tag">Liposuction</span>
+                            </div>
+                        </div>
+                        <div class="cc__actions">
+                            <a href="/destinations/turkey/" class="cc__btn-primary">Explore Turkey →</a>
+                            <a href="/get-quote/" class="cc__btn-outline">Get Turkey Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thailand -->
+                <div class="cc">
+                    <div class="cc__visual">
+                        <div class="cc__bg"></div>
+                        <div class="cc__visual-overlay"></div>
+                        <div class="cc__visual-content">
+                            <div class="cc__flag">🇹🇭</div>
+                            <div class="cc__country-name">Thailand</div>
+                            <div class="cc__tagline">Where World-Class Care Meets Warm Hospitality</div>
+                        </div>
+                    </div>
+                    <div class="cc__info">
+                        <div class="cc__headline">Asia's Premier Medical Tourism Destination Since 2000</div>
+                        <p class="cc__desc">Thailand pioneered medical tourism in Asia, with Bumrungrad International Hospital alone treating over 1 million international patients yearly. Renowned for exceptional patient experience, compassionate care, and a recovery-friendly tropical environment.</p>
+                        <div class="cc__stats">
+                            <div class="cc__stat"><div class="cc__stat-val">18</div><div class="cc__stat-label">Specialties</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">400+</div><div class="cc__stat-label">Treatments</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">8+</div><div class="cc__stat-label">Hospitals</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val cc__stat-val--teal">65%</div><div class="cc__stat-label">Avg. Savings</div></div>
+                        </div>
+                        <div class="cc__top-treatments">
+                            <div class="cc__top-label">Popular Treatments</div>
+                            <div class="cc__tags">
+                                <span class="cc__tag">Cardiac Surgery</span><span class="cc__tag">Orthopedics</span><span class="cc__tag">IVF</span>
+                                <span class="cc__tag">Wellness Checkups</span><span class="cc__tag">Cosmetic Surgery</span>
+                            </div>
+                        </div>
+                        <div class="cc__actions">
+                            <a href="/destinations/thailand/" class="cc__btn-primary">Explore Thailand →</a>
+                            <a href="/get-quote/" class="cc__btn-outline">Get Thailand Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UAE -->
+                <div class="cc">
+                    <div class="cc__visual">
+                        <div class="cc__bg"></div>
+                        <div class="cc__visual-overlay"></div>
+                        <div class="cc__visual-content">
+                            <div class="cc__flag">🇦🇪</div>
+                            <div class="cc__country-name">UAE</div>
+                            <div class="cc__tagline">Luxury Healthcare in the Heart of the Middle East</div>
+                        </div>
+                    </div>
+                    <div class="cc__info">
+                        <div class="cc__headline">Premium Healthcare with No Visa Hassles for Many Nationalities</div>
+                        <p class="cc__desc">The UAE — particularly Dubai and Abu Dhabi — offers ultra-modern hospitals with the latest technologies. Ideal for patients who want premium, hotel-like healthcare experiences with easy visa access, excellent connectivity, and Arabic and English-speaking medical staff.</p>
+                        <div class="cc__stats">
+                            <div class="cc__stat"><div class="cc__stat-val">15</div><div class="cc__stat-label">Specialties</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">300+</div><div class="cc__stat-label">Treatments</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">5+</div><div class="cc__stat-label">Hospitals</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val cc__stat-val--teal">40%</div><div class="cc__stat-label">Avg. Savings</div></div>
+                        </div>
+                        <div class="cc__top-treatments">
+                            <div class="cc__top-label">Popular Treatments</div>
+                            <div class="cc__tags">
+                                <span class="cc__tag">Orthopedics</span><span class="cc__tag">Cardiology</span><span class="cc__tag">Oncology</span>
+                                <span class="cc__tag">Fertility</span><span class="cc__tag">Executive Health Checks</span>
+                            </div>
+                        </div>
+                        <div class="cc__actions">
+                            <a href="/destinations/uae/" class="cc__btn-primary">Explore UAE →</a>
+                            <a href="/get-quote/" class="cc__btn-outline">Get UAE Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Singapore -->
+                <div class="cc">
+                    <div class="cc__visual">
+                        <div class="cc__bg"></div>
+                        <div class="cc__visual-overlay"></div>
+                        <div class="cc__visual-content">
+                            <div class="cc__flag">🇸🇬</div>
+                            <div class="cc__country-name">Singapore</div>
+                            <div class="cc__tagline">Asia's Gold Standard in Medical Excellence</div>
+                        </div>
+                    </div>
+                    <div class="cc__info">
+                        <div class="cc__headline">Cutting-Edge Technology & Research-Driven Care</div>
+                        <p class="cc__desc">Singapore consistently ranks among the world's best healthcare systems. With institutions like Mount Elizabeth, Gleneagles, and National University Hospital, it excels in complex procedures — oncology, transplants, neurosurgery, and advanced cardiac care — with outcomes comparable to the Mayo Clinic.</p>
+                        <div class="cc__stats">
+                            <div class="cc__stat"><div class="cc__stat-val">15</div><div class="cc__stat-label">Specialties</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">300+</div><div class="cc__stat-label">Treatments</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val">5+</div><div class="cc__stat-label">Hospitals</div></div>
+                            <div class="cc__stat"><div class="cc__stat-val cc__stat-val--teal">50%</div><div class="cc__stat-label">Avg. Savings</div></div>
+                        </div>
+                        <div class="cc__top-treatments">
+                            <div class="cc__top-label">Popular Treatments</div>
+                            <div class="cc__tags">
+                                <span class="cc__tag">Cancer Treatment</span><span class="cc__tag">Cardiac Surgery</span><span class="cc__tag">Neurosurgery</span>
+                                <span class="cc__tag">Transplants</span><span class="cc__tag">Robotic Surgery</span>
+                            </div>
+                        </div>
+                        <div class="cc__actions">
+                            <a href="/destinations/singapore/" class="cc__btn-primary">Explore Singapore →</a>
+                            <a href="/get-quote/" class="cc__btn-outline">Get Singapore Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="compare-section" id="compare">
+        <div class="container">
+            <div class="section__header section__header--center">
+                <div class="section__label">At a Glance</div>
+                <h2 class="section__title">Compare All Destinations</h2>
+                <p class="section__desc">Side-by-side comparison to help you choose the right country for your treatment.</p>
+            </div>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th style="width:22%;">Feature</th>
+                        <th><span class="compare-flag">🇮🇳</span>India</th>
+                        <th><span class="compare-flag">🇹🇷</span>Turkey</th>
+                        <th><span class="compare-flag">🇹🇭</span>Thailand</th>
+                        <th><span class="compare-flag">🇦🇪</span>UAE</th>
+                        <th><span class="compare-flag">🇸🇬</span>Singapore</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Avg. Savings vs USA</td><td class="cost-hl">80–93%</td><td class="cost-hl">60–75%</td><td class="cost-hl">55–70%</td><td>30–50%</td><td>40–60%</td></tr>
+                    <tr><td>Heart Bypass (CABG)</td><td class="cost-hl">$5,000</td><td>$9,000</td><td>$12,000</td><td>$20,000</td><td>$18,000</td></tr>
+                    <tr><td>Knee Replacement</td><td class="cost-hl">$4,500</td><td>$7,000</td><td>$10,000</td><td>$15,000</td><td>$13,000</td></tr>
+                    <tr><td>Hair Transplant (FUE)</td><td>$1,200</td><td class="cost-hl">$1,800</td><td>$3,000</td><td>$4,000</td><td>$5,000</td></tr>
+                    <tr><td>JCI/NABH Accredited</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                    <tr><td>English Widely Spoken</td><td class="check">✓</td><td class="partial">Partial</td><td class="partial">Partial</td><td class="check">✓</td><td class="check">✓</td></tr>
+                    <tr><td>Visa Ease</td><td>E-visa</td><td>E-visa</td><td>Visa on arrival</td><td>Easy access</td><td>Easy access</td></tr>
+                    <tr><td>Best For</td><td>Complex care, transplants, affordability</td><td>Cosmetic, dental, hair</td><td>Wellness, cardiac, IVF</td><td>Premium luxury care</td><td>Cancer, neuro, advanced tech</td></tr>
+                    <tr><td>Specialties Available</td><td><strong>28</strong></td><td>20</td><td>18</td><td>15</td><td>15</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Why Medical Tourism -->
+    <section class="why-travel">
+        <div class="container">
+            <div class="section__header section__header--center">
+                <div class="section__label">Why Travel for Treatment?</div>
+                <h2 class="section__title">The Benefits of Medical Tourism</h2>
+                <p class="section__desc">Millions of patients travel abroad for healthcare every year. Here's why it makes sense.</p>
+            </div>
+            <div class="reasons">
+                <div class="reason">
+                    <div class="reason__icon">💰</div>
+                    <div class="reason__title">Save 50–90% on Costs</div>
+                    <div class="reason__desc">The same procedure, same quality implants, and comparable outcomes — at a fraction of what you'd pay in the US, UK, or Canada. Many patients save tens of thousands of dollars.</div>
+                </div>
+                <div class="reason">
+                    <div class="reason__icon">⏰</div>
+                    <div class="reason__title">Skip Long Wait Times</div>
+                    <div class="reason__desc">NHS wait times can stretch months or years. Medical tourism lets you get treated within days or weeks, at a time that works for you.</div>
+                </div>
+                <div class="reason">
+                    <div class="reason__icon">🏆</div>
+                    <div class="reason__title">World-Class Surgeons</div>
+                    <div class="reason__desc">Many surgeons at top hospitals abroad are Western-trained, internationally published, and handle far higher case volumes than their counterparts in the US or Europe.</div>
+                </div>
+                <div class="reason">
+                    <div class="reason__icon">🏥</div>
+                    <div class="reason__title">Accredited Hospitals</div>
+                    <div class="reason__desc">We only partner with JCI or NABH-accredited hospitals — the same accreditation bodies that certify hospitals in the US and Europe.</div>
+                </div>
+                <div class="reason">
+                    <div class="reason__icon">🤝</div>
+                    <div class="reason__title">Concierge-Level Support</div>
+                    <div class="reason__desc">With Ginger Healthcare, you get a dedicated care manager who handles visas, flights, accommodation, hospital coordination, translation, and post-op follow-ups.</div>
+                </div>
+                <div class="reason">
+                    <div class="reason__icon">✈️</div>
+                    <div class="reason__title">Combine Treatment & Travel</div>
+                    <div class="reason__desc">Recover in a beautiful destination. Many patients combine their treatment with a relaxing recovery holiday — especially in Thailand, Singapore, and Dubai.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help -->
+    <section class="how-help">
+        <div class="container">
+            <div class="section__header section__header--center">
+                <div class="section__label">How We Help</div>
+                <h2 class="section__title">Your Journey With Ginger</h2>
+                <p class="section__desc">From your first enquiry to returning home — we manage everything.</p>
+            </div>
+            <div class="help-steps">
+                <div class="help-step">
+                    <div class="help-step__num">📋</div>
+                    <div class="help-step__title">Share Your Needs</div>
+                    <div class="help-step__desc">Tell us your condition and preferences. Get a free assessment within 24 hours.</div>
+                </div>
+                <div class="help-step">
+                    <div class="help-step__num">🏥</div>
+                    <div class="help-step__title">Get Matched</div>
+                    <div class="help-step__desc">We recommend the best hospitals and doctors across countries, with transparent pricing.</div>
+                </div>
+                <div class="help-step">
+                    <div class="help-step__num">✈️</div>
+                    <div class="help-step__title">Travel & Treat</div>
+                    <div class="help-step__desc">We handle visa, airport pickup, hotel, and hospital logistics. You focus on healing.</div>
+                </div>
+                <div class="help-step">
+                    <div class="help-step__num">💚</div>
+                    <div class="help-step__title">Recover & Thrive</div>
+                    <div class="help-step__desc">Post-treatment follow-ups and ongoing support even after you return home.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Not Sure Which Country Is Right for You?</h2>
+            <p>Share your medical details and our team will recommend the best destination based on your condition, budget, and preferences.</p>
+            <div class="cta-actions">
+                <a href="/get-quote/" class="btn btn--white btn--large">Get Free Assessment</a>
+                <a href="/book-consultation/" class="btn btn--large" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">Talk to a Care Manager</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer><div class="container">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <div class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></div>
+                <p class="footer__desc">Ginger Healthcare is a medical tourism company based in New Delhi, India. We guide, advise, and assist international patients seeking world-class medical treatment at affordable prices.</p>
+                <div class="footer__social"><a href="#">f</a><a href="#">in</a><a href="#">tw</a><a href="#">yt</a></div>
+            </div>
+            <div class="footer__col"><h4>Destinations</h4><a href="/destinations/india/">🇮🇳 India</a><a href="/destinations/turkey/">🇹🇷 Turkey</a><a href="/destinations/thailand/">🇹🇭 Thailand</a><a href="/destinations/uae/">🇦🇪 UAE</a><a href="/destinations/singapore/">🇸🇬 Singapore</a></div>
+            <div class="footer__col"><h4>Top Specialties</h4><a href="/specialties/cardiac-surgery/">Cardiac Surgery</a><a href="/specialties/orthopedics/">Orthopedics</a><a href="/specialties/cosmetic-surgery/">Cosmetic Surgery</a><a href="/specialties/dentistry/">Dentistry</a><a href="/specialties/fertility/">Fertility & IVF</a></div>
+            <div class="footer__col"><h4>Tools</h4><a href="/cost-calculator/">Cost Calculator</a><a href="/get-quote/">Get Free Quote</a><a href="/book-consultation/">Book Consultation</a><a href="/compare-hospitals/">Compare Hospitals</a></div>
+            <div class="footer__col"><h4>Company</h4><a href="/about/">About Us</a><a href="/how-it-works/">How It Works</a><a href="/testimonials/">Testimonials</a><a href="/blog/">Blog</a><a href="/contact/">Contact Us</a></div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Ginger Healthcare. All rights reserved.</p>
+            <div class="footer__legal"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms of Service</a><a href="/disclaimer/">Medical Disclaimer</a></div>
+        </div>
+    </div></footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
+
+        // Animate cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.cc, .reason, .help-step').forEach((el, i) => {
+            el.sty

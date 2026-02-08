@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | Your Medical Journey | Ginger Healthcare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.1);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--large{padding:16px 36px;font-size:1rem;border-radius:var(--radius-md)}.btn--white{background:#fff;color:var(--navy)}.btn--white:hover{background:var(--gray-50)}.btn--teal{background:var(--teal);color:#fff}.btn--teal:hover{background:#0c918c}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .hero{position:relative;overflow:hidden;padding:72px 0 56px;text-align:center}
+        .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .hero__inner{max-width:740px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hero__icon{font-size:2.4rem;margin-bottom:10px;display:block}
+        .hero h1{font-family:var(--font-display);font-size:2.5rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:10px}
+        .hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hero p{font-size:1.08rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:600px;margin:0 auto}
+        .hero__badges{display:flex;justify-content:center;gap:16px;margin-top:18px;flex-wrap:wrap}
+        .hero__badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:50px;font-size:.82rem;color:rgba(255,255,255,.55)}
+        .content{max-width:1000px;margin:0 auto;padding:0 24px}
+
+        /* TIMELINE */
+        .timeline{padding:56px 0 20px;position:relative}
+        .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--gray-200);transform:translateX(-50%)}
+        .tl-step{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;margin-bottom:20px;align-items:start;position:relative}
+        .tl-step:nth-child(odd) .tl-content{grid-column:1;text-align:right}
+        .tl-step:nth-child(odd) .tl-visual{grid-column:3}
+        .tl-step:nth-child(even) .tl-content{grid-column:3;text-align:left}
+        .tl-step:nth-child(even) .tl-visual{grid-column:1;text-align:right}
+        .tl-dot{grid-column:2;display:flex;justify-content:center;position:relative;z-index:1}
+        .tl-dot__circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.15);border:4px solid var(--white)}
+        .tl-content{padding:8px 28px}
+        .tl-content__phase{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+        .tl-content__title{font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
+        .tl-content__desc{font-size:.92rem;color:var(--gray-600);line-height:1.7;margin-bottom:10px}
+        .tl-content__tags{display:flex;flex-wrap:wrap;gap:6px}
+        .tl-step:nth-child(odd) .tl-content__tags{justify-content:flex-end}
+        .tl-tag{padding:4px 12px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:50px;font-size:.75rem;font-weight:600;color:var(--gray-500)}
+        .tl-visual{padding:8px 28px}
+        .tl-visual__card{display:inline-block;padding:20px 24px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);text-align:center;min-width:160px}
+        .tl-visual__icon{font-size:2.2rem;margin-bottom:6px;display:block}
+        .tl-visual__text{font-size:.82rem;font-weight:600;color:var(--navy)}
+        .tl-visual__sub{font-size:.72rem;color:var(--gray-400);margin-top:2px}
+
+        /* PROMISE BAR */
+        .promise{background:linear-gradient(135deg,#F0FDF9,#ECFDF5);border:1.5px solid #A7F3D0;border-radius:var(--radius-xl);padding:40px;margin:40px 0;text-align:center}
+        .promise h3{font-family:var(--font-display);font-size:1.3rem;color:var(--navy);margin-bottom:20px}
+        .promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .promise-item{text-align:center}
+        .promise-item__icon{font-size:1.6rem;margin-bottom:6px;display:block}
+        .promise-item__text{font-size:.85rem;font-weight:600;color:#065F46;line-height:1.3}
+
+        /* FAQ MINI */
+        .mini-faq{padding:40px 0}
+        .mini-faq__title{font-family:var(--font-display);font-size:1.4rem;color:var(--navy);text-align:center;margin-bottom:24px}
+        .mf-item{border:1.5px solid var(--gray-200);border-radius:var(--radius-md);margin-bottom:10px;overflow:hidden}
+        .mf-item.open{border-color:var(--ginger)}
+        .mf-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;gap:12px}
+        .mf-item.open .mf-q{background:var(--cream)}
+        .mf-q__text{font-weight:600;color:var(--navy);font-size:.95rem}
+        .mf-q__arrow{font-size:.8rem;color:var(--gray-400);transition:transform .3s}.mf-item.open .mf-q__arrow{transform:rotate(180deg);color:var(--ginger)}
+        .mf-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+        .mf-a__inner{padding:0 20px 16px;font-size:.92rem;color:var(--gray-600);line-height:1.7}
+
+        .cta{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-xl);padding:56px 40px;text-align:center;margin:12px 0 48px;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(242,101,34,.15),transparent);border-radius:50%}
+        .cta h2{font-family:var(--font-display);font-size:1.8rem;color:#fff;margin-bottom:8px;position:relative}
+        .cta p{color:rgba(255,255,255,.5);margin-bottom:24px;position:relative;max-width:500px;margin-left:auto;margin-right:auto}
+        .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500)}.footer a{color:var(--navy);font-weight:500}
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.hero h1{font-size:2rem}.timeline::before{left:28px}.tl-step{grid-template-columns:56px 1fr;gap:0}.tl-dot{grid-column:1;grid-row:1}.tl-content{grid-column:2;text-align:left!important;padding:4px 0 20px 16px}.tl-content__tags{justify-content:flex-start!important}.tl-step:nth-child(odd) .tl-content{grid-column:2}.tl-visual{display:none}.promise-grid{grid-template-columns:repeat(2,1fr)}.hero__badges{flex-direction:column;align-items:center}.topbar{display:none}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#ee87808881ae898780898b9cc0868b8f829a868d8f9c8b">✉ <span class="__cf_email__" data-cfemail="d5bcbbb3ba95b2bcbbb2b0a7fbbdb0b4b9a1bdb6b4a7b0">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 English</div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link nav__link--active">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+
+    <div class="hero"><div class="hero__bg"></div><div class="hero__pattern"></div><div class="hero__orb1"></div><div class="hero__orb2"></div><div class="hero__inner"><span class="hero__icon">🗺️</span><h1>Your Medical Journey, <em>Step by Step</em></h1><p>From your first enquiry to your full recovery — here's exactly what happens, with no surprises along the way</p><div class="hero__badges"><div class="hero__badge"><span>⏱️</span> Typically 2–4 weeks end to end</div><div class="hero__badge"><span>🆓</span> Our services are 100% free</div><div class="hero__badge"><span>🤝</span> Dedicated case manager throughout</div></div></div></div>
+
+    <div class="content">
+        <div class="timeline">
+            <!-- STEP 1 -->
+            <div class="tl-step">
+                <div class="tl-content"><div class="tl-content__phase" style="color:var(--ginger)">Step 1 · Day 1</div><div class="tl-content__title">Share Your Medical Details</div><div class="tl-content__desc">Submit your enquiry via our website, WhatsApp, or email. Upload your medical reports, scans, and doctor's notes. The more details you share, the more accurate your quote will be.</div><div class="tl-content__tags"><span class="tl-tag">📋 Online form</span><span class="tl-tag">💬 WhatsApp</span><span class="tl-tag">📎 Upload reports</span></div></div>
+                <div class="tl-dot"><div class="tl-dot__circle" style="background:linear-gradient(135deg,var(--ginger),var(--ginger-dark))">1</div></div>
+                <div class="tl-visual"><div class="tl-visual__card"><span class="tl-visual__icon">📝</span><div class="tl-visual__text">Free · No Obligation</div><div class="tl-visual__sub">Takes 5 minutes</div></div></div>
+            </div>
+            <!-- STEP 2 -->
+            <div class="tl-step">
+                <div class="tl-visual"><div class="tl-visual__card"><span class="tl-visual__icon">🏥</span><div class="tl-visual__text">2–3 Hospital Options</div><div class="tl-visual__sub">Within 24–48 hours</div></div></div>
+                <div class="tl-dot"><div class="tl-dot__circle" style="background:linear-gradient(135deg,var(--teal),#0c918c)">2</div></div>
+                <div class="tl-content"><div class="tl-content__phase" style="color:var(--teal)">Step 2 · Day 1–3</div><div class="tl-content__title">Receive Hospital Recommendations</div><div class="tl-content__desc">Our medical team reviews your case and sends you personalised recommendations from 2–3 top hospitals. Each quote includes treatment plan, cost breakdown, doctor profile, and estimated stay duration.</div><div class="tl-content__tags"><span class="tl-tag">💰 Detailed costs</span><span class="tl-tag">👨‍⚕️ Doctor profiles</span><span class="tl-tag">📊 Comparison</span></div></div>
+            </div>
+            <!-- STEP 3 -->
+            <div class="tl-step">
+                <div class="tl-visual"><div class="tl-visual__card"><span class="tl-visual__icon">✈️</span><div class="tl-visual__text">Complete Travel Support</div><div class="tl-visual__sub">Visa, flights, hotel</div></div></div>
+                <div class="tl-dot"><div class="tl-dot__circle" style="background:linear-gradient(135deg,#F59E0B,#D97706)">3</div></div>
+                <div class="tl-content"><div class="tl-content__phase" style="color:#D97706">Step 3 · Day 3–14</div><div class="tl-content__title">Visa, Travel & Accommodation</div><div class="tl-content__desc">Once you confirm, we handle everything: medical visa invitation letter, travel date planning, airport pickup arrangement, and hotel booking near the hospital. Your case manager coordinates every detail.</div><div class="tl-content__tags"><span class="tl-tag">🛂 Visa assistance</span><span class="tl-tag">🏨 Hotel booking</span><span class="tl-tag">🚗 Airport pickup</span></div></div>
+            </div>
+            <!-- STEP 5 -->
+            <div class="tl-step">
+                <div class="tl-content"><div class="tl-content__phase" style="color:#EC4899">Step 4 · Treatment Day</div><div class="tl-content__title">Arrival & Treatment</div><div class="tl-content__desc">You're greeted at the airport and driven to the hospital. Pre-admission tests, admission, and your surgery or procedure. Our coordinator is present on-site and stays in touch with your family back home throughout.</div><div class="tl-content__tags"><span class="tl-tag">🚗 Airport pickup</span><span class="tl-tag">🩺 Pre-op tests</span><span class="tl-tag">🏥 Dedicated coordinator</span></div></div>
+                <div class="tl-dot"><div class="tl-dot__circle" style="background:linear-gradient(135deg,#EC4899,#DB2777)">4</div></div>
+                <div class="tl-visual"><div class="tl-visual__card"><span class="tl-visual__icon">🏥</span><div class="tl-visual__text">24/7 On-Ground Support</div><div class="tl-visual__sub">We're with you throughout</div></div></div>
+            </div>
+            <!-- STEP 6 -->
+            <div class="tl-step">
+                <div class="tl-visual"><div class="tl-visual__card"><span class="tl-visual__icon">🩹</span><div class="tl-visual__text">Full Recovery Plan</div><div class="tl-visual__sub">Hotel + follow-ups</div></div></div>
+                <div class="tl-dot"><div class="tl-dot__circle" style="background:linear-gradient(135deg,#059669,#047857)">5</div></div>
+                <div class="tl-content"><div class="tl-content__phase" style="color:#059669">Step 5 · Post Treatment</div><div class="tl-content__title">Recovery & Follow-Up</div><div class="tl-content__desc">After discharge, recover at your hotel with follow-up visits to the hospital. When you're cleared to travel, we arrange your return journey. You receive a complete discharge summary, medications, and a virtual follow-up schedule with your doctor.</div><div class="tl-content__tags"><span class="tl-tag">🏨 Recovery stay</span><span class="tl-tag">📋 Discharge summary</span><span class="tl-tag">📞 Virtual follow-ups</span></div></div>
+            </div>
+        </div>
+
+        <!-- PROMISE -->
+        <div class="promise">
+            <h3>✅ Our Promise at Every Step</h3>
+            <div class="promise-grid">
+                <div class="promise-item"><span class="promise-item__icon">🆓</span><div class="promise-item__text">Zero service charges — always free for patients</div></div>
+                <div class="promise-item"><span class="promise-item__icon">🔒</span><div class="promise-item__text">Your data is 100% confidential and never shared without consent</div></div>
+                <div class="promise-item"><span class="promise-item__icon">🤝</span><div class="promise-item__text">One dedicated case manager from start to finish</div></div>
+                <div class="promise-item"><span class="promise-item__icon">📞</span><div class="promise-item__text">24/7 support — even months after you return home</div></div>
+            </div>
+        </div>
+
+        <!-- MINI FAQ -->
+        <div class="mini-faq">
+            <div class="mini-faq__title">Common Questions</div>
+            <div class="mf-item"><div class="mf-q"><div class="mf-q__text">How long does the entire process take?</div><div class="mf-q__arrow">▼</div></div><div class="mf-a"><div class="mf-a__inner">Typically <strong>2–4 weeks</strong> from first enquiry to arriving at the hospital. Emergency cases can be fast-tracked within 7–10 days. The timeline depends mainly on visa processing (3–10 days) and your preferred travel dates.</div></div></div>
+            <div class="mf-item"><div class="mf-q"><div class="mf-q__text">Is there really no cost for your services?</div><div class="mf-q__arrow">▼</div></div><div class="mf-a"><div class="mf-a__inner"><strong>Correct — our services are completely free.</strong> No consultation fee, no coordination fee, no hidden commission. Your hospital bill is exactly what it would be if you contacted the hospital directly. We are compensated by our partner hospitals.</div></div></div>
+            <div class="mf-item"><div class="mf-q"><div class="mf-q__text">What if I don't like the hospital options?</div><div class="mf-q__arrow">▼</div></div><div class="mf-a"><div class="mf-a__inner">No problem at all. There's zero obligation at any point. If the first recommendations don't feel right, tell us your concerns and we'll find alternatives. You're always in control of the decision.</div></div></div>
+            <div class="mf-item"><div class="mf-q"><div class="mf-q__text">Can I bring my family along?</div><div class="mf-q__arrow">▼</div></div><div class="mf-a"><div class="mf-a__inner">Absolutely. We recommend at least one attendant. They can apply for a Medical Attendant Visa. We help with hotel bookings that accommodate families and can arrange sightseeing or downtime activities during your recovery period.</div></div></div>
+        </div>
+
+        <div class="cta">
+            <h2>Ready to Take the First Step?</h2>
+            <p>It takes just 5 minutes to submit your enquiry. We'll take it from there.</p>
+            <div class="cta-btns"><a href="/get-quote/" class="btn btn--primary btn--large">📋 Get Free Quote</a><a href="/cost-calculator/" class="btn btn--teal btn--large">🧮 Estimate Costs First</a></div>
+        </div>
+    </div>
+
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a></p></footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+document.querySelectorAll('.mf-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement,a=item.querySelector('.mf-a'),inner=item.querySelector('.mf-a__inner');const isOpen=item.classList.contains('ope

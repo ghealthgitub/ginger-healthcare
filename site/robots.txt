@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/includes/
+Disallow: /admin/
+
+Sitemap: https://ginger.healthcare/sitemap.xml

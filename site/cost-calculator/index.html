@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Cost Calculator | Ginger Healthcare</title>
+    <meta name="description" content="Calculate your medical treatment and full trip costs in India, Turkey, Thailand, UAE & Singapore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--teal-light:#14B8B3;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.10);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;min-height:100vh;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}select,input{font-family:inherit}
+
+        /* NAV */
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--large{padding:16px 36px;font-size:1rem;border-radius:var(--radius-md)}.btn--teal{background:var(--teal);color:#fff;box-shadow:0 2px 8px rgba(14,165,160,.25)}.btn--teal:hover{background:#0c918c;transform:translateY(-1px)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+
+        /* HERO */
+        .calc-hero{position:relative;overflow:hidden;padding:56px 0 44px;text-align:center}
+        .calc-hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .calc-hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .calc-hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .calc-hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .calc-hero__inner{max-width:700px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .calc-hero__icon{font-size:2.2rem;margin-bottom:8px;display:block}
+        .calc-hero h1{font-family:var(--font-display);font-size:2.4rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:6px}
+        .calc-hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .calc-hero p{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+        /* CARD */
+        .calc-wrap{max-width:980px;margin:-28px auto 0;padding:0 24px;position:relative;z-index:2}
+        .calc-card{background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);overflow:hidden;border:1px solid var(--gray-200)}
+        .calc-body{padding:40px 48px}
+
+        /* STEP BAR — now 6 steps, compact labels hidden on results */
+        .steps-bar{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:36px}
+        .step-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--gray-400);background:var(--gray-100);border:2px solid var(--gray-200);transition:all .35s;position:relative;z-index:1;flex-shrink:0}
+        .step-dot.active{background:var(--ginger);color:#fff;border-color:var(--ginger);box-shadow:0 3px 12px rgba(242,101,34,.3)}
+        .step-dot.completed{background:var(--teal);color:#fff;border-color:var(--teal)}
+        .step-dot.completed::after{content:'✓';font-size:.75rem}.step-dot.completed span{display:none}
+        .step-line{width:32px;height:3px;background:var(--gray-200);transition:background .35s;margin:0 -2px;z-index:0;border-radius:3px;flex-shrink:0}.step-line.completed{background:var(--teal)}
+
+        .form-section{display:none;animation:slideIn .35s ease}.form-section.active{display:block}
+        @keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        .section-title{font-family:var(--font-display);font-size:1.5rem;color:var(--navy);margin-bottom:6px;text-align:center}
+        .section-desc{font-size:.95rem;color:var(--gray-500);text-align:center;margin-bottom:24px}
+
+        /* GRIDS */
+        .dest-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:22px}
+        .dest-card{border:2px solid var(--gray-200);border-radius:var(--radius-lg);padding:22px 10px;cursor:pointer;transition:all .25s;text-align:center;background:var(--white)}
+        .dest-card:hover{border-color:var(--ginger);background:var(--cream);transform:translateY(-2px)}
+        .dest-card.selected{border-color:var(--ginger);background:var(--cream);box-shadow:0 4px 16px rgba(242,101,34,.12)}
+        .dest-card__flag{font-size:2rem;margin-bottom:5px;display:block}.dest-card__name{font-weight:600;color:var(--navy);font-size:.95rem;margin-bottom:2px}.dest-card__save{font-size:.78rem;color:var(--teal);font-weight:500}
+
+        .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;max-height:420px;overflow-y:auto;padding-right:6px}
+        .spec-grid::-webkit-scrollbar{width:5px}.spec-grid::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:8px}
+        .spec-card{border:2px solid var(--gray-200);border-radius:var(--radius-md);padding:14px 8px;cursor:pointer;transition:all .2s;text-align:center;background:var(--white)}
+        .spec-card:hover{border-color:var(--ginger);background:var(--cream)}
+        .spec-card.selected{border-color:var(--ginger);background:var(--cream);box-shadow:0 2px 10px rgba(242,101,34,.1)}
+        .spec-card__icon{font-size:1.5rem;margin-bottom:3px;display:block}.spec-card__name{font-size:.82rem;font-weight:600;color:var(--navy);line-height:1.25}
+
+        .treat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:22px;max-height:370px;overflow-y:auto;padding-right:6px}
+        .treat-grid::-webkit-scrollbar{width:5px}.treat-grid::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:8px}
+        .treat-card{border:2px solid var(--gray-200);border-radius:var(--radius-md);padding:16px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px;background:var(--white)}
+        .treat-card:hover{border-color:var(--ginger);background:var(--cream)}
+        .treat-card.selected{border-color:var(--ginger);background:var(--cream);box-shadow:0 2px 10px rgba(242,101,34,.1)}
+        .treat-card__icon{font-size:1.3rem;flex-shrink:0}.treat-card__name{font-weight:600;color:var(--navy);font-size:.95rem}.treat-card__price{font-size:.82rem;color:var(--teal);font-weight:500;margin-top:2px}
+
+        /* BUTTONS */
+        .btn-row{display:flex;justify-content:space-between;gap:15px;margin-top:24px}
+        .btn-back{padding:12px 26px;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;background:var(--gray-100);color:var(--gray-600);transition:all .2s}.btn-back:hover{background:var(--gray-200)}
+        .btn-next{padding:12px 28px;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;background:var(--ginger);color:#fff;margin-left:auto;transition:all .2s;box-shadow:0 2px 8px rgba(242,101,34,.2)}.btn-next:hover{background:var(--ginger-dark)}.btn-next:disabled{background:var(--gray-300);color:var(--gray-500);cursor:not-allowed;box-shadow:none}
+
+        /* ═══ STEP 4: TREATMENT ESTIMATE ═══ */
+        .tx-hero{background:linear-gradient(135deg,var(--navy),#183d6e);border-radius:var(--radius-xl);padding:36px 32px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+        .tx-hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(14,165,160,.15),transparent);border-radius:50%}
+        .tx-hero__badge{display:inline-block;padding:5px 16px;background:rgba(255,255,255,.1);border-radius:50px;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.65);margin-bottom:8px}
+        .tx-hero__label{font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:4px;font-weight:500}
+        .tx-hero__amount{font-family:var(--font-display);font-size:3.4rem;font-weight:700;color:var(--teal-light);position:relative}
+        .tx-hero__vs{font-size:1rem;color:rgba(255,255,255,.4);margin-top:8px}
+        .tx-hero__vs s{color:rgba(255,255,255,.25)}
+        .tx-hero__pct{display:inline-block;margin-left:8px;padding:3px 14px;background:rgba(16,185,129,.2);border-radius:50px;font-size:.85rem;font-weight:700;color:#6EE7B7}
+
+        .tx-details{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+        .tx-detail-card{background:var(--white);border:2px solid var(--gray-200);border-radius:var(--radius-lg);padding:22px 16px;text-align:center;transition:all .2s}
+        .tx-detail-card--highlight{border-color:var(--teal);background:#F0FDF9}
+        .tx-detail-card__icon{font-size:1.8rem;margin-bottom:6px;display:block}
+        .tx-detail-card__val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--navy)}
+        .tx-detail-card--highlight .tx-detail-card__val{color:var(--teal)}
+        .tx-detail-card__label{font-size:.92rem;color:var(--gray-500);margin-top:4px;font-weight:500}
+        .tx-total-stay{text-align:center;padding:14px;background:var(--navy);border-radius:var(--radius-lg);margin-bottom:24px}
+        .tx-total-stay__text{font-size:1.1rem;font-weight:700;color:#fff}
+        .tx-total-stay__text em{font-style:normal;color:var(--teal-light)}
+        .tx-total-stay__sub{font-size:.85rem;color:rgba(255,255,255,.45);margin-top:3px}
+
+        .incl-excl{margin-bottom:24px}
+        .incl-box{padding:18px;border-radius:var(--radius-lg);border:1px solid #A7F3D0;background:#F0FDF9}
+        .incl-box__title{font-weight:700;font-size:.95rem;margin-bottom:10px;color:#059669}
+        .incl-item{font-size:.88rem;padding:3px 0;display:flex;align-items:flex-start;gap:6px;color:var(--gray-600)}
+        .incl-item::before{content:'✓';color:#059669;font-weight:700;flex-shrink:0}
+        .pre-inv{background:var(--cream);border:1.5px solid var(--ginger);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+        .pre-inv__icon{font-size:1.6rem;flex-shrink:0}
+        .pre-inv__text{flex:1}
+        .pre-inv__title{font-weight:700;font-size:.95rem;color:var(--navy)}
+        .pre-inv__range{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ginger);margin-top:2px}
+        .pre-inv__note{font-size:.78rem;color:var(--gray-500);margin-top:2px}
+
+        .all-dest{margin-bottom:24px}
+        .all-dest__title{font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:10px}
+        .all-dest__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+        .all-dest__card{padding:14px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);text-align:center;transition:all .2s}
+        .all-dest__card.yours{border-color:var(--teal);background:#F0FDF9}
+        .all-dest__flag{font-size:1.3rem;display:block;margin-bottom:3px}.all-dest__name{font-size:.78rem;color:var(--gray-500);margin-bottom:3px}
+        .all-dest__price{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--navy)}
+        .all-dest__card.yours .all-dest__price{color:var(--teal)}
+        .all-dest__save{font-size:.72rem;font-weight:600;color:var(--ginger);margin-top:2px}
+
+        .expand-cta{text-align:center;padding:28px 20px;background:linear-gradient(180deg,var(--cream),#FFF1E6);border:2px dashed var(--ginger);border-radius:var(--radius-xl);margin-top:8px}
+        .expand-cta__text{font-size:1rem;color:var(--gray-600);margin-bottom:14px}
+        .expand-cta__text strong{color:var(--navy)}
+
+        /* ═══ STEP 5: TRAVEL FORM ═══ */
+        .travel-form{display:grid;gap:20px}
+        .tf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        .tf-group{display:flex;flex-direction:column;gap:5px}
+        .tf-label{font-size:.88rem;font-weight:600;color:var(--navy)}.tf-label small{font-weight:400;color:var(--gray-400)}
+        .tf-select,.tf-input{padding:12px 16px;border:2px solid var(--gray-200);border-radius:var(--radius-md);font-size:.95rem;color:var(--gray-700);background:var(--white);transition:border-color .2s;width:100%}
+        .tf-select:focus,.tf-input:focus{outline:none;border-color:var(--ginger)}
+        .tf-hint{font-size:.75rem;color:var(--gray-400);margin-top:2px}
+        .hotel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+        .hotel-card{border:2px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all .25s;background:var(--white);text-align:center}
+        .hotel-card:hover{border-color:var(--ginger);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+        .hotel-card.selected{border-color:var(--ginger);box-shadow:0 6px 20px rgba(242,101,34,.15)}
+        .hotel-card__head{padding:18px 14px 12px}.hotel-card__icon{font-size:1.8rem;margin-bottom:4px;display:block}
+        .hotel-card__name{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy)}
+        .hotel-card__type{font-size:.78rem;color:var(--gray-500);margin-top:2px}
+        .hotel-card__price-box{padding:12px;background:var(--gray-50)}
+        .hotel-card.selected .hotel-card__price-box{background:var(--cream)}
+        .hotel-card__price{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--navy)}
+        .hotel-card.selected .hotel-card__price{color:var(--ginger)}
+        .hotel-card__per{font-size:.75rem;color:var(--gray-400)}
+        .hotel-card--pop{position:relative}.hotel-card--pop::after{content:'Popular';position:absolute;top:8px;right:8px;padding:3px 10px;background:var(--ginger);color:#fff;border-radius:50px;font-size:.65rem;font-weight:700}
+        .tsb{background:var(--gray-50);border:2px solid var(--gray-200);border-radius:var(--radius-lg);padding:22px;margin-bottom:18px}
+        .tsb__title{font-weight:700;font-size:1.05rem;color:var(--navy);margin-bottom:12px}
+        .tsb__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+        .tsb__item{text-align:center;padding:18px 12px;background:var(--white);border-radius:var(--radius-lg);border:2px solid var(--gray-200)}
+        .tsb__item--hl{border-color:var(--teal);background:#F0FDF9}
+        .tsb__icon{font-size:1.6rem;display:block;margin-bottom:4px}.tsb__val{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--navy)}.tsb__item--hl .tsb__val{color:var(--teal)}.tsb__label{font-size:.85rem;color:var(--gray-500);margin-top:3px;font-weight:500}
+
+        /* ═══ STEP 6: FULL BUDGET ═══ */
+        .grand-hero{background:linear-gradient(135deg,var(--navy),#183d6e);border-radius:var(--radius-xl);padding:36px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+        .grand-hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(14,165,160,.15),transparent);border-radius:50%}
+        .grand-hero__badge{display:inline-block;padding:5px 16px;background:rgba(255,255,255,.1);border-radius:50px;font-size:.88rem;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:8px}
+        .grand-hero__label{font-size:1.05rem;color:rgba(255,255,255,.5);margin-bottom:4px}
+        .grand-hero__amount{font-family:var(--font-display);font-size:3.4rem;font-weight:700;color:var(--teal-light)}
+        .grand-hero__sub{font-size:.92rem;color:rgba(255,255,255,.35);margin-top:6px}.grand-hero__sub s{color:rgba(255,255,255,.2)}
+
+        .summary-bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+        .summary-tag{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:50px;font-size:.85rem;font-weight:500;color:var(--navy)}.summary-tag span{font-size:.95rem}
+
+        .result-label{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--navy);margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+        .result-label span{font-size:1.2rem}
+
+        .budget-tbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:8px}
+        .budget-tbl thead th{background:var(--navy);color:#fff;padding:14px 18px;font-size:.88rem;font-weight:600;text-align:left}
+        .budget-tbl td{padding:14px 18px;font-size:.92rem;border-bottom:1px solid var(--gray-100);vertical-align:middle}
+        .budget-tbl tr:last-child td{border-bottom:none}
+        .budget-tbl tbody tr:hover{background:var(--cream)}
+        .budget-tbl .pv{font-family:var(--font-display);font-weight:700;color:var(--navy);text-align:right;font-size:1rem}
+        .budget-tbl .pv--teal{color:var(--teal);font-size:1.05rem}
+        .budget-tbl .row-sub{background:var(--gray-50)}.budget-tbl .row-sub td{font-weight:600;border-bottom:2px solid var(--gray-200)}
+        .budget-tbl .row-total{background:var(--navy)!important}.budget-tbl .row-total td{color:#fff;font-weight:700;border:none;font-size:1rem}
+        .budget-tbl .row-total .pv{color:var(--teal-light);font-size:1.2rem}
+        .budget-tbl .note{font-size:.78rem;color:var(--gray-400);font-weight:400}
+        .budget-tbl .ci{margin-right:5px}
+
+        .savings-hero{background:linear-gradient(135deg,#059669,#10b981);border-radius:var(--radius-xl);padding:32px;text-align:center;margin:24px 0;position:relative;overflow:hidden}
+        .savings-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,255,255,.1),transparent);border-radius:50%}
+        .savings-hero__badge{display:inline-block;padding:4px 14px;background:rgba(255,255,255,.15);border-radius:50px;font-size:.82rem;font-weight:600;color:#fff;margin-bottom:8px}
+        .savings-hero__amount{font-family:var(--font-display);font-size:3rem;font-weight:700;color:#fff}
+        .savings-hero__text{font-size:.95rem;color:rgba(255,255,255,.65);margin-top:4px}
+
+        .results-cta{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-xl);padding:32px;text-align:center;position:relative;overflow:hidden;margin-top:20px}
+        .results-cta::before{content:'';position:absolute;top:-30px;right:-30px;width:130px;height:130px;background:radial-gradient(circle,rgba(242,101,34,.15),transparent);border-radius:50%}
+        .results-cta h3{font-family:var(--font-display);font-size:1.2rem;color:#fff;margin-bottom:5px;position:relative}
+        .results-cta p{font-size:.92rem;color:rgba(255,255,255,.45);margin-bottom:14px;position:relative}.results-cta .btn{position:relative}
+        .disclaimer{text-align:center;margin-top:14px;font-size:.78rem;color:var(--gray-400);line-height:1.5;padding:0 16px}
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500);margin-top:48px}.footer a{color:var(--navy);font-weight:500}
+
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.calc-hero h1{font-size:1.9rem}.calc-body{padding:24px 18px}.dest-grid{grid-template-columns:repeat(3,1fr)}.spec-grid{grid-template-columns:repeat(3,1fr)}.treat-grid{grid-template-columns:1fr}.hotel-grid{grid-template-columns:1fr}.tf-row{grid-template-columns:1fr}.tsb__grid{grid-template-columns:repeat(3,1fr)}.all-dest__grid{grid-template-columns:repeat(3,1fr)}.tx-details{grid-template-columns:repeat(3,1fr)}.topbar{display:none}.step-line{width:18px}.step-dot{width:32px;height:32px;font-size:.72rem}.tx-detail-card__val{font-size:1.4rem}.tsb__val{font-size:1.3rem}}
+        @media(max-width:480px){.dest-grid{grid-template-columns:repeat(2,1fr)}.spec-grid{grid-template-columns:repeat(2,1fr)}.all-dest__grid{grid-template-columns:repeat(2,1fr)}.tx-hero__amount,.grand-hero__amount{font-size:2.4rem}.savings-hero__amount{font-size:2.2rem}.step-line{width:12px}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#0d64636b624d6a64636a687f2365686c6179656e6c7f68">✉ <span class="__cf_email__" data-cfemail="e68f888089a6818f88818394c88e83878a928e85879483">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 <a href="#" style="color:rgba(255,255,255,.85)">English</a></div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link nav__link--active">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+
+    <div class="calc-hero"><div class="calc-hero__bg"></div><div class="calc-hero__pattern"></div><div class="calc-hero__orb1"></div><div class="calc-hero__orb2"></div><div class="calc-hero__inner"><span class="calc-hero__icon">💰</span><h1>Treatment <em>Cost Calculator</em></h1><p>Estimate your treatment cost — then optionally calculate your full trip budget</p></div></div>
+
+    <div class="calc-wrap"><div class="calc-card"><div class="calc-body">
+        <div class="steps-bar">
+            <div class="step-dot active" id="step1"><span>1</span></div><div class="step-line" id="line1"></div>
+            <div class="step-dot" id="step2"><span>2</span></div><div class="step-line" id="line2"></div>
+            <div class="step-dot" id="step3"><span>3</span></div><div class="step-line" id="line3"></div>
+            <div class="step-dot" id="step4"><span>4</span></div><div class="step-line" id="line4"></div>
+            <div class="step-dot" id="step5"><span>5</span></div><div class="step-line" id="line5"></div>
+            <div class="step-dot" id="step6"><span>6</span></div>
+        </div>
+
+        <!-- S1: Destination -->
+        <div class="form-section active" id="section1">
+            <h2 class="section-title">Choose Your Destination</h2><p class="section-desc">Where would you like to have your treatment?</p>
+            <div class="dest-grid">
+                <div class="dest-card" data-destination="india"><span class="dest-card__flag">🇮🇳</span><div class="dest-card__name">India</div><div class="dest-card__save">Save up to 93%</div></div>
+                <div class="dest-card" data-destination="turkey"><span class="dest-card__flag">🇹🇷</span><div class="dest-card__name">Turkey</div><div class="dest-card__save">Save up to 79%</div></div>
+                <div class="dest-card" data-destination="thailand"><span class="dest-card__flag">🇹🇭</span><div class="dest-card__name">Thailand</div><div class="dest-card__save">Save up to 75%</div></div>
+                <div class="dest-card" data-destination="uae"><span class="dest-card__flag">🇦🇪</span><div class="dest-card__name">UAE</div><div class="dest-card__save">Save up to 50%</div></div>
+                <div class="dest-card" data-destination="singapore"><span class="dest-card__flag">🇸🇬</span><div class="dest-card__name">Singapore</div><div class="dest-card__save">Save up to 64%</div></div>
+            </div>
+            <div class="btn-row"><button class="btn-next" id="next1" disabled>Next — Select Specialty →</button></div>
+        </div>
+        <!-- S2: Specialty -->
+        <div class="form-section" id="section2">
+            <h2 class="section-title">Select Medical Specialty</h2><p class="section-desc">Choose the area of treatment</p>
+            <div class="spec-grid" id="specGrid"></div>
+            <div class="btn-row"><button class="btn-back" id="back2">← Back</button><button class="btn-next" id="next2" disabled>Next — Select Treatment →</button></div>
+        </div>
+        <!-- S3: Treatment -->
+        <div class="form-section" id="section3">
+            <h2 class="section-title">Select Treatment</h2><p class="section-desc">Choose a procedure to see estimated costs</p>
+            <div class="treat-grid" id="treatmentGrid"></div>
+            <div class="btn-row"><button class="btn-back" id="back3">← Back</button><button class="btn-next" id="next3" disabled>See Treatment Estimate →</button></div>
+        </div>
+
+        <!-- ═══ S4: TREATMENT ESTIMATE ═══ -->
+        <div class="form-section" id="section4">
+            <div class="tx-hero">
+                <div class="tx-hero__badge" id="txBadge">Treatment · Destination</div>
+                <div class="tx-hero__label">Estimated Hospital Package Cost</div>
+                <div class="tx-hero__amount" id="txAmount">$0</div>
+                <div class="tx-hero__vs">vs <s id="txUsaPrice">$0</s> in USA <span class="tx-hero__pct" id="txPct">0% savings</span></div>
+            </div>
+            <div class="tx-details" id="txDetails"></div>
+            <div class="tx-total-stay" id="txTotalStay"></div>
+            <div class="pre-inv" id="txPreInv">
+                <div class="pre-inv__icon">🔬</div>
+                <div class="pre-inv__text"><div class="pre-inv__title">Pre-Admission Investigations</div><div class="pre-inv__range">$1,000</div><div class="pre-inv__note">Blood work, imaging, cardiac evaluation & other diagnostics done before admission</div></div>
+            </div>
+            <div class="incl-excl">
+                <div class="incl-box"><div class="incl-box__title">✅ Included in Hospital Package</div><div class="incl-item">Surgeon & medical team fees</div><div class="incl-item">Anaesthesia & OT charges</div><div class="incl-item">Drugs & consumables during stay</div><div class="incl-item">Hospital bed / room rent</div><div class="incl-item">Food for patient & attendant in hospital</div></div>
+            </div>
+            <div class="all-dest" id="txAllDest"></div>
+            <div class="expand-cta">
+                <div class="expand-cta__text"><strong>Want to know your full trip cost?</strong><br>We'll estimate hotel, flights, visa & food so you can budget your entire medical trip.</div>
+                <button class="btn btn--teal btn--large" id="btnExpandTrip">🧳 Calculate Approximate Total Expenses →</button>
+            </div>
+            <div class="results-cta" style="margin-top:24px"><h3>📩 Or Get a Personalised Quote Now</h3><p>Share your reports for an accurate, all-inclusive cost from 2–3 top hospitals.</p><a href="/get-quote/" class="btn btn--primary btn--large">Get Free Detailed Quote →</a></div>
+            <p class="disclaimer">* Hospital estimates based on average costs across leading hospitals. Actual prices may vary based on complexity, hospital, and room category.</p>
+            <div class="btn-row"><button class="btn-back" id="back4">← Change Treatment</button></div>
+        </div>
+
+        <!-- ═══ S5: TRAVEL & STAY FORM ═══ -->
+        <div class="form-section" id="section5">
+            <h2 class="section-title">Plan Your Travel & Stay</h2><p class="section-desc">Help us estimate your complete trip budget</p>
+            <div class="tsb" id="tsbBox"></div>
+            <div class="travel-form">
+                <div class="tf-row">
+                    <div class="tf-group"><label class="tf-label">Your Country / Nationality</label><select class="tf-select" id="tfNat"><option value="">Select country...</option></select><div class="tf-hint">For visa fee estimation</div></div>
+                    <div class="tf-group"><label class="tf-label">Number of Travelers</label><select class="tf-select" id="tfTrav"><option value="1">1 — Patient only</option><option value="2" selected>2 — Patient + 1 Attendant</option><option value="3">3 — Patient + 2 Attendants</option></select></div>
+                </div>
+                <div class="tf-row">
+                    <div class="tf-group"><label class="tf-label">Boarding Airport <small>(your nearest)</small></label><input class="tf-input" type="text" id="tfBoard" placeholder="e.g. Lagos, Dhaka, New York JFK..." list="apList"><datalist id="apList"></datalist></div>
+                    <div class="tf-group"><label class="tf-label">Destination Airport</label><select class="tf-select" id="tfDestAP"></select></div>
+                </div>
+                <div class="tf-row">
+                    <div class="tf-group"><label class="tf-label">Tentative Travel Date</label><input class="tf-input" type="date" id="tfDate"><div class="tf-hint">Flight fares vary significantly by date</div></div>
+                    <div class="tf-group"><label class="tf-label">Flight Class</label><select class="tf-select" id="tfClass"><option value="economy">Economy</option><option value="business">Business Class</option></select></div>
+                </div>
+                <div class="tf-group"><label class="tf-label" style="margin-bottom:8px">Hotel Category <small>(for stay outside hospital)</small></label><div class="hotel-grid" id="hotelGrid"></div></div>
+            </div>
+            <div class="btn-row"><button class="btn-back" id="back5">← Back to Estimate</button><button class="btn-next" id="next5" disabled>Calculate Full Trip Budget →</button></div>
+        </div>
+
+        <!-- ═══ S6: FULL TRIP BUDGET ═══ -->
+        <div class="form-section" id="section6">
+            <div class="grand-hero"><div class="grand-hero__badge" id="grandBadge"></div><div class="grand-hero__label">Estimated Total Trip Cost</div><div class="grand-hero__amount" id="grandTotal">$0</div><div class="grand-hero__sub">Hospital + Hotel + Flights + Visa + Food &nbsp;·&nbsp; vs <s id="grandUsa">$0</s> treatment alone in USA</div></div>
+            <div class="summary-bar" id="summaryBar"></div>
+            <div class="result-label"><span>🏥</span> Hospital Package</div>
+            <table class="budget-tbl"><thead><tr><th>Item</th><th>Details</th><th style="text-align:right">Cost (USD)</th></tr></thead><tbody id="hospBody"></tbody></table>
+            <div class="result-label"><span>🧳</span> Additional Expenses <small style="font-weight:400;color:var(--gray-400);font-family:var(--font-body);font-size:.78rem;margin-left:4px">(outside hospital — not part of hospital package)</small></div>
+            <table class="budget-tbl"><thead><tr><th>Item</th><th>Details</th><th style="text-align:right">Cost (USD)</th></tr></thead><tbody id="addlBody"></tbody></table>
+            <div class="result-label"><span>💵</span> Grand Total</div>
+            <table class="budget-tbl"><tbody id="grandBody"></tbody></table>
+            <div class="savings-hero"><div class="savings-hero__badge">💰 Your Total Savings vs USA</div><div class="savings-hero__amount" id="savingsAmt">$0</div><div class="savings-hero__text">Even including flights, hotel, visa & food — you still save massively</div></div>
+            <div class="results-cta"><h3>📩 Get a Personalised Quote</h3><p>These are estimates. Share your reports for an accurate cost from 2–3 top hospitals.</p><a href="/get-quote/" class="btn btn--primary btn--large">Get Free Detailed Quote →</a></div>
+            <p class="disclaimer">* Hospital estimates based on average costs. Hotel, flight, visa & food are approximate. Visa fees sourced from indianvisaonline.gov.in (Medical Visa). Flight fares are indicative — actual fares depend on airline, booking date & availability.</p>
+            <div class="btn-row"><button class="btn-back" id="back6">← Start Over</button></div>
+        </div>
+
+    </div></div></div>
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p></footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+const specialties=[{key:'cardiac-surgery',icon:'❤️',name:'Cardiac Surgery'},{key:'cardiology',icon:'💓',name:'Cardiology'},{key:'orthopedics',icon:'🦴',name:'Orthopedics'},{key:'neurosurgery',icon:'🧠',name:'Neurosurgery'},{key:'neurology',icon:'🧠',name:'Neurology'},{key:'medical-oncology',icon:'🎗️',name:'Medical Oncology'},{key:'surgical-oncology',icon:'🎗️',name:'Surgical Oncology'},{key:'radiation-oncology',icon:'☢️',name:'Radiation Oncology'},{key:'hematology-bmt',icon:'🩸',name:'Hematology & BMT'},{key:'surgical-gastroenterology',icon:'🫁',name:'Surgical Gastro'},{key:'gastroenterology',icon:'🫁',name:'Gastroenterology'},{key:'nephrology',icon:'🫘',name:'Nephrology'},{key:'urology',icon:'🚽',name:'Urology'},{key:'vascular-surgery',icon:'🩸',name:'Vascular Surgery'},{key:'cosmetic-surgery',icon:'✨',name:'Cosmetic Surgery'},{key:'bariatric-surgery',icon:'⚖️',name:'Bariatric Surgery'},{key:'breast-surgery',icon:'🎀',name:'Breast Surgery'},{key:'dentistry',icon:'🦷',name:'Dentistry'},{key:'dermatology',icon:'🧴',name:'Dermatology'},{key:'ophthalmology',icon:'👁️',name:'Ophthalmology'},{key:'ent',icon:'👂',name:'ENT'},{key:'fertility',icon:'👶',name:'Fertility & IVF'},{key:'gynecology',icon:'🤰',name:'OB-GYN'},{key:'pulmonology',icon:'🌬️',name:'Pulmonology'},{key:'endocrinology',icon:'🩺',name:'Endocrinology'},{key:'rheumatology',icon:'🦠',name:'Rheumatology'},{key:'general-surgery',icon:'🏥',name:'General Surgery'},{key:'interventional-neuroradiology',icon:'🧠',name:'Interventional Neuro'}];
+document.getElementById('specGrid').innerHTML=specialties.map(s=>`<div class="spec-card" data-specialty="${s.key}"><span class="spec-card__icon">${s.icon}</span><div class="spec-card__name">${s.name}</div></div>`).join('');
+
+const treatments={'cardiac-surgery':[{n:'CABG (Heart Bypass)',p:5000,u:120000,i:'❤️',d:7},{n:'Heart Valve Replacement',p:7000,u:150000,i:'🫀',d:8},{n:'Aortic Aneurysm Repair',p:8000,u:100000,i:'🩺',d:7},{n:'Heart Transplant',p:30000,u:400000,i:'💗',d:21}],'cardiology':[{n:'Angioplasty + Stent',p:3500,u:40000,i:'💓',d:3},{n:'Pacemaker Implant',p:4000,u:35000,i:'🔋',d:3},{n:'Cardiac Catheterization',p:1500,u:15000,i:'🩺',d:2}],'orthopedics':[{n:'Total Knee Replacement',p:5500,u:50000,i:'🦵',d:5},{n:'Total Hip Replacement',p:6000,u:55000,i:'🦴',d:5},{n:'Spine Surgery (Fusion)',p:6500,u:80000,i:'🦴',d:6},{n:'ACL Reconstruction',p:3500,u:25000,i:'🦵',d:3},{n:'Shoulder Replacement',p:5500,u:45000,i:'💪',d:4}],'neurosurgery':[{n:'Brain Tumor Surgery',p:8000,u:100000,i:'🧠',d:7},{n:'Spine Tumor Surgery',p:7000,u:80000,i:'🩻',d:6},{n:'Deep Brain Stimulation',p:15000,u:100000,i:'⚡',d:5}],'medical-oncology':[{n:'Chemotherapy (per cycle)',p:500,u:5000,i:'💉',d:1},{n:'Immunotherapy',p:2000,u:15000,i:'🛡️',d:1},{n:'Targeted Therapy',p:1500,u:10000,i:'🎯',d:1}],'surgical-oncology':[{n:'Mastectomy',p:3500,u:35000,i:'🎗️',d:4},{n:'Prostatectomy',p:5000,u:40000,i:'🎗️',d:5},{n:'Colon Cancer Surgery',p:5500,u:50000,i:'🎗️',d:6}],'hematology-bmt':[{n:'BMT (Autologous)',p:20000,u:350000,i:'🩸',d:21},{n:'BMT (Allogeneic)',p:35000,u:500000,i:'🩸',d:30}],'surgical-gastroenterology':[{n:'Liver Transplant',p:35000,u:500000,i:'🫁',d:18},{n:'Kidney Transplant',p:15000,u:200000,i:'🫘',d:14},{n:'Whipple Procedure',p:8000,u:80000,i:'🩺',d:10}],'cosmetic-surgery':[{n:'Rhinoplasty',p:2500,u:8000,i:'👃',d:1},{n:'Facelift',p:4000,u:15000,i:'✨',d:2},{n:'Liposuction',p:2000,u:8000,i:'✨',d:1},{n:'Tummy Tuck',p:3500,u:12000,i:'✨',d:2},{n:'BBL',p:4000,u:12000,i:'✨',d:2}],'bariatric-surgery':[{n:'Gastric Sleeve',p:5000,u:20000,i:'⚖️',d:3},{n:'Gastric Bypass',p:6500,u:25000,i:'⚖️',d:4}],'dentistry':[{n:'Dental Implant (per tooth)',p:500,u:4000,i:'🦷',d:1},{n:'Full Mouth Restoration',p:5000,u:40000,i:'🦷',d:3},{n:'All-on-4 Implants',p:6000,u:25000,i:'🦷',d:3}],'dermatology':[{n:'Hair Transplant (3000 grafts)',p:1500,u:12000,i:'💇',d:1},{n:'Hair Transplant (5000 grafts)',p:2500,u:18000,i:'💇',d:1}],'ophthalmology':[{n:'LASIK (both eyes)',p:1000,u:4500,i:'👁️',d:0},{n:'Cataract Surgery',p:1200,u:5000,i:'👁️',d:1},{n:'Glaucoma Surgery',p:1500,u:6000,i:'👁️',d:1}],'fertility':[{n:'IVF (single cycle)',p:3500,u:15000,i:'👶',d:1},{n:'IVF with Donor Eggs',p:5000,u:25000,i:'👶',d:1},{n:'ICSI',p:4000,u:18000,i:'👶',d:1}],'nephrology':[{n:'Dialysis (per session)',p:50,u:500,i:'🫘',d:0},{n:'Kidney Transplant',p:15000,u:200000,i:'🫘',d:14}],'default':[{n:'Consultation + Diagnostics',p:500,u:3000,i:'🩺',d:0},{n:'Minor Procedure',p:2000,u:15000,i:'💊',d:1},{n:'Major Surgery',p:8000,u:60000,i:'🏥',d:5}]};
+
+const destinations={india:{mult:1,flag:'🇮🇳',name:'India',food:15,hE:25,hM:50,hP:110,airports:[{c:'DEL',n:'Delhi (IGI Airport)'},{c:'BOM',n:'Mumbai (Chhatrapati Shivaji)'},{c:'BLR',n:'Bengaluru (Kempegowda)'},{c:'MAA',n:'Chennai (Anna Intl)'},{c:'HYD',n:'Hyderabad (Rajiv Gandhi)'},{c:'CCU',n:'Kolkata (Netaji Subhas Chandra Bose)'},{c:'AMD',n:'Ahmedabad (Sardar Vallabhbhai Patel)'},{c:'PNQ',n:'Pune (Lohegaon)'},{c:'GOI',n:'Goa (Manohar Intl)'},{c:'COK',n:'Kochi (Cochin Intl)'},{c:'TRV',n:'Thiruvananthapuram (Trivandrum)'},{c:'JAI',n:'Jaipur (Sanganeer)'},{c:'LKO',n:'Lucknow (Chaudhary Charan Singh)'},{c:'NAG',n:'Nagpur (Dr Ambedkar)'},{c:'IXC',n:'Chandigarh'},{c:'PAT',n:'Patna (Jay Prakash Narayan)'},{c:'GAU',n:'Guwahati (Lokpriya Bordoloi)'},{c:'VNS',n:'Varanasi (Lal Bahadur Shastri)'},{c:'IXB',n:'Bagdogra'},{c:'VTZ',n:'Visakhapatnam'},{c:'BBI',n:'Bhubaneswar (Biju Patnaik)'},{c:'IDR',n:'Indore (Devi Ahilya Bai Holkar)'},{c:'CCJ',n:'Kozhikode (Calicut Intl)'},{c:'CJB',n:'Coimbatore'},{c:'SXR',n:'Srinagar'},{c:'IXR',n:'Ranchi (Birsa Munda)'}]},turkey:{mult:1.3,flag:'🇹🇷',name:'Turkey',food:25,hE:35,hM:70,hP:150,airports:[{c:'IST',n:'Istanbul Airport'},{c:'SAW',n:'Istanbul Sabiha Gökçen'},{c:'ANK',n:'Ankara Esenboğa'}]},thailand:{mult:1.5,flag:'🇹🇭',name:'Thailand',food:20,hE:22,hM:50,hP:120,airports:[{c:'BKK',n:'Bangkok Suvarnabhumi'},{c:'DMK',n:'Bangkok Don Mueang'}]},uae:{mult:2.5,flag:'🇦🇪',name:'UAE',food:35,hE:55,hM:110,hP:230,airports:[{c:'DXB',n:'Dubai (DXB)'},{c:'AUH',n:'Abu Dhabi (AUH)'}]},singapore:{mult:2.2,flag:'🇸🇬',name:'Singapore',food:30,hE:45,hM:90,hP:190,airports:[{c:'SIN',n:'Singapore Changi'}]}};
+
+const visaFees={'africa':80,'middleeast':80,'southasia':25,'southeast_asia':80,'east_asia':80,'europe':80,'uk':100,'usa':160,'canada':160,'australia':80,'south_america':80,'russia':80,'default':80};
+const c2r={'Nigeria':'africa','Kenya':'africa','Ethiopia':'africa','Ghana':'africa','Tanzania':'africa','Uganda':'africa','South Africa':'africa','Cameroon':'africa','Somalia':'africa','Mozambique':'africa','Angola':'africa','Sudan':'africa','Libya':'africa','Egypt':'middleeast','Zambia':'africa','Zimbabwe':'africa','Rwanda':'africa','Senegal':'africa','Iraq':'middleeast','Yemen':'middleeast','Oman':'middleeast','Saudi Arabia':'middleeast','Kuwait':'middleeast','Bahrain':'middleeast','Qatar':'middleeast','Jordan':'middleeast','Lebanon':'middleeast','Palestine':'middleeast','Syria':'middleeast','Iran':'middleeast','Bangladesh':'southasia','Nepal':'southasia','Sri Lanka':'southasia','Afghanistan':'southasia','Maldives':'southasia','Bhutan':'southasia','Myanmar':'southeast_asia','Pakistan':'southasia','Indonesia':'southeast_asia','Malaysia':'southeast_asia','Philippines':'southeast_asia','Vietnam':'southeast_asia','Thailand':'southeast_asia','Cambodia':'southeast_asia','Laos':'southeast_asia','China':'east_asia','Japan':'east_asia','South Korea':'east_asia','Mongolia':'east_asia','Taiwan':'east_asia','United Kingdom':'uk','UK':'uk','United States':'usa','USA':'usa','US':'usa','Canada':'canada','Australia':'australia','New Zealand':'australia','Brazil':'south_america','Argentina':'south_america','Colombia':'south_america','Peru':'south_america','Chile':'south_america','Russia':'russia','Ukraine':'europe','Kazakhstan':'russia','Uzbekistan':'russia','Germany':'europe','France':'europe','Italy':'europe','Spain':'europe','Netherlands':'europe','Belgium':'europe','Sweden':'europe','Switzerland':'europe','Austria':'europe','Poland':'europe','Portugal':'europe','Greece':'europe','Czech Republic':'europe','Romania':'europe','Hungary':'europe','Denmark':'europe','Finland':'europe','Norway':'europe','Ireland':'europe','Turkey':'europe'};
+const fares={'africa':{e:[350,550],b:[1200,2200]},'middleeast':{e:[200,400],b:[800,1500]},'southasia':{e:[100,250],b:[400,800]},'southeast_asia':{e:[200,400],b:[700,1400]},'east_asia':{e:[300,500],b:[1000,2000]},'europe':{e:[350,600],b:[1500,3000]},'uk':{e:[400,650],b:[1800,3500]},'usa':{e:[500,900],b:[2500,5000]},'canada':{e:[500,850],b:[2200,4500]},'australia':{e:[400,700],b:[1500,3000]},'south_america':{e:[600,1000],b:[2500,4500]},'russia':{e:[300,500],b:[1000,2000]},'default':{e:[400,700],b:[1500,3000]}};
+const popAP=['Lagos (LOS)','Abuja (ABV)','Accra (ACC)','Nairobi (NBO)','Addis Ababa (ADD)','Dar es Salaam (DAR)','Dhaka (DAC)','Chittagong (CGP)','Kathmandu (KTM)','Colombo (CMB)','Kabul (KBL)','Baghdad (BGW)','Basra (BSR)','Erbil (EBL)','Muscat (MCT)','Riyadh (RUH)','Jeddah (JED)','Kuwait City (KWI)','Doha (DOH)','Amman (AMM)','Cairo (CAI)','Tashkent (TAS)','Moscow (SVO)','Almaty (ALA)','Jakarta (CGK)','Kuala Lumpur (KUL)','Manila (MNL)','Ho Chi Minh (SGN)','Bangkok (BKK)','Phnom Penh (PNH)','Beijing (PEK)','Shanghai (PVG)','Tokyo (NRT)','Seoul (ICN)','London (LHR)','London (LGW)','Manchester (MAN)','Paris (CDG)','Frankfurt (FRA)','Amsterdam (AMS)','Rome (FCO)','Madrid (MAD)','Zurich (ZRH)','New York (JFK)','Newark (EWR)','Los Angeles (LAX)','Chicago (ORD)','Houston (IAH)','San Francisco (SFO)','Toronto (YYZ)','Vancouver (YVR)','Sydney (SYD)','Melbourne (MEL)','Auckland (AKL)','São Paulo (GRU)','Buenos Aires (EZE)','Bogotá (BOG)','Lima (LIM)'];
+
+const natSel=document.getElementById('tfNat');
+Object.keys(c2r).sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;natSel.appendChild(o)});
+const dl=document.getElementById('apList');popAP.forEach(a=>{const o=document.createElement('option');o.value=a;dl.appendChild(o)});
+
+let selDest=null,selSpec=null,selTreat=null,selHotel=null;
+
+document.querySelectorAll('.dest-card').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.dest-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');selDest=c.dataset.destination;document.getElementById('next1').disabled=false})});
+document.querySelectorAll('.spec-card').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.spec-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');selSpec=c.dataset.specialty;document.getElementById('next2').disabled=false})});
+
+function loadTreatments(){
+    const g=document.getElementById('treatmentGrid'),list=treatments[selSpec]||treatments['default'];
+    g.innerHTML=list.map(t=>`<div class="treat-card" data-n="${t.n}" data-p="${t.p}" data-u="${t.u}" data-d="${t.d}"><div class="treat-card__icon">${t.i}</div><div><div class="treat-card__name">${t.n}</div><div class="treat-card__price">From $${t.p.toLocaleString()}</div></div></div>`).join('');
+    document.querySelectorAll('.treat-card').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.treat-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');selTreat={n:c.dataset.n,p:+c.dataset.p,u:+c.dataset.u,d:+c.dataset.d};document.getElementById('next3').disabled=false})});
+}
+
+function showTreatmentEstimate(){
+    const d=destinations[selDest],txP=Math.round(selTreat.p*d.mult),pct=Math.round(((selTreat.u-txP)/selTreat.u)*100);
+    const preOp=selTreat.d>0?2:1,postOp=Math.max(3,Math.round(selTreat.d*0.8)),total=preOp+selTreat.d+postOp;
+    window._tc={preOp,postOp,hotelDays:preOp+postOp,totalDays:total,txP};
+    document.getElementById('txBadge').textContent=`${selTreat.n} · ${d.flag} ${d.name}`;
+    animateVal(document.getElementById('txAmount'),0,txP,700);
+    document.getElementById('txUsaPrice').textContent=`$${selTreat.u.toLocaleString()}`;
+    document.getElementById('txPct').textContent=`${pct}% savings`;
+    // 3-card duration display
+    document.getElementById('txDetails').innerHTML=`
+        <div class="tx-detail-card"><span class="tx-detail-card__icon">🔬</span><div class="tx-detail-card__val">${preOp} days</div><div class="tx-detail-card__label">Pre-Op Evaluation</div></div>
+        <div class="tx-detail-card tx-detail-card--highlight"><span class="tx-detail-card__icon">🏥</span><div class="tx-detail-card__val">${selTreat.d} days</div><div class="tx-detail-card__label">Hospitalisation</div></div>
+        <div class="tx-detail-card"><span class="tx-detail-card__icon">🩺</span><div class="tx-detail-card__val">${postOp} days</div><div class="tx-detail-card__label">Recovery & Follow-up</div></div>`;
+    document.getElementById('txTotalStay').innerHTML=`<div class="tx-total-stay__text">Total Stay: <em>~${total} days</em> &nbsp;·&nbsp; Hotel Needed: <em>~${preOp+postOp} nights</em></div><div class="tx-total-stay__sub">Pre-op & recovery outside hospital · Hospitalisation is inside the hospital</div>`;
+    // All destinations
+    let cards='';Object.keys(destinations).forEach(k=>{const dd=destinations[k],pr=Math.round(selTreat.p*dd.mult),sv=Math.round(((selTreat.u-pr)/selTreat.u)*100);cards+=`<div class="all-dest__card${k===selDest?' yours':''}"><span class="all-dest__flag">${dd.flag}</span><div class="all-dest__name">${dd.name}${k===selDest?' ✓':''}</div><div class="all-dest__price">$${pr.toLocaleString()}</div><div class="all-dest__save">Save ${sv}%</div></div>`});
+    document.getElementById('txAllDest').innerHTML=`<div class="all-dest__title">📊 Compare hospital package across destinations:</div><div class="all-dest__grid">${cards}</div>`;
+}
+
+function loadTravelStep(){
+    const d=destinations[selDest],tc=window._tc;
+    document.getElementById('tsbBox').innerHTML=`<div class="tsb__title">📋 ${selTreat.n} in ${d.flag} ${d.name}</div><div class="tsb__grid"><div class="tsb__item"><span class="tsb__icon">🔬</span><div class="tsb__val">${tc.preOp}d</div><div class="tsb__label">Pre-op</div></div><div class="tsb__item tsb__item--hl"><span class="tsb__icon">🏥</span><div class="tsb__val">${selTreat.d}d</div><div class="tsb__label">Hospital</div></div><div class="tsb__item"><span class="tsb__icon">🩺</span><div class="tsb__val">${tc.postOp}d</div><div class="tsb__label">Recovery</div></div></div><div style="text-align:center;margin-top:12px;font-size:1rem;color:var(--navy);font-weight:700">Total: ~${tc.totalDays} days · Hotel: ~${tc.hotelDays} nights</div>`;
+    document.getElementById('tfDestAP').innerHTML=d.airports.map(a=>`<option value="${a.c}">${a.n}</option>`).join('');
+    const now=new Date();now.setDate(now.getDate()+30);document.getElementById('tfDate').value=now.toISOString().slice(0,10);
+    document.getElementById('hotelGrid').innerHTML=`
+        <div class="hotel-card" data-tier="eco"><div class="hotel-card__head"><span class="hotel-card__icon">🏠</span><div class="hotel-card__name">Economy</div><div class="hotel-card__type">Guest house / Budget</div></div><div class="hotel-card__price-box"><div class="hotel-card__price">$${d.hE}/night</div><div class="hotel-card__per">${tc.hotelDays} nights = $${d.hE*tc.hotelDays}</div></div></div>
+        <div class="hotel-card hotel-card--pop" data-tier="mid"><div class="hotel-card__head"><span class="hotel-card__icon">🏨</span><div class="hotel-card__name">Mid-Range</div><div class="hotel-card__type">3-star / Serviced apt</div></div><div class="hotel-card__price-box"><div class="hotel-card__price">$${d.hM}/night</div><div class="hotel-card__per">${tc.hotelDays} nights = $${d.hM*tc.hotelDays}</div></div></div>
+        <div class="hotel-card" data-tier="prem"><div class="hotel-card__head"><span class="hotel-card__icon">🌟</span><div class="hotel-card__name">Premium</div><div class="hotel-card__type">4-5 star</div></div><div class="hotel-card__price-box"><div class="hotel-card__price">$${d.hP}/night</div><div class="hotel-card__per">${tc.hotelDays} nights = $${d.hP*tc.hotelDays}</div></div></div>`;
+    selHotel=null;document.getElementById('next5').disabled=true;
+    document.querySelectorAll('.hotel-card').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.hotel-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');selHotel=c.dataset.tier;chk5()})});
+    chk5();
+}
+function chk5(){document.getElementById('next5').disabled=!(selHotel&&document.getElementById('tfNat').value&&document.getElementById('tfBoard').value.trim())}
+document.getElementById('tfNat').addEventListener('change',chk5);document.getElementById('tfBoard').addEventListener('input',chk5);
+
+function calcFullBudget(){
+    const d=destinations[selDest],tc=window._tc,trav=+document.getElementById('tfTrav').value,nat=document.getElementById('tfNat').value,board=document.getElementById('tfBoard').value,destAP=document.getElementById('tfDestAP').selectedOptions[0].text,cls=document.getElementById('tfClass').value,dt=document.getElementById('tfDate').value;
+    const region=c2r[nat]||'default',txP=tc.txP,usaP=selTreat.u;
+    const hRate=selHotel==='eco'?d.hE:selHotel==='mid'?d.hM:d.hP,hCost=hRate*tc.hotelDays;
+    const fr=fares[region]||fares['default'],range=cls==='business'?fr.b:fr.e,fpp=Math.round((range[0]+range[1])/2),fTotal=fpp*2*trav;
+    const vpp=visaFees[region]||visaFees['default'],vTotal=vpp*trav;
+    const foodC=d.food*tc.hotelDays*trav;
+    const addl=hCost+fTotal+vTotal+foodC,hospTotal=txP+1000,grand=hospTotal+addl,save=usaP-grand,pct=Math.round((save/usaP)*100);
+    const spec=selSpec.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase()),hLabel=selHotel==='eco'?'Economy':selHotel==='mid'?'Mid-Range':'Premium',cLabel=cls==='business'?'Business':'Economy';
+
+    document.getElementById('grandBadge').textContent=`${selTreat.n} · ${d.name} · ${nat}`;
+    animateVal(document.getElementById('grandTotal'),0,grand,800);
+    document.getElementById('grandUsa').textContent=`$${usaP.toLocaleString()}`;
+    animateVal(document.getElementById('savingsAmt'),0,Math.max(0,save),900);
+
+    document.getElementById('summaryBar').innerHTML=`<span class="summary-tag"><span>${d.flag}</span> ${d.name}</span><span class="summary-tag"><span>🏥</span> ${spec}</span><span class="summary-tag"><span>💊</span> ${selTreat.n}</span><span class="summary-tag"><span>🏨</span> ${hLabel}</span><span class="summary-tag"><span>✈️</span> ${cLabel}</span><span class="summary-tag"><span>👥</span> ${trav} traveler${trav>1?'s':''}</span><span class="summary-tag"><span>📅</span> ~${tc.totalDays} days</span>`;
+
+    document.getElementById('hospBody').innerHTML=`<tr><td><span class="ci">🏥</span> <strong>Hospital Package</strong></td><td>Surgeon fees, drugs, consumables, OT, bed rent, in-hospital food<br><span class="note">${selTreat.d}-day hospitalisation</span></td><td><span class="pv pv--teal">$${txP.toLocaleString()}</span></td></tr><tr><td><span class="ci">🔬</span> Pre-Admission Investigations</td><td>Blood work, imaging, cardiac evaluation & diagnostics<br><span class="note">Done before hospital admission</span></td><td><span class="pv">$1,000</span></td></tr><tr class="row-sub"><td><strong>Hospital Total</strong></td><td></td><td><span class="pv pv--teal">$${(txP+1000).toLocaleString()}</span></td></tr>`;
+
+    document.getElementById('addlBody').innerHTML=`
+        <tr><td><span class="ci">🏨</span> Hotel / Accommodation</td><td>${hLabel} · ${tc.hotelDays} nights × $${hRate}/night<br><span class="note">Pre-op (${tc.preOp}d) + Recovery (${tc.postOp}d)</span></td><td><span class="pv">$${hCost.toLocaleString()}</span></td></tr>
+        <tr><td><span class="ci">✈️</span> Flights</td><td>${cLabel} class · ${board} → ${destAP}<br><span class="note">Return tickets × ${trav} persons · ~$${fpp}/person one-way${dt?' · '+dt:''}</span></td><td><span class="pv">$${fTotal.toLocaleString()}</span></td></tr>
+        <tr><td><span class="ci">🛂</span> Visa</td><td>Medical Visa × ${trav} persons<br><span class="note">${nat} nationals · ~$${vpp}/person · Ref: indianvisaonline.gov.in</span></td><td><span class="pv">$${vTotal.toLocaleString()}</span></td></tr>
+        <tr><td><span class="ci">🍽️</span> Food & Local Travel</td><td>Outside hospital · ${tc.hotelDays} days × $${d.food}/day × ${trav} persons</td><td><span class="pv">$${foodC.toLocaleString()}</span></td></tr>
+        <tr class="row-sub"><td><strong>Additional Expenses Subtotal</strong></td><td></td><td><span class="pv">$${addl.toLocaleString()}</span></td></tr>`;
+
+    document.getElementById('grandBody').innerHTML=`
+        <tr class="row-total"><td><strong>🏥 Hospital Total</strong></td><td><span style="font-size:.78rem;opacity:.6">Package + Pre-admission</span></td><td><span class="pv">$${hospTotal.toLocaleString()}</span></td></tr>
+        <tr class="row-total"><td><strong>🧳 Additional Expenses</strong></td><td></td><td><span class="pv">$${addl.toLocaleString()}</span></td></tr>
+        <tr class="row-total" style="border-top:2px solid rgba(255,255,255,.2)"><td style="font-size:1.1rem"><strong>GRAND TOTAL</strong></td><td></td><td><span class="pv" style="font-size:1.4rem">$${grand.toLocaleString()}</span></td></tr>`;
+}
+
+function animateVal(el,s,e,dur){const r=e-s,t0=performance.now();(function f(now){const p=Math.min((now-t0)/dur,1);el.textContent='$'+Math.round(s+r*(1-Math.pow(1-p,3))).toLocaleString();if(p<1)requestAnimationFrame(f)})(t0)}
+
+function goTo(step){
+    document.querySelectorAll('.form-section').forEach(s=>s.classList.remove('active'));
+    document.getElementById(`section${step}`).classList.add('active');
+    for(let i=1;i<=6;i++){const dot=document.getElementById(`step${i}`),line=document.getElementById(`line${i}`);dot.classList.remove('active','completed');if(line)line.classList.remove('completed');if(i<step){dot.classList.add('completed');if(line)line.classList.add('completed')}else if(i===step)dot.classList.add('active')}
+    document.querySelector('.calc-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+document.getElementById('next1').addEventListener('click',()=>goTo(2));
+document.getElementById('back2').addEventListener('click',()=>goTo(1));
+document.getElementById('next2').addEventListener('click',()=>{loadTreatments();goTo(3)});
+document.getElementById('back3').addEventListener('click',()=>goTo(2));
+document.getElementById('next3').addEventListener('click',()=>{showTreatmentEstimate();goTo(4)});
+document.getElementById('back4').addEventListener('click',()=>goTo(3));
+document.getElementById('btnExpandTrip').addEventListener('click',()=>{loadTravelStep();goTo(5)});
+document.getElementById('back5').addEventListener('click',()=>goTo(4));
+document.getElementById('next5').addEventListener('click',()=>{calcFullBudget();goTo(6)});
+document.getElementById('back6').addEventListener('click',()=>{
+    selDest=selSpec=selTreat=selHotel=null;
+    document.querySelectorAll('.dest-card,.spec-card,.treat-card,.hotel-card').forEach(c=>c.classList.

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Hospitals Delhi — Specialties, Doctors, Costs & Reviews | Ginger Healthcare</title>
+    <meta name="description" content="Apollo Hospitals Delhi — JCI & NABH accredited, 710 beds, 200+ specialists. Cardiac surgery, oncology, transplants, orthopedics. Get free quote & end-to-end support.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--teal-light:#14B8B3;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-sm:0 1px 2px rgba(11,37,69,.05);--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.10);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.78rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar a:hover{color:var(--ginger-light)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.9rem;font-weight:500;color:var(--gray-600);transition:color .2s;position:relative}.nav__link:hover{color:var(--navy)}.nav__link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--ginger);transition:width .3s}.nav__link:hover::after{width:100%}.nav__link--active{color:var(--ginger)}.nav__link--active::after{width:100%}
+        .nav__cta{display:flex;align-items:center;gap:12px}.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:.88rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--outline{background:transparent;color:var(--navy);border:1.5px solid var(--gray-300)}.btn--outline:hover{border-color:var(--navy);background:var(--gray-50)}.btn--white{background:#fff;color:var(--navy);box-shadow:var(--shadow-md)}.btn--white:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}.btn--large{padding:14px 32px;font-size:.95rem;border-radius:var(--radius-md)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .breadcrumb{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:14px 0}.breadcrumb__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--gray-400)}.breadcrumb a{color:var(--gray-500)}.breadcrumb a:hover{color:var(--ginger)}.breadcrumb__current{color:var(--navy);font-weight:500}
+
+        .country-hero{position:relative;overflow:hidden;min-height:480px;display:flex;align-items:center}
+        .country-hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#FF9933 0%,#FFFFFF 35%,#138808 65%,#000080 100%)}
+        .country-hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,37,69,.88),rgba(11,37,69,.75));z-index:1}
+        .country-hero__inner{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;width:100%}
+        .country-hero__content{animation:fadeInUp .6s ease-out}
+        .country-hero__flag-row{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+        .country-hero__flag{font-size:3rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+        .country-hero__badge{padding:5px 14px;border-radius:50px;font-size:.75rem;font-weight:600;background:rgba(242,101,34,.2);color:var(--ginger-light)}
+        .country-hero h1{font-family:var(--font-display);font-size:2.8rem;font-weight:600;color:#fff;line-height:1.15;margin-bottom:14px}
+        .country-hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .country-hero__desc{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:28px;max-width:560px}
+        .country-hero__actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+        .country-hero__stats{display:flex;gap:32px;flex-wrap:wrap}
+        .hero-stat__val{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#fff}
+        .hero-stat__label{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:2px}
+        .hero-sidebar{animation:fadeInUp .6s .15s ease-out both}
+        .hero-sidebar__card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:28px;backdrop-filter:blur(8px)}
+        .hero-sidebar__title{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:16px}
+        .hero-sidebar__hospitals{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+        .hero-hosp{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);transition:all .2s}
+        .hero-hosp:hover{background:rgba(255,255,255,.1);border-color:var(--ginger)}
+        .hero-hosp__icon{width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+        .hero-hosp__name{font-weight:600;font-size:.85rem;color:#fff}
+        .hero-hosp__loc{font-size:.72rem;color:rgba(255,255,255,.4)}
+        .hero-sidebar__accred{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+        .accred-badge{padding:5px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:50px;font-size:.72rem;color:rgba(255,255,255,.55);font-weight:500}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+        .container{max-width:1280px;margin:0 auto;padding:0 24px}section{padding:80px 0}
+        .section__label{font-size:.75rem;font-weight:700;color:var(--ginger);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+        .section__title{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:16px}
+        .section__desc{font-size:1rem;color:var(--gray-500);max-width:600px;line-height:1.7}
+        .section__header{margin-bottom:48px}.section__header--center{text-align:center}.section__header--center .section__desc{margin:0 auto}
+        .section__header--row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+        .why-country{background:var(--white)}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .why-card{padding:28px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);transition:all .3s}
+        .why-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .why-card__icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+        .why-card:nth-child(6n+1) .why-card__icon{background:#FFF1F2}.why-card:nth-child(6n+2) .why-card__icon{background:#EFF6FF}.why-card:nth-child(6n+3) .why-card__icon{background:#F0FDF4}
+        .why-card:nth-child(6n+4) .why-card__icon{background:#FFF7ED}.why-card:nth-child(6n+5) .why-card__icon{background:#FAF5FF}.why-card:nth-child(6n) .why-card__icon{background:#F0FDFA}
+        .why-card__title{font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:8px}
+        .why-card__desc{font-size:.84rem;color:var(--gray-500);line-height:1.65}
+
+        .hospitals-section{background:var(--gray-50)}.hospital-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .hosp-card{background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s}
+        .hosp-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .hosp-card__visual{height:180px;position:relative;overflow:hidden}
+        .hosp-card__img{position:absolute;inset:0;transition:transform .5s}
+        .hosp-card:hover .hosp-card__img{transform:scale(1.08)}
+        .hosp-card:nth-child(1) .hosp-card__img{background:linear-gradient(135deg,#7f1d1d 0%,#dc2626 40%,#f87171 100%)}
+        .hosp-card:nth-child(2) .hosp-card__img{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 40%,#60a5fa 100%)}
+        .hosp-card:nth-child(3) .hosp-card__img{background:linear-gradient(135deg,#14532d 0%,#16a34a 40%,#4ade80 100%)}
+        .hosp-card:nth-child(4) .hosp-card__img{background:linear-gradient(135deg,#4a1d96 0%,#7c3aed 40%,#c084fc 100%)}
+        .hosp-card:nth-child(5) .hosp-card__img{background:linear-gradient(135deg,#78350f 0%,#d97706 40%,#fbbf24 100%)}
+        .hosp-card:nth-child(6) .hosp-card__img{background:linear-gradient(135deg,#134e4a 0%,#0d9488 40%,#5eead4 100%)}
+        .hosp-card__img::before{content:'';position:absolute;bottom:0;left:0;right:0;height:70%;background:linear-gradient(to top,rgba(0,0,0,.18),transparent)}
+        .hosp-card__img::after{content:'🏥';position:absolute;top:16px;right:16px;font-size:2.2rem;opacity:.25;filter:grayscale(1) brightness(3)}
+        .hosp-card__gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,37,69,.85) 0%,rgba(11,37,69,.3) 50%,rgba(11,37,69,.05) 100%);z-index:1}
+        .hosp-card__visual-content{position:relative;z-index:2;padding:20px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+        .hosp-card__name{font-family:var(--font-display);font-size:1.1rem;font-weight:600}
+        .hosp-card__city{font-size:.78rem;color:rgba(255,255,255,.6)}
+        .hosp-card__badges{display:flex;gap:6px;margin-top:8px}
+        .hosp-card__badge{padding:3px 10px;background:rgba(255,255,255,.15);border-radius:50px;font-size:.68rem;font-weight:600}
+        .hosp-card__body{padding:20px}
+        .hosp-card__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+        .hosp-card__stat{text-align:center;padding:8px;background:var(--gray-50);border-radius:6px}
+        .hosp-card__stat-val{font-weight:700;font-size:.9rem;color:var(--navy)}
+        .hosp-card__stat-label{font-size:.65rem;color:var(--gray-400)}
+        .hosp-card__specialties{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px}
+        .hosp-card__spec{padding:3px 10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:50px;font-size:.72rem;color:var(--gray-500)}
+        .hosp-card:hover .hosp-card__spec{background:#FFF7ED;border-color:#FFE4CC;color:var(--ginger-dark)}
+        .hosp-card__link{font-size:.85rem;font-weight:600;color:var(--ginger);display:flex;align-items:center;gap:4px}
+
+        .cost-section{background:var(--white)}.cost-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+        .cost-table thead th{background:var(--navy);color:#fff;padding:14px 18px;font-size:.82rem;font-weight:600;text-align:left}
+        .cost-table td{padding:13px 18px;font-size:.88rem;border-bottom:1px solid var(--gray-100)}.cost-table tr:last-child td{border-bottom:none}.cost-table tbody tr:hover{background:var(--cream)}
+        .cost-hl{color:var(--teal);font-weight:600}.cost-savings{display:inline-block;background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600}
+
+        .spec-section{background:var(--gray-50)}.spec-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+        .spec-mini{display:flex;align-items:center;gap:12px;padding:16px;background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);transition:all .25s}
+        .spec-mini:hover{border-color:var(--ginger);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+        .spec-mini__icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--gray-50);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+        .spec-mini:hover .spec-mini__icon{background:#FFF7ED}
+        .spec-mini__name{font-weight:600;font-size:.84rem;color:var(--navy)}.spec-mini__count{font-size:.72rem;color:var(--gray-400)}
+
+        .travel-section{background:var(--white)}.travel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .travel-card{padding:24px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-align:center;transition:all .25s}
+        .travel-card:hover{border-color:var(--ginger);transform:translateY(-3px)}
+        .travel-card__icon{font-size:2rem;margin-bottom:12px}.travel-card__title{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
+        .travel-card__desc{font-size:.82rem;color:var(--gray-500);line-height:1.6}
+
+        .testimonials-section{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+        .testimonials-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 100%,rgba(242,101,34,.1) 0%,transparent 50%)}
+        .testimonials-section .container{position:relative;z-index:1}.testimonials-section .section__label{color:var(--ginger-light)}.testimonials-section .section__title{color:#fff}
+        .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .test-card{padding:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-lg);transition:all .3s}
+        .test-card:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
+        .test-card__stars{color:#FFC107;font-size:.85rem;margin-bottom:12px;letter-spacing:2px}
+        .test-card__text{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px;font-style:italic}
+        .test-card__author{display:flex;align-items:center;gap:12px}
+        .test-card__avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--ginger-light)}
+        .test-card__name{font-weight:600;font-size:.85rem}.test-card__meta{font-size:.72rem;color:rgba(255,255,255,.4)}
+
+        .faq-section{background:var(--gray-50)}.faq-list{display:flex;flex-direction:column;gap:8px;max-width:820px;margin:0 auto}
+        .faq-item{border:1.5px solid var(--gray-200);border-radius:var(--radius-md);overflow:hidden;background:#fff;transition:border-color .2s}
+        .faq-item:hover{border-color:var(--gray-300)}.faq-item.active{border-color:var(--ginger)}
+        .faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--navy);transition:background .2s}
+        .faq-q:hover{background:var(--gray-50)}.faq-q svg{width:18px;height:18px;color:var(--gray-400);transition:transform .3s;flex-shrink:0}
+        .faq-item.active .faq-q svg{transform:rotate(180deg);color:var(--ginger)}
+        .faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+        .faq-item.active .faq-a{max-height:500px;padding:0 20px 20px}.faq-a p{font-size:.88rem;line-height:1.7;color:var(--gray-600)}
+
+        .other-dest{background:var(--white)}.other-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .other-card{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:all .3s}
+        .other-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .other-card__flag{font-size:2.4rem;margin-bottom:10px}.other-card__name{font-weight:600;font-size:1rem;color:var(--navy);margin-bottom:4px}
+        .other-card__meta{font-size:.78rem;color:var(--gray-400);margin-bottom:14px}
+        .other-card__link{font-size:.82rem;font-weight:600;color:var(--ginger);display:inline-flex;align-items:center;gap:4px}.other-card:hover .other-card__link{gap:8px}
+
+        .cta-section{background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));padding:64px 0;text-align:center;color:#fff;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,.1) 0%,transparent 50%)}
+        .cta-section .container{position:relative;z-index:1}.cta-section h2{font-family:var(--font-display);font-size:2.2rem;font-weight:600;margin-bottom:12px}
+        .cta-section p{font-size:1.05rem;opacity:.85;max-width:540px;margin:0 auto 28px}.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        footer{background:var(--navy);color:rgba(255,255,255,.7);padding:64px 0 0}
+        .footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+        .footer__brand .logo{margin-bottom:16px}.footer__brand .logo__text span:first-child{color:#fff}.footer__brand .logo__text span:last-child{color:var(--ginger-light)}
+        .footer__desc{font-size:.85rem;line-height:1.7;margin-bottom:20px;color:rgba(255,255,255,.5)}
+        .footer__social{display:flex;gap:12px}.footer__social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:background .2s}.footer__social a:hover{background:var(--ginger)}
+        .footer__col h4{color:#fff;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+        .footer__col a{display:block;font-size:.85rem;padding:5px 0;color:rgba(255,255,255,.5);transition:color .2s}.footer__col a:hover{color:var(--ginger-light)}
+        .footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer__bottom p,.footer__bottom a{font-size:.78rem;color:rgba(255,255,255,.35)}.footer__legal{display:flex;gap:24px}
+
+        @media(max-width:1024px){.country-hero__inner{grid-template-columns:1fr;gap:32px}.hero-sidebar{display:none}.hospital-grid{grid-template-columns:repeat(2,1fr)}.spec-mini-grid{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.travel-grid{grid-template-columns:repeat(2,1fr)}.test-grid{grid-template-columns:repeat(2,1fr)}.other-grid{grid-template-columns:repeat(2,1fr)}.footer__grid{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:768px){.topbar{display:none}.nav__links{display:none}.hamburger{display:flex}.country-hero{min-height:auto;padding:48px 0}.country-hero h1{font-size:2rem}.country-hero__stats{gap:20px}.hospital-grid{grid-template-columns:1fr}.spec-mini-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.travel-grid{grid-template-columns:1fr 1fr}.test-grid{grid-template-columns:1fr}.other-grid{grid-template-columns:1fr 1fr}.cost-table{display:block;overflow-x:auto}.footer__grid{grid-template-columns:1fr 1fr}.footer__bottom{flex-direction:column;text-align:center}}
+        @media(max-width:480px){.spec-mini-grid{grid-template-columns:1fr}.travel-grid{grid-template-columns:1fr}.other-grid{grid-template-columns:1fr}}
+    
+        /* HOSPITAL PAGE STYLES */
+        .hosp-hero{position:relative;overflow:hidden;min-height:420px;display:flex;align-items:center}
+        .hosp-hero__bg{position:absolute;inset:0}
+        .hosp-hero__slider{position:absolute;inset:0;z-index:0}
+        .hosp-hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center}
+        .hosp-hero__slide.active{opacity:1}
+        .hosp-hero__slide:nth-child(1){background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 40%,#60a5fa 100%)}
+        .hosp-hero__slide:nth-child(2){background:linear-gradient(135deg,#0f4c75 0%,#3282b8 40%,#bbe1fa 100%)}
+        .hosp-hero__slide:nth-child(3){background:linear-gradient(135deg,#1b262c 0%,#0f4c75 40%,#3282b8 100%)}
+        .hosp-hero__slide-label{position:absolute;bottom:16px;left:16px;padding:5px 14px;background:rgba(0,0,0,.45);border-radius:50px;font-size:.7rem;color:rgba(255,255,255,.7);backdrop-filter:blur(4px);z-index:1}
+        .hosp-hero__dots{position:absolute;bottom:16px;right:24px;display:flex;gap:8px;z-index:3}
+        .hosp-hero__dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none}
+        .hosp-hero__dot.active{background:var(--ginger);transform:scale(1.2)}
+        .hosp-hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,37,69,.88),rgba(11,37,69,.72));z-index:1}
+        /* Specialty-tab doctors */
+        .spec-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+        .spec-tab{padding:9px 20px;border:1.5px solid var(--gray-200);border-radius:50px;font-size:.82rem;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all .2s;background:var(--white)}
+        .spec-tab:hover{border-color:var(--ginger);color:var(--ginger)}
+        .spec-tab.active{background:var(--ginger);color:#fff;border-color:var(--ginger)}
+        .doc-group{display:none}.doc-group.active{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+        .spec-link-row{margin-top:10px;padding-top:16px;border-top:1px solid var(--gray-200);display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--gray-500)}
+        .spec-link-row a{color:var(--ginger);font-weight:600}
+        .hosp-hero__inner{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:center}
+        .hosp-hero__content{animation:fadeInUp .6s ease-out}
+        .hosp-hero__top{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+        .hosp-hero__badge{padding:5px 14px;border-radius:50px;font-size:.72rem;font-weight:600}
+        .hosp-hero__badge--jci{background:rgba(14,165,160,.2);color:var(--teal-light)}
+        .hosp-hero__badge--nabh{background:rgba(96,165,250,.15);color:#93bbfd}
+        .hosp-hero__badge--iso{background:rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
+        .hosp-hero h1{font-family:var(--font-display);font-size:2.6rem;font-weight:600;color:#fff;line-height:1.15;margin-bottom:6px}
+        .hosp-hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hosp-hero__sub{font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:24px}
+        .hosp-hero__sub span{color:rgba(255,255,255,.75);font-weight:500}
+        .hosp-hero__stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:28px}
+        .hstat{text-align:center;padding:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-md)}
+        .hstat__val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff}
+        .hstat__label{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:2px}
+        .hosp-hero__actions{display:flex;gap:12px;flex-wrap:wrap}
+        .hosp-hero__sidebar{animation:fadeInUp .6s .15s ease-out both}
+        .quote-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:28px;backdrop-filter:blur(8px)}
+        .quote-card__title{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:6px}
+        .quote-card__desc{font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:20px;line-height:1.6}
+        .quote-card__field{margin-bottom:12px}
+        .quote-card__field label{display:block;font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:4px;font-weight:500}
+        .quote-card__field input,.quote-card__field select,.quote-card__field textarea{width:100%;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);color:#fff;font-size:.85rem;font-family:var(--font-body);outline:none;transition:border-color .2s}
+        .quote-card__field input:focus,.quote-card__field select:focus,.quote-card__field textarea:focus{border-color:var(--ginger)}
+        .quote-card__field input::placeholder,.quote-card__field textarea::placeholder{color:rgba(255,255,255,.25)}
+        .quote-card__field select option{background:var(--navy);color:#fff}
+        .quote-card__btn{width:100%;padding:12px;background:var(--ginger);color:#fff;border:none;border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s;margin-top:4px}
+        .quote-card__btn:hover{background:var(--ginger-dark)}
+        .about-section{background:var(--white)}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+        .about-text{font-size:.92rem;color:var(--gray-600);line-height:1.75}
+        .about-text p+p{margin-top:16px}
+        .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .about-hl{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--gray-50);border-radius:var(--radius-md);border:1px solid var(--gray-200)}
+        .about-hl__icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+        .about-hl__title{font-weight:600;font-size:.85rem;color:var(--navy)}
+        .about-hl__desc{font-size:.78rem;color:var(--gray-500);margin-top:2px;line-height:1.5}
+        .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+        .spec-card{padding:20px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-align:center;transition:all .25s}
+        .spec-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+        .spec-card__icon{font-size:1.6rem;margin-bottom:10px}
+        .spec-card__name{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:4px}
+        .spec-card__count{font-size:.72rem;color:var(--gray-400)}
+        .spec-card__link{font-size:.75rem;color:var(--ginger);font-weight:600;margin-top:8px;display:inline-flex;align-items:center;gap:4px}
+        .doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+        .doc-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;transition:all .25s;text-align:center}
+        .doc-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+        .doc-card__avatar{width:100%;height:160px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gray-300);position:relative;overflow:hidden}
+        .doc-card:nth-child(4n+1) .doc-card__avatar{background:linear-gradient(135deg,#EFF6FF,#DBEAFE)}
+        .doc-card:nth-child(4n+2) .doc-card__avatar{background:linear-gradient(135deg,#F0FDF4,#DCFCE7)}
+        .doc-card:nth-child(4n+3) .doc-card__avatar{background:linear-gradient(135deg,#FFF7ED,#FFEDD5)}
+        .doc-card:nth-child(4n) .doc-card__avatar{background:linear-gradient(135deg,#FAF5FF,#F3E8FF)}
+        .doc-card__body{padding:18px}
+        .doc-card__name{font-weight:600;font-size:.9rem;color:var(--navy)}
+        .doc-card__spec{font-size:.78rem;color:var(--ginger);font-weight:500;margin-top:2px}
+        .doc-card__exp{font-size:.72rem;color:var(--gray-400);margin-top:4px}
+        .doc-card__link{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:600;color:var(--ginger);padding:5px 14px;border:1.5px solid var(--ginger);border-radius:50px;transition:all .2s}
+        .doc-card:hover .doc-card__link{background:var(--ginger);color:#fff}
+        .facilities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+        .fac-card{padding:20px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);text-align:center;transition:all .25s}
+        .fac-card:hover{border-color:var(--ginger);transform:translateY(-2px)}
+        .fac-card__icon{font-size:1.5rem;margin-bottom:8px}
+        .fac-card__title{font-weight:600;font-size:.85rem;color:var(--navy)}
+        .fac-card__desc{font-size:.75rem;color:var(--gray-500);margin-top:4px;line-height:1.5}
+        .accred-grid{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+        .accred-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 32px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);min-width:150px;transition:all .25s}
+        .accred-item:hover{border-color:var(--ginger);transform:translateY(-2px)}
+        .accred-item__icon{font-size:2.2rem}
+        .accred-item__name{font-weight:700;font-size:.9rem;color:var(--navy)}
+        .accred-item__desc{font-size:.72rem;color:var(--gray-400);text-align:center}
+        .intl-section{background:var(--white)}
+        .intl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+        .intl-card{padding:24px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);transition:all .25s}
+        .intl-card:hover{border-color:var(--ginger);transform:translateY(-2px)}
+        .intl-card__icon{font-size:1.5rem;margin-bottom:10px}
+        .intl-card__title{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
+        .intl-card__desc{font-size:.82rem;color:var(--gray-500);line-height:1.6}
+        @media(max-width:1024px){.hosp-hero__inner{grid-template-columns:1fr}.hosp-hero__sidebar{display:none}.about-grid{grid-template-columns:1fr}.doc-grid{grid-template-columns:repeat(2,1fr)}.doc-group.active{grid-template-columns:repeat(2,1fr)}.spec-grid{grid-template-columns:repeat(3,1fr)}.intl-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.hosp-hero{min-height:auto;padding:48px 0}.hosp-hero h1{font-size:2rem}.hosp-hero__stats{grid-template-columns:repeat(3,1fr)}.doc-grid{grid-template-columns:repeat(2,1fr)}.doc-group.active{grid-template-columns:repeat(2,1fr)}.spec-grid{grid-template-columns:repeat(2,1fr)}.facilities-grid{grid-template-columns:repeat(2,1fr)}.intl-grid{grid-template-columns:1fr}}
+        @media(max-width:480px){.hosp-hero__stats{grid-template-columns:repeat(2,1fr)}.doc-grid{grid-template-columns:1fr}.doc-group.active{grid-template-columns:1fr}.spec-grid{grid-template-columns:1fr}.facilities-grid{grid-template-columns:1fr}}
+
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#94fdfaf2fbd4f3fdfaf3f1e6bafcf1f5f8e0fcf7f5e6f1">✉ <span class="__cf_email__" data-cfemail="9af3f4fcf5dafdf3f4fdffe8b4f2fffbf6eef2f9fbe8ff">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 <a href="#" style="color:rgba(255,255,255,.85)">English</a></div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link nav__link--active">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a><a href="/testimonials/" class="nav__link">Reviews</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+    <div class="breadcrumb"><div class="breadcrumb__inner"><a href="/">Home</a> <span>›</span> <a href="/destinations/">Destinations</a> <span>›</span> <a href="/destinations/india/">India</a> <span>›</span> <a href="/destinations/india/hospitals/">Hospitals</a> <span>›</span> <span class="breadcrumb__current">Apollo Hospitals Delhi</span></div></div>
+
+    <!-- HERO -->
+    <section class="hosp-hero">
+        <div class="hosp-hero__slider" id="heroSlider">
+            <div class="hosp-hero__slide active" style="background-image:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1400&q=80');background-size:cover;background-position:center"><span class="hosp-hero__slide-label">📷 Hospital Exterior</span></div>
+            <div class="hosp-hero__slide" style="background-image:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400&q=80');background-size:cover;background-position:center"><span class="hosp-hero__slide-label">📷 Reception & Lobby</span></div>
+            <div class="hosp-hero__slide" style="background-image:url('https://images.unsplash.com/photo-1551190822-a9ce113ac100?w=1400&q=80');background-size:cover;background-position:center"><span class="hosp-hero__slide-label">📷 Operation Theatre</span></div>
+        </div>
+        <div class="hosp-hero__overlay"></div>
+        <div class="hosp-hero__dots" id="heroDots">
+            <button class="hosp-hero__dot active" onclick="goSlide(0)"></button>
+            <button class="hosp-hero__dot" onclick="goSlide(1)"></button>
+            <button class="hosp-hero__dot" onclick="goSlide(2)"></button>
+        </div>
+        <div class="hosp-hero__inner">
+            <div class="hosp-hero__content">
+                <div class="hosp-hero__top">
+                    <span class="hosp-hero__badge hosp-hero__badge--jci">✓ JCI Accredited</span>
+                    <span class="hosp-hero__badge hosp-hero__badge--nabh">✓ NABH</span>
+                    <span class="hosp-hero__badge hosp-hero__badge--iso">✓ ISO 9001</span>
+                </div>
+                <h1><em>Apollo Hospitals</em>, Delhi</h1>
+                <p class="hosp-hero__sub">📍 <span>Sarita Vihar, New Delhi, India</span> &nbsp;·&nbsp; Established <span>1983</span> &nbsp;·&nbsp; Part of <span>Apollo Hospitals Group</span></p>
+                <div class="hosp-hero__stats">
+                    <div class="hstat"><div class="hstat__val">710</div><div class="hstat__label">Beds</div></div>
+                    <div class="hstat"><div class="hstat__val">200+</div><div class="hstat__label">Specialists</div></div>
+                    <div class="hstat"><div class="hstat__val">52</div><div class="hstat__label">Specialties</div></div>
+                    <div class="hstat"><div class="hstat__val">40+</div><div class="hstat__label">Years</div></div>
+                    <div class="hstat"><div class="hstat__val">120+</div><div class="hstat__label">Countries Served</div></div>
+                </div>
+                <div class="hosp-hero__actions">
+                    <a href="/get-quote/?hospital=apollo-delhi" class="btn btn--primary btn--large">Get Free Quote →</a>
+                    <a href="#doctors" class="btn btn--large" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.15)">View Doctors ↓</a>
+                </div>
+            </div>
+            <div class="hosp-hero__sidebar">
+                <div class="quote-card">
+                    <div class="quote-card__title">📩 Get a Free Quote</div>
+                    <p class="quote-card__desc">Share your condition and get a treatment plan with cost estimate from Apollo Delhi within 24 hours.</p>
+                    <div class="quote-card__field"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+                    <div class="quote-card__field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+                    <div class="quote-card__field"><label>Specialty Needed</label><select><option>Select Specialty</option><option>Cardiac Surgery</option><option>Oncology</option><option>Orthopedics</option><option>Neurosurgery</option><option>Transplant</option><option>Other</option></select></div>
+                    <div class="quote-card__field"><label>Brief Description</label><textarea rows="3" placeholder="Describe your condition..."></textarea></div>
+                    <button class="quote-card__btn">Submit — Get Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section"><div class="container">
+        <div class="section__header"><div class="section__label">About the Hospital</div><h2 class="section__title">Indraprastha Apollo Hospital, New Delhi</h2></div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Indraprastha Apollo Hospital, New Delhi, is the flagship hospital of the Apollo Hospitals Group — India's foremost integrated healthcare provider. Established in 1983, it was the first hospital in India to be accredited by the Joint Commission International (JCI) and has been consistently re-accredited for over two decades.</p>
+                <p>Located in Sarita Vihar, South Delhi, the 710-bed multi-specialty tertiary care hospital is one of the most sought-after destinations for international patients. It treats patients from over 120 countries and has a dedicated International Patient Services division with multilingual coordinators, visa assistance, and concierge services.</p>
+                <p>Apollo Delhi is especially renowned for its cardiac sciences programme (performing 6,000+ cardiac procedures annually), advanced oncology centre (with robotic surgery, CyberKnife, and immunotherapy), liver and kidney transplant programmes, and comprehensive orthopaedic and neurosurgery departments.</p>
+            </div>
+            <div class="about-highlights">
+                <div class="about-hl"><div class="about-hl__icon">🏆</div><div><div class="about-hl__title">India's First JCI Hospital</div><div class="about-hl__desc">Accredited since 2005. Consistently re-accredited across 6 cycles.</div></div></div>
+                <div class="about-hl"><div class="about-hl__icon">❤️</div><div><div class="about-hl__title">6,000+ Cardiac Procedures/Year</div><div class="about-hl__desc">One of Asia's highest-volume cardiac surgery centres.</div></div></div>
+                <div class="about-hl"><div class="about-hl__icon">🤖</div><div><div class="about-hl__title">Da Vinci Robotic Surgery</div><div class="about-hl__desc">Advanced robotic surgery for urology, gynecology, and oncology.</div></div></div>
+                <div class="about-hl"><div class="about-hl__icon">🌍</div><div><div class="about-hl__title">120+ Countries Served</div><div class="about-hl__desc">Dedicated international patient department with multilingual team.</div></div></div>
+                <div class="about-hl"><div class="about-hl__icon">🧬</div><div><div class="about-hl__title">Proton & CyberKnife</div><div class="about-hl__desc">Advanced cancer treatment including precision radiation therapy.</div></div></div>
+                <div class="about-hl"><div class="about-hl__icon">🫁</div><div><div class="about-hl__title">1,000+ Transplants</div><div class="about-hl__desc">Liver, kidney, heart, lung, and bone marrow transplant programmes.</div></div></div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- SPECIALTIES & DOCTORS — Tabbed by Specialty -->
+    <section style="background:var(--gray-50)" id="doctors"><div class="container">
+        <div class="section__header"><div class="section__label">Specialties & Doctors</div><h2 class="section__title">Doctors by Specialty at Apollo Delhi</h2><p class="section__desc">Select a specialty to see our top doctors in that department.</p></div>
+
+        <div class="spec-tabs">
+            <span class="spec-tab active" onclick="showSpecDocs(this,'all')">All Doctors</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'cardiac')">❤️ Cardiac Surgery</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'oncology')">🎗️ Oncology</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'ortho')">🦴 Orthopedics</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'neuro')">🧠 Neurosurgery</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'transplant')">🩸 Transplants & BMT</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'gastro')">🫁 Gastro & HPB</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'fertility')">👶 Fertility & IVF</span>
+            <span class="spec-tab" onclick="showSpecDocs(this,'bariatric')">⚖️ Bariatric Surgery</span>
+        </div>
+
+        <!-- All Doctors -->
+        <div class="doc-group active" data-spec="all">
+            <a href="/destinations/india/doctors/dr-rajesh-sharma/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Rajesh Sharma</div><div class="doc-card__spec">Cardiac Surgery (CTVS)</div><div class="doc-card__exp">25+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-vinod-raina/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Vinod Raina</div><div class="doc-card__spec">Medical Oncology</div><div class="doc-card__exp">35+ years · Chairman Oncology</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-ips-oberoi/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. I.P.S. Oberoi</div><div class="doc-card__spec">Orthopedics & Joint Replacement</div><div class="doc-card__exp">28+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-anupam-sibal/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Anupam Sibal</div><div class="doc-card__spec">Paediatric Gastro & Hepatology</div><div class="doc-card__exp">30+ years · Group Medical Director</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-s-hukku/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. S. Hukku</div><div class="doc-card__spec">Radiation Oncology</div><div class="doc-card__exp">30+ years · HOD Radiation Oncology</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-arun-prasad/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Arun Prasad</div><div class="doc-card__spec">Bariatric & Metabolic Surgery</div><div class="doc-card__exp">25+ years · Chief Surgeon</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-neeraj-goel/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Neeraj Goel</div><div class="doc-card__spec">Liver Transplant Surgery</div><div class="doc-card__exp">20+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-rk-sharma/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. R.K. Sharma</div><div class="doc-card__spec">Neurosurgery</div><div class="doc-card__exp">22+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+        </div>
+
+        <!-- Cardiac Surgery Doctors -->
+        <div class="doc-group" data-spec="cardiac">
+            <a href="/destinations/india/doctors/dr-rajesh-sharma/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Rajesh Sharma</div><div class="doc-card__spec">Cardiac Surgery (CTVS)</div><div class="doc-card__exp">25+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-mukesh-goel/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Mukesh Goel</div><div class="doc-card__spec">Cardiac Surgery (CTVS)</div><div class="doc-card__exp">20+ years · Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All cardiac treatments: <a href="/destinations/india/cardiac-surgery/">View 15+ procedures →</a></div>
+        </div>
+
+        <!-- Oncology Doctors -->
+        <div class="doc-group" data-spec="oncology">
+            <a href="/destinations/india/doctors/dr-vinod-raina/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Vinod Raina</div><div class="doc-card__spec">Medical Oncology</div><div class="doc-card__exp">35+ years · Chairman Oncology</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-s-hukku/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. S. Hukku</div><div class="doc-card__spec">Radiation Oncology</div><div class="doc-card__exp">30+ years · HOD Radiation Oncology</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-harit-chaturvedi/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Harit Chaturvedi</div><div class="doc-card__spec">Surgical Oncology</div><div class="doc-card__exp">28+ years · Director</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All oncology treatments: <a href="/destinations/india/medical-oncology/">View 20+ procedures →</a></div>
+        </div>
+
+        <!-- Orthopedics Doctors -->
+        <div class="doc-group" data-spec="ortho">
+            <a href="/destinations/india/doctors/dr-ips-oberoi/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. I.P.S. Oberoi</div><div class="doc-card__spec">Orthopedics & Joint Replacement</div><div class="doc-card__exp">28+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-raju-vaishya/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Raju Vaishya</div><div class="doc-card__spec">Orthopedics & Arthroscopy</div><div class="doc-card__exp">25+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All ortho treatments: <a href="/destinations/india/orthopedics/">View 18+ procedures →</a></div>
+        </div>
+
+        <!-- Neurosurgery Doctors -->
+        <div class="doc-group" data-spec="neuro">
+            <a href="/destinations/india/doctors/dr-rk-sharma/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. R.K. Sharma</div><div class="doc-card__spec">Neurosurgery</div><div class="doc-card__exp">22+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-vp-singh/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. V.P. Singh</div><div class="doc-card__spec">Neurosurgery</div><div class="doc-card__exp">30+ years · Director</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All neuro treatments: <a href="/destinations/india/neurosurgery/">View 12+ procedures →</a></div>
+        </div>
+
+        <!-- Transplant Doctors -->
+        <div class="doc-group" data-spec="transplant">
+            <a href="/destinations/india/doctors/dr-neeraj-goel/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Neeraj Goel</div><div class="doc-card__spec">Liver Transplant Surgery</div><div class="doc-card__exp">20+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-sandeep-guleria/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Sandeep Guleria</div><div class="doc-card__spec">Kidney & Liver Transplant</div><div class="doc-card__exp">25+ years · Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All transplant treatments: <a href="/destinations/india/hematology-bmt/">View 8+ procedures →</a></div>
+        </div>
+
+        <!-- Gastro Doctors -->
+        <div class="doc-group" data-spec="gastro">
+            <a href="/destinations/india/doctors/dr-anupam-sibal/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Anupam Sibal</div><div class="doc-card__spec">Paediatric Gastro & Hepatology</div><div class="doc-card__exp">30+ years · Group Medical Director</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-pavan-dang/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Pavan Dang</div><div class="doc-card__spec">Gastroenterology & Hepatology</div><div class="doc-card__exp">22+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All gastro treatments: <a href="/destinations/india/gastroenterology/">View 10+ procedures →</a></div>
+        </div>
+
+        <!-- Fertility Doctors -->
+        <div class="doc-group" data-spec="fertility">
+            <a href="/destinations/india/doctors/dr-manisha-singh/" class="doc-card"><div class="doc-card__avatar">👩‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Manisha Singh</div><div class="doc-card__spec">IVF & Reproductive Medicine</div><div class="doc-card__exp">18+ years · Sr. Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <a href="/destinations/india/doctors/dr-sonia-malik/" class="doc-card"><div class="doc-card__avatar">👩‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Sonia Malik</div><div class="doc-card__spec">Fertility & IVF</div><div class="doc-card__exp">25+ years · Consultant</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All fertility treatments: <a href="/destinations/india/fertility/">View 8+ procedures →</a></div>
+        </div>
+
+        <!-- Bariatric Doctors -->
+        <div class="doc-group" data-spec="bariatric">
+            <a href="/destinations/india/doctors/dr-arun-prasad/" class="doc-card"><div class="doc-card__avatar">👨‍⚕️</div><div class="doc-card__body"><div class="doc-card__name">Dr. Arun Prasad</div><div class="doc-card__spec">Bariatric & Metabolic Surgery</div><div class="doc-card__exp">25+ years · Chief Surgeon</div><span class="doc-card__link">View Profile</span></div></a>
+            <div class="spec-link-row" style="grid-column:1/-1">All bariatric treatments: <a href="/destinations/india/bariatric-surgery/">View 5+ procedures →</a></div>
+        </div>
+
+    </div></section>
+
+    <!-- FACILITIES -->
+    <section style="background:var(--gray-50)"><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">Infrastructure</div><h2 class="section__title">World-Class Facilities</h2></div>
+        <div class="facilities-grid">
+            <div class="fac-card"><div class="fac-card__icon">🤖</div><div class="fac-card__title">Da Vinci Robotic System</div><div class="fac-card__desc">4th generation robotic surgery for precision procedures</div></div>
+            <div class="fac-card"><div class="fac-card__icon">🔬</div><div class="fac-card__title">CyberKnife & IGRT</div><div class="fac-card__desc">Sub-millimetre accuracy radiation for cancer treatment</div></div>
+            <div class="fac-card"><div class="fac-card__icon">💓</div><div class="fac-card__title">Hybrid Cath Lab</div><div class="fac-card__desc">Advanced catheterisation lab for complex cardiac interventions</div></div>
+            <div class="fac-card"><div class="fac-card__icon">🧊</div><div class="fac-card__title">Modular OTs</div><div class="fac-card__desc">30+ modular operation theatres with HEPA filtration</div></div>
+            <div class="fac-card"><div class="fac-card__icon">🛏️</div><div class="fac-card__title">ICU & Critical Care</div><div class="fac-card__desc">100+ ICU beds with ventilators, cardiac monitors, dialysis</div></div>
+            <div class="fac-card"><div class="fac-card__icon">🧪</div><div class="fac-card__title">NABL Lab</div><div class="fac-card__desc">24/7 pathology, radiology, and diagnostic imaging services</div></div>
+            <div class="fac-card"><div class="fac-card__icon">🚑</div><div class="fac-card__title">24/7 Emergency</div><div class="fac-card__desc">Trauma centre with air ambulance and rapid response</div></div>
+            <div class="fac-card"><div class="fac-card__icon">💊</div><div class="fac-card__title">In-House Pharmacy</div><div class="fac-card__desc">24/7 pharmacy with international medication availability</div></div>
+        </div>
+    </div></section>
+
+    <!-- ACCREDITATIONS -->
+    <section><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">Trust & Quality</div><h2 class="section__title">Accreditations & Awards</h2></div>
+        <div class="accred-grid">
+            <div class="accred-item"><div class="accred-item__icon">🏅</div><div class="accred-item__name">JCI</div><div class="accred-item__desc">Joint Commission International — Gold Standard</div></div>
+            <div class="accred-item"><div class="accred-item__icon">🏅</div><div class="accred-item__name">NABH</div><div class="accred-item__desc">National Accreditation Board for Hospitals</div></div>
+            <div class="accred-item"><div class="accred-item__icon">🏅</div><div class="accred-item__name">NABL</div><div class="accred-item__desc">National Accreditation Board for Laboratories</div></div>
+            <div class="accred-item"><div class="accred-item__icon">🏅</div><div class="accred-item__name">ISO 9001</div><div class="accred-item__desc">Quality Management System Certified</div></div>
+            <div class="accred-item"><div class="accred-item__icon">🏅</div><div class="accred-item__name">Green OT</div><div class="accred-item__desc">Certified Green Operation Theatres</div></div>
+        </div>
+    </div></section>
+
+    <!-- INTERNATIONAL PATIENT SERVICES -->
+    <section class="intl-section" style="background:var(--gray-50)"><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">For International Patients</div><h2 class="section__title">International Patient Services</h2><p class="section__desc">Apollo Delhi has a dedicated wing to serve international patients. Here's what Ginger Healthcare and Apollo provide together.</p></div>
+        <div class="intl-grid">
+            <div class="intl-card"><div class="intl-card__icon">🛂</div><div class="intl-card__title">Visa & Travel Assistance</div><div class="intl-card__desc">Medical visa invitation letter, e-Medical Visa guidance, and airport pickup/drop arranged by Ginger Healthcare.</div></div>
+            <div class="intl-card"><div class="intl-card__icon">🗣️</div><div class="intl-card__title">Multilingual Coordinators</div><div class="intl-card__desc">Dedicated coordinators fluent in Arabic, Russian, French, Bangla, and more. Translation services for all consultations.</div></div>
+            <div class="intl-card"><div class="intl-card__icon">🏨</div><div class="intl-card__title">Accommodation</div><div class="intl-card__desc">Nearby hotels and serviced apartments arranged at negotiated rates. Patient guest houses also available on campus.</div></div>
+            <div class="intl-card"><div class="intl-card__icon">💳</div><div class="intl-card__title">Transparent Pricing</div><div class="intl-card__desc">Detailed cost estimates before travel. No hidden charges. Multiple payment options including international wire transfer.</div></div>
+            <div class="intl-card"><div class="intl-card__icon">📱</div><div class="intl-card__title">Tele-Consultation</div><div class="intl-card__desc">Video consultation with Apollo doctors before you travel. Share reports online and get treatment plans remotely.</div></div>
+            <div class="intl-card"><div class="intl-card__icon">📋</div><div class="intl-card__title">Post-Discharge Support</div><div class="intl-card__desc">Follow-up consultations via telemedicine after returning home. Medical summaries provided in English.</div></div>
+        </div>
+    </div></section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section"><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">Patient Stories</div><h2 class="section__title">What Patients Say About Apollo Delhi</h2></div>
+        <div class="test-grid">
+            <div class="test-card"><div class="test-card__stars">★★★★★</div><p class="test-card__text">"Apollo Delhi saved my life. I was diagnosed with a complex cardiac condition and the team performed a minimally invasive bypass. The care was exceptional from arrival to discharge."</p><div class="test-card__author"><div class="test-card__avatar">SO</div><div><div class="test-card__name">Samuel Okonkwo</div><div class="test-card__meta">🇳🇬 Nigeria · CABG Surgery</div></div></div></div>
+            <div class="test-card"><div class="test-card__stars">★★★★★</div><p class="test-card__text">"My mother's liver transplant at Apollo went flawlessly. Dr. Trehan's team was incredible. Ginger arranged everything — visa, hotel, airport transfer. We felt completely taken care of."</p><div class="test-card__author"><div class="test-card__avatar">AK</div><div><div class="test-card__name">Abdul Karim</div><div class="test-card__meta">🇧🇩 Bangladesh · Liver Transplant</div></div></div></div>
+            <div class="test-card"><div class="test-card__stars">★★★★★</div><p class="test-card__text">"I came for a total knee replacement. The orthopaedic team used the latest robotic-assisted technique. I was walking within 2 days. The cost was a fraction of what I was quoted in the US."</p><div class="test-card__author"><div class="test-card__avatar">JM</div><div><div class="test-card__name">Janet Morrison</div><div class="test-card__meta">🇺🇸 USA · Knee Replacement</div></div></div></div>
+        </div>
+    </div></section>
+
+    <!-- FAQ -->
+    <section class="faq-section"><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">Common Questions</div><h2 class="section__title">FAQs About Apollo Hospitals Delhi</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">Where is Apollo Hospital Delhi located?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Indraprastha Apollo Hospital is located in Sarita Vihar, South Delhi, near the Jasola–Apollo metro station. It's approximately 15 km from Delhi Airport (IGI) — about 30-45 minutes by car.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">What is Apollo Delhi best known for?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Apollo Delhi is especially renowned for cardiac surgery (6,000+ procedures/year), oncology (CyberKnife, robotic surgery, immunotherapy), organ transplants (liver, kidney, heart), neurosurgery, and orthopedics (robotic joint replacement).</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How much does treatment at Apollo Delhi cost?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Costs vary by procedure. Indicatively: CABG from $5,000, knee replacement from $5,500, liver transplant from $28,000, cancer treatment from $3,000. Ginger Healthcare provides free, detailed cost estimates based on your specific case.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">Does Apollo Delhi have international patient services?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Yes. Apollo Delhi has one of India's largest international patient departments, treating patients from 120+ countries. They offer multilingual coordinators, visa assistance, airport transfers, and currency exchange. Ginger Healthcare adds an additional layer of end-to-end support.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How do I book a consultation at Apollo Delhi through Ginger?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Simply fill out our Get Free Quote form with your medical details and reports. Our team will review your case, connect you with the right Apollo Delhi specialist, provide a cost estimate, and coordinate your entire journey — from visa to discharge.</p></div></div>
+        </div>
+    </div></section>
+
+    <!-- OTHER HOSPITALS CTA -->
+    <section style="background:var(--white)"><div class="container">
+        <div class="section__header section__header--row"><div><div class="section__label">Explore More</div><h2 class="section__title">Other Hospitals in India</h2></div><a href="/destinations/india/hospitals/" class="btn btn--outline">View All Hospitals →</a></div>
+        <div class="other-grid">
+            <a href="/destinations/india/hospitals/fortis/" class="other-card"><div class="other-card__flag">🏥</div><div class="other-card__name">Fortis Healthcare</div><div class="other-card__meta">Gurugram · Bengaluru · Kolkata</div><span class="other-card__link">View Hospital →</span></a>
+            <a href="/destinations/india/hospitals/medanta/" class="other-card"><div class="other-card__flag">🏥</div><div class="other-card__name">Medanta — The Medicity</div><div class="other-card__meta">Gurugram · Lucknow</div><span class="other-card__link">View Hospital →</span></a>
+            <a href="/destinations/india/hospitals/max/" class="other-card"><div class="other-card__flag">🏥</div><div class="other-card__name">Max Super Speciality</div><div class="other-card__meta">Delhi · Noida · Gurgaon</div><span class="other-card__link">View Hospital →</span></a>
+            <a href="/destinations/india/hospitals/kokilaben/" class="other-card"><div class="other-card__flag">🏥</div><div class="other-card__name">Kokilaben Ambani Hospital</div><div class="other-card__meta">Mumbai</div><span class="other-card__link">View Hospital →</span></a>
+        </div>
+    </div></section>
+
+    <!-- CTA -->
+    <section class="cta-section"><div class="container"><h2>Ready to Get Treated at Apollo Delhi?</h2><p>Share your medical reports and get a personalised treatment plan with costs from Apollo Hospitals Delhi — within 24 hours.</p><div class="cta-actions"><a href="/get-quote/?hospital=apollo-delhi" class="btn btn--white btn--large">Get Free Apollo Quote</a><a href="/book-consultation/" class="btn btn--large" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3)">Talk to a Care Manager</a></div></div></section>
+
+    <footer><div class="container"><div class="footer__grid"><div class="footer__brand"><div class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></div><p class="footer__desc">Ginger Healthcare is a medical tourism company based in New Delhi, India. We guide, advise, and assist international patients seeking world-class medical treatment at affordable prices.</p><div class="footer__social"><a href="#">f</a><a href="#">in</a><a href="#">tw</a><a href="#">yt</a></div></div><div class="footer__col"><h4>Destinations</h4><a href="/destinations/india/">🇮🇳 India</a><a href="/destinations/turkey/">🇹🇷 Turkey</a><a href="/destinations/thailand/">🇹🇭 Thailand</a><a href="/destinations/uae/">🇦🇪 UAE</a><a href="/destinations/singapore/">🇸🇬 Singapore</a></div><div class="footer__col"><h4>Top Specialties</h4><a href="/specialties/cardiac-surgery/">Cardiac Surgery</a><a href="/specialties/orthopedics/">Orthopedics</a><a href="/specialties/cosmetic-surgery/">Cosmetic Surgery</a><a href="/specialties/dentistry/">Dentistry</a><a href="/specialties/fertility/">Fertility & IVF</a></div><div class="footer__col"><h4>Tools</h4><a href="/cost-calculator/">Cost Calculator</a><a href="/get-quote/">Get Free Quote</a><a href="/book-consultation/">Book Consultation</a><a href="/compare-hospitals/">Compare Hospitals</a></div><div class="footer__col"><h4>Company</h4><a href="/about/">About Us</a><a href="/how-it-works/">How It Works</a><a href="/testimonials/">Testimonials</a><a href="/blog/">Blog</a><a href="/contact/">Contact Us</a></div></div><div class="footer__bottom"><p>&copy; 2025 Ginger Healthcare. All rights reserved.</p><div class="footer__legal"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms of Service</a><a href="/disclaimer/">Medical Disclaimer</a></div></div></div></footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+
+    // Hero Image Slider
+    let currentSlide=0;const slides=document.querySelectorAll(".hosp-hero__slide"),dots=document.querySelectorAll(".hosp-hero__dot");
+    function goSlide(n){slides[currentSlide].classList.remove("active");dots[currentSlide].classList.remove("active");currentSlide=n;slides[currentSlide].classList.add("active");dots[currentSlide].classList.add("active")}
+    setInterval(()=>{goSlide((currentSlide+1)%slides.length)},4500);
+
+    // Specialty-tab Doctors
+    function showSpecDocs(el,spec){
+        document.querySelectorAll(".spec-tab").forEach(t=>t.classList.remove("active"));
+        el.classList.add("active");
+        document.querySelectorAll(".doc-group").forEach(g=>g.classList.remove("active"));
+        document.querySelector('.doc-group[data-spec="'+spec+'"]').classList.add("active");
+    }
+
+    // Scroll animations
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity="1";x.target.style.transform="translateY(0)"}})},{threshold:.05});
+    document.querySelectorAll(".doc-card,.fac-card,.accred-item,.intl-card,.test-

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner With Us | Ginger Healthcare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.1);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}select,input,textarea{font-family:inherit}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--large{padding:16px 36px;font-size:1rem;border-radius:var(--radius-md)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .hero{position:relative;overflow:hidden;padding:72px 0 56px;text-align:center}
+        .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .hero__inner{max-width:740px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hero__icon{font-size:2.4rem;margin-bottom:10px;display:block}
+        .hero h1{font-family:var(--font-display);font-size:2.5rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:10px}
+        .hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hero p{font-size:1.08rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:600px;margin:0 auto}
+        .content{max-width:1100px;margin:0 auto;padding:0 24px}
+        .sec{padding:56px 0}
+        .sec__title{font-family:var(--font-display);font-size:1.8rem;font-weight:600;color:var(--navy);text-align:center;margin-bottom:6px}
+        .sec__desc{font-size:1rem;color:var(--gray-500);text-align:center;margin-bottom:40px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+        /* STATS */
+        .stats-strip{max-width:800px;margin:-32px auto 0;padding:0 24px;position:relative;z-index:2}
+        .stats-row{display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);border:1px solid var(--gray-200);overflow:hidden}
+        .ss{text-align:center;padding:24px 16px;border-right:1px solid var(--gray-200)}
+        .ss:last-child{border-right:none}
+        .ss__num{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--navy)}.ss__num span{color:var(--ginger)}
+        .ss__label{font-size:.82rem;color:var(--gray-500);margin-top:2px}
+
+        /* PARTNER TYPES */
+        .type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+        .type-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:36px;transition:all .3s;position:relative;overflow:hidden}
+        .type-card:hover{border-color:var(--ginger);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .type-card__icon{width:64px;height:64px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:16px}
+        .type-card__title{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+        .type-card__desc{font-size:.92rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+        .type-card__benefits{list-style:none}
+        .type-card__benefits li{padding:6px 0;font-size:.88rem;color:var(--gray-600);display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+        .type-card__benefits li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+
+        /* WHY PARTNER */
+        .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .why-card{text-align:center;padding:28px 20px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-lg)}
+        .why-card__icon{font-size:2rem;margin-bottom:10px;display:block}
+        .why-card__title{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:6px}
+        .why-card__desc{font-size:.85rem;color:var(--gray-500);line-height:1.5}
+
+        /* FORM */
+        .partner-form{max-width:720px;margin:0 auto;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-lg)}
+        .pf__title{font-family:var(--font-display);font-size:1.4rem;color:var(--navy);text-align:center;margin-bottom:6px}
+        .pf__desc{font-size:.92rem;color:var(--gray-500);text-align:center;margin-bottom:28px}
+        .fg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+        .fi{display:flex;flex-direction:column;gap:5px}.fi--full{grid-column:span 2}
+        .fi__label{font-size:.88rem;font-weight:600;color:var(--navy)}.fi__label .req{color:#EF4444}.fi__label small{font-weight:400;color:var(--gray-400)}
+        .fi__input,.fi__select,.fi__textarea{padding:12px 16px;border:2px solid var(--gray-200);border-radius:var(--radius-md);font-size:.95rem;color:var(--gray-700);background:var(--white);transition:border-color .2s;width:100%}
+        .fi__input:focus,.fi__select:focus,.fi__textarea:focus{outline:none;border-color:var(--ginger)}
+        .fi__textarea{min-height:110px;resize:vertical}
+        .btn-apply{width:100%;padding:16px;border-radius:var(--radius-md);font-weight:700;font-size:1.05rem;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));color:#fff;transition:all .2s;box-shadow:0 4px 16px rgba(242,101,34,.25);margin-top:12px}
+        .btn-apply:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(242,101,34,.3)}
+
+        /* LOGOS */
+        .logos-bar{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:40px 0;text-align:center}
+        .logos-bar__title{font-size:.88rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .logos-row{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;max-width:800px;margin:0 auto;opacity:.5}
+        .logos-row span{font-size:2rem}
+
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500)}.footer a{color:var(--navy);font-weight:500}
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.hero h1{font-size:2rem}.stats-row{grid-template-columns:repeat(2,1fr)}.ss:nth-child(2){border-right:none}.type-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.fi--full{grid-column:span 1}.partner-form{padding:24px 20px}.topbar{display:none}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#5831363e37183f31363f3d2a76303d39342c303b392a3d">✉ <span class="__cf_email__" data-cfemail="3f565159507f585651585a4d11575a5e534b575c5e4d5a">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 English</div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+
+    <div class="hero"><div class="hero__bg"></div><div class="hero__pattern"></div><div class="hero__orb1"></div><div class="hero__orb2"></div><div class="hero__inner"><span class="hero__icon">🤝</span><h1>Partner With <em>Ginger Healthcare</em></h1><p>Join our growing network of hospitals, doctors, travel agents, and healthcare providers serving international patients</p></div></div>
+
+    <div class="stats-strip"><div class="stats-row">
+        <div class="ss"><div class="ss__num">50<span>+</span></div><div class="ss__label">Hospital Partners</div></div>
+        <div class="ss"><div class="ss__num">5<span></span></div><div class="ss__label">Countries</div></div>
+        <div class="ss"><div class="ss__num">5,000<span>+</span></div><div class="ss__label">Patients Referred</div></div>
+        <div class="ss"><div class="ss__num">60<span>+</span></div><div class="ss__label">Source Countries</div></div>
+    </div></div>
+
+    <div class="content">
+        <!-- PARTNER TYPES -->
+        <div class="sec">
+            <h2 class="sec__title">Partnership Opportunities</h2>
+            <p class="sec__desc">We work with a range of healthcare stakeholders to create better outcomes for international patients</p>
+            <div class="type-grid">
+                <div class="type-card">
+                    <div class="type-card__icon" style="background:#EFF6FF">🏥</div>
+                    <div class="type-card__title">Hospitals & Clinics</div>
+                    <div class="type-card__desc">Join our curated network of hospitals and receive pre-screened, high-intent international patients.</div>
+                    <ul class="type-card__benefits">
+                        <li>Steady flow of international patient referrals</li>
+                        <li>Dedicated relationship manager</li>
+                        <li>Pre-screened patients with medical reports ready</li>
+                        <li>Marketing support and co-branded content</li>
+                        <li>Multilingual patient coordination support</li>
+                    </ul>
+                </div>
+                <div class="type-card">
+                    <div class="type-card__icon" style="background:#F0FDF9">👨‍⚕️</div>
+                    <div class="type-card__title">Doctors & Surgeons</div>
+                    <div class="type-card__desc">Build your international practice. We connect you with patients seeking world-class specialists.</div>
+                    <ul class="type-card__benefits">
+                        <li>Profile featured on our platform</li>
+                        <li>International patient referrals</li>
+                        <li>Patient coordination handled by us</li>
+                        <li>Second opinion consultation opportunities</li>
+                        <li>Build your reputation with verified patient reviews</li>
+                    </ul>
+                </div>
+                <div class="type-card">
+                    <div class="type-card__icon" style="background:#FEF3C7">✈️</div>
+                    <div class="type-card__title">Travel Agents & Facilitators</div>
+                    <div class="type-card__desc">Expand your portfolio with medical tourism. Earn commissions on every successful patient referral.</div>
+                    <ul class="type-card__benefits">
+                        <li>Competitive referral commissions</li>
+                        <li>Training on medical tourism processes</li>
+                        <li>Marketing materials and sales support</li>
+                        <li>Patient coordination handled entirely by us</li>
+                        <li>Dashboard to track referrals and commissions</li>
+                    </ul>
+                </div>
+                <div class="type-card">
+                    <div class="type-card__icon" style="background:#FCE7F3">🏢</div>
+                    <div class="type-card__title">Insurance & Corporates</div>
+                    <div class="type-card__desc">Offer your clients access to affordable, quality healthcare abroad as part of your insurance or employee wellness programme.</div>
+                    <ul class="type-card__benefits">
+                        <li>Reduce healthcare costs by 50–80%</li>
+                        <li>Pre-vetted hospital network across 5 countries</li>
+                        <li>End-to-end patient management</li>
+                        <li>Custom reporting and SLAs</li>
+                        <li>White-label solutions available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHY PARTNER -->
+        <div class="sec" style="padding-top:0">
+            <h2 class="sec__title">Why Partner With Us?</h2>
+            <p class="sec__desc">We're not just another facilitator — we're a growth partner</p>
+            <div class="why-grid">
+                <div class="why-card"><span class="why-card__icon">📈</span><div class="why-card__title">Growing Patient Volume</div><div class="why-card__desc">We bring patients from 60+ countries. Our digital-first approach means consistent, high-quality leads year-round.</div></div>
+                <div class="why-card"><span class="why-card__icon">🎯</span><div class="why-card__title">Pre-Qualified Referrals</div><div class="why-card__desc">Every patient we refer comes with medical reports, diagnosis, and treatment expectations — saving your team hours.</div></div>
+                <div class="why-card"><span class="why-card__icon">🤝</span><div class="why-card__title">Transparent Relationship</div><div class="why-card__desc">No hidden agendas. Clear terms, timely payments, and a dedicated point of contact for every partner.</div></div>
+                <div class="why-card"><span class="why-card__icon">🌍</span><div class="why-card__title">Multi-Market Reach</div><div class="why-card__desc">We have on-ground presence in Africa, Middle East, and South Asia — the fastest-growing medical tourism source markets.</div></div>
+                <div class="why-card"><span class="why-card__icon">📊</span><div class="why-card__title">Data & Reporting</div><div class="why-card__desc">Partner dashboard with real-time tracking of referrals, conversions, patient feedback, and revenue metrics.</div></div>
+                <div class="why-card"><span class="why-card__icon">🛡️</span><div class="why-card__title">Quality Commitment</div><div class="why-card__desc">We only partner with accredited institutions. Your reputation is safe with us, and ours with you.</div></div>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="sec" id="apply" style="padding-top:0">
+            <div class="partner-form">
+                <div class="pf__title">🤝 Apply to Partner</div>
+                <div class="pf__desc">Tell us about your organisation and we'll be in touch within 48 hours</div>
+                <div class="fg">
+                    <div class="fi"><label class="fi__label">Organisation Name <span class="req">*</span></label><input class="fi__input" type="text" id="pOrg" placeholder="Hospital / Clinic / Company name"></div>
+                    <div class="fi"><label class="fi__label">Partnership Type <span class="req">*</span></label><select class="fi__select" id="pType"><option value="">Select type...</option><option>Hospital / Clinic</option><option>Doctor / Surgeon</option><option>Travel Agent / Facilitator</option><option>Insurance Company</option><option>Corporate / Employer</option><option>Other</option></select></div>
+                </div>
+                <div class="fg">
+                    <div class="fi"><label class="fi__label">Contact Person <span class="req">*</span></label><input class="fi__input" type="text" id="pName" placeholder="Full name"></div>
+                    <div class="fi"><label class="fi__label">Designation</label><input class="fi__input" type="text" id="pDesig" placeholder="e.g. CEO, Head of International, etc."></div>
+                </div>
+                <div class="fg">
+                    <div class="fi"><label class="fi__label">Email <span class="req">*</span></label><input class="fi__input" type="email" id="pEmail" placeholder="business@email.com"></div>
+                    <div class="fi"><label class="fi__label">Phone / WhatsApp <span class="req">*</span></label><input class="fi__input" type="tel" id="pPhone" placeholder="+91 98765 43210"></div>
+                </div>
+                <div class="fg">
+                    <div class="fi"><label class="fi__label">Country <span class="req">*</span></label><input class="fi__input" type="text" id="pCountry" placeholder="e.g. India, Turkey, Nigeria"></div>
+                    <div class="fi"><label class="fi__label">Website <small>(optional)</small></label><input class="fi__input" type="url" id="pWebsite" placeholder="https://your-website.com"></div>
+                </div>
+                <div class="fg"><div class="fi fi--full"><label class="fi__label">Tell Us About Your Organisation <span class="req">*</span></label><textarea class="fi__textarea" id="pAbout" placeholder="Brief description — specialties, accreditations, number of beds, international patient volume, or your referral network..."></textarea></div></div>
+                <button class="btn-apply" id="applyBtn" onclick="handleApply()">🚀 Submit Partnership Application</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGOS -->
+    <div class="logos-bar">
+        <div class="logos-bar__title">Trusted by leading hospitals across 5 countries</div>
+        <div class="logos-row"><span>🏥</span><span>🏥</span><span>🏥</span><span>🏥</span><span>🏥</span><span>🏥</span><span>🏥</span><span>🏥</span></div>
+        <div style="margin-top:12px;font-size:.78rem;color:var(--gray-400)">Hospital logos will appear here</div>
+    </div>
+
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a></p></footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+function handleApply(){
+    const org=document.getElementById('pOrg').value.trim(),t=document.getElementById('pType').value,n=document.getElementById('pName').value.trim(),e=document.getElementById('pEmail').value.trim(),p=document.getElementById('pPhone').value.trim(),a=document.getElementById('pAbout').value.trim();
+    if(!org||!t||!n||!e||!p||!a){alert('Please fill in all required fields.');return}
+    const btn=docume

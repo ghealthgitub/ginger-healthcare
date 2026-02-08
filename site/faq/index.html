@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Ginger Healthcare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;font-size:15px}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.82rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.95rem;font-weight:500;color:var(--gray-600);transition:color .2s}.nav__link:hover{color:var(--navy)}.nav__link--active{color:var(--ginger)}
+        .nav__cta{display:flex;align-items:center;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark)}.btn--large{padding:16px 36px;font-size:1rem;border-radius:var(--radius-md)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .hero{position:relative;overflow:hidden;padding:64px 0 52px;text-align:center}
+        .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B2545 0%,#183d6e 50%,#13315C 100%)}
+        .hero__pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+        .hero__orb1{position:absolute;top:-80px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(242,101,34,.12),transparent);border-radius:50%}
+        .hero__orb2{position:absolute;bottom:-100px;left:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(14,165,160,.08),transparent);border-radius:50%}
+        .hero__inner{max-width:700px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .hero__icon{font-size:2.4rem;margin-bottom:10px;display:block}
+        .hero h1{font-family:var(--font-display);font-size:2.5rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:8px}
+        .hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+        /* SEARCH */
+        .search-wrap{max-width:600px;margin:-24px auto 0;padding:0 24px;position:relative;z-index:2}
+        .search-box{display:flex;align-items:center;gap:12px;padding:14px 20px;background:var(--white);border-radius:50px;box-shadow:var(--shadow-xl);border:2px solid var(--gray-200)}
+        .search-box:focus-within{border-color:var(--ginger)}
+        .search-box span{font-size:1.2rem;color:var(--gray-400)}
+        .search-box input{flex:1;border:none;outline:none;font-size:1rem;color:var(--gray-700);font-family:var(--font-body);background:transparent}
+        .search-box input::placeholder{color:var(--gray-400)}
+        .search-count{text-align:center;margin-top:12px;font-size:.85rem;color:var(--gray-400)}
+
+        /* CATEGORY TABS */
+        .faq-wrap{max-width:860px;margin:32px auto 0;padding:0 24px}
+        .cat-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:32px}
+        .cat-tab{padding:9px 20px;border-radius:50px;border:2px solid var(--gray-200);background:var(--white);font-size:.88rem;font-weight:600;color:var(--gray-500);transition:all .2s;cursor:pointer}
+        .cat-tab:hover{border-color:var(--gray-400);color:var(--navy)}
+        .cat-tab.active{border-color:var(--ginger);background:var(--cream);color:var(--ginger)}
+
+        /* FAQ SECTION */
+        .faq-section{margin-bottom:36px}
+        .faq-section__title{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+        .faq-section__title span{font-size:1.3rem}
+
+        /* ACCORDION */
+        .faq-item{border:1.5px solid var(--gray-200);border-radius:var(--radius-md);margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+        .faq-item:hover{border-color:var(--gray-300)}
+        .faq-item.open{border-color:var(--ginger)}
+        .faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;cursor:pointer;background:var(--white);transition:background .2s;gap:12px}
+        .faq-item.open .faq-q{background:var(--cream)}
+        .faq-q__text{font-weight:600;color:var(--navy);font-size:.95rem;line-height:1.4;flex:1}
+        .faq-q__arrow{width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--gray-400);transition:transform .3s;flex-shrink:0}
+        .faq-item.open .faq-q__arrow{transform:rotate(180deg);color:var(--ginger)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+        .faq-a__inner{padding:0 20px 18px;font-size:.92rem;color:var(--gray-600);line-height:1.7}
+        .faq-a__inner strong{color:var(--navy)}
+        .faq-a__inner ul{margin:8px 0 8px 18px;list-style:disc}.faq-a__inner li{margin-bottom:4px}
+
+        .no-results{text-align:center;padding:40px;color:var(--gray-400);font-size:1rem;display:none}
+
+        /* CTA */
+        .cta-box{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-xl);padding:40px;text-align:center;margin:48px 0;position:relative;overflow:hidden}
+        .cta-box::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(242,101,34,.15),transparent);border-radius:50%}
+        .cta-box h3{font-family:var(--font-display);font-size:1.4rem;color:#fff;margin-bottom:6px;position:relative}
+        .cta-box p{color:rgba(255,255,255,.5);margin-bottom:18px;position:relative;font-size:.95rem}
+        .cta-box .btn{position:relative}
+
+        .footer{text-align:center;padding:32px 24px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500);margin-top:0}.footer a{color:var(--navy);font-weight:500}
+        @media(max-width:768px){.nav__links{display:none}.hamburger{display:flex}.hero h1{font-size:1.9rem}.cat-tabs{gap:6px}.cat-tab{padding:7px 14px;font-size:.82rem}.topbar{display:none}}
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#bcd5d2dad3fcdbd5d2dbd9ce92d4d9ddd0c8d4dfddced9">✉ <span class="__cf_email__" data-cfemail="82ebece4edc2e5ebece5e7f0aceae7e3eef6eae1e3f0e7">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 English</div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+
+    <div class="hero"><div class="hero__bg"></div><div class="hero__pattern"></div><div class="hero__orb1"></div><div class="hero__orb2"></div><div class="hero__inner"><span class="hero__icon">❓</span><h1>Frequently Asked <em>Questions</em></h1><p>Everything you need to know about medical treatment abroad — answered</p></div></div>
+
+    <div class="search-wrap"><div class="search-box"><span>🔍</span><input type="text" id="searchInput" placeholder="Search questions... e.g. visa, cost, safety"></div><div class="search-count" id="searchCount"></div></div>
+
+    <div class="faq-wrap">
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">All Questions</button>
+            <button class="cat-tab" data-cat="process">🔄 Process</button>
+            <button class="cat-tab" data-cat="cost">💰 Costs</button>
+            <button class="cat-tab" data-cat="safety">🛡️ Safety</button>
+            <button class="cat-tab" data-cat="visa">🛂 Visa & Travel</button>
+            <button class="cat-tab" data-cat="hospital">🏥 Hospitals</button>
+            <button class="cat-tab" data-cat="recovery">🩹 Recovery</button>
+        </div>
+
+        <div id="faqContainer"></div>
+        <div class="no-results" id="noResults">😕 No questions match your search. Try different keywords or <a href="/get-quote/" style="color:var(--ginger);font-weight:600">contact us directly</a>.</div>
+
+        <div class="cta-box">
+            <h3>Still Have Questions?</h3>
+            <p>Our medical coordinators are available 24/7 to help you</p>
+            <a href="/get-quote/" class="btn btn--primary btn--large">💬 Talk to Us — It's Free</a>
+        </div>
+    </div>
+
+    <footer class="footer"><p>© 2025 <a href="/">Ginger Healthcare</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a></p></footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
+const faqs=[
+{cat:"process",q:"How does Ginger Healthcare work?",a:"We connect international patients with top hospitals across India, Turkey, Thailand, UAE, and Singapore. You share your medical details with us, and we get personalised treatment quotes from 2–3 leading hospitals. Once you choose, we handle everything — visa assistance, airport pickup, hospital coordination, accommodation, interpreter, and follow-up care."},
+{cat:"process",q:"How do I get started?",a:"Simply <strong>submit a free quote request</strong> on our website with your medical reports. Our team reviews your case within 24 hours and sends you hospital recommendations with cost estimates. There's no cost and no commitment at this stage."},
+{cat:"process",q:"How long does the entire process take from inquiry to treatment?",a:"Typically <strong>2–4 weeks</strong> from your first inquiry to arriving at the hospital. This includes: medical review (1–2 days), hospital selection and quote (2–3 days), visa processing (3–10 days), and travel planning. Emergency cases can be fast-tracked within 7–10 days."},
+{cat:"process",q:"Can I get a second opinion before deciding on surgery?",a:"Absolutely. We encourage second opinions. You can share your reports with multiple hospitals and we'll arrange video consultations with different specialists so you can compare recommendations before making any decision."},
+{cat:"process",q:"Do I need to bring a companion/attendant?",a:"While not mandatory, we strongly recommend having one attendant (family member or friend) accompany you. They provide emotional support, help with logistics, and can make decisions if needed. Our cost calculator factors in attendant costs too."},
+{cat:"cost",q:"How much can I save compared to treatment in my home country?",a:"Savings typically range from <strong>50% to 90%</strong> depending on the procedure and destination. For example, a heart bypass surgery (CABG) that costs $120,000+ in the USA can cost $5,000–$8,000 in India, with the same quality of care and internationally accredited hospitals."},
+{cat:"cost",q:"What's included in the hospital package cost?",a:"Hospital packages typically include: <strong>surgeon fees, anaesthesia, operation theatre charges, prescribed medications, bed charges (private/semi-private room), nursing care, in-hospital meals, and standard post-op monitoring</strong>. Pre-admission investigations (blood work, imaging) are usually quoted separately."},
+{cat:"cost",q:"Are there hidden costs I should be aware of?",a:"We believe in full transparency. Costs that are sometimes overlooked include: <ul><li>Pre-admission investigations ($500–$1,500)</li><li>Implants or prosthetics (priced separately for ortho/cardiac)</li><li>Extended hospital stay if complications arise</li><li>Post-discharge medications</li><li>Follow-up consultations</li></ul>We flag all potential additional costs upfront so there are no surprises."},
+{cat:"cost",q:"Do you charge any service fee?",a:"<strong>No.</strong> Ginger Healthcare's services are completely free for patients. We don't charge any consultation fees, coordination fees, or hidden commissions. Our revenue comes from partnerships with hospitals — your treatment cost remains the same whether you come through us or contact the hospital directly."},
+{cat:"cost",q:"Can I pay in installments or get financing?",a:"Some hospitals offer payment plans for larger procedures. We can also connect you with medical loan providers in select countries. Most hospitals require a deposit before admission, with the balance due at discharge. We'll help you understand the payment schedule upfront."},
+{cat:"safety",q:"Are the hospitals internationally accredited?",a:"Yes. We only partner with hospitals that hold <strong>JCI (Joint Commission International)</strong> or national accreditations like <strong>NABH (India), TEMOS, or ISQua</strong>. These are the same standards used by top hospitals in the US and Europe."},
+{cat:"safety",q:"What if something goes wrong during or after treatment?",a:"All our partner hospitals have robust protocols for complications. Your treatment quote includes standard post-op monitoring. In the rare event of complications: the hospital provides immediate medical care, we coordinate with the medical team on your behalf, and extended stay costs are discussed transparently. We also recommend travel insurance that covers medical emergencies."},
+{cat:"safety",q:"How do I verify the doctor's credentials?",a:"We provide full doctor profiles including their qualifications, years of experience, number of procedures performed, hospital affiliations, and patient reviews. You can also request a video consultation with the surgeon before making any decision."},
+{cat:"safety",q:"Is it safe to travel for surgery to another country?",a:"Millions of people travel for medical treatment every year. India alone receives over 2 million medical tourists annually. The key is choosing the right hospital and having a trusted coordinator. With Ginger Healthcare, you get: accredited hospitals, experienced surgeons, dedicated case managers, and 24/7 support throughout your journey."},
+{cat:"visa",q:"What type of visa do I need for medical treatment?",a:"Most countries offer a <strong>Medical Visa</strong> specifically for patients traveling for treatment. For India, you apply for an Indian Medical Visa which allows up to 60 days stay (extendable). We provide a visa invitation letter from the hospital to support your application."},
+{cat:"visa",q:"How long does the visa process take?",a:"Medical visa processing times vary: <strong>India: 3–7 working days</strong>, Turkey: 1–3 days (e-Visa for most countries), Thailand: 3–5 days, UAE: 2–5 days, Singapore: 3–5 days. We provide all required documentation including hospital invitation letters, treatment plans, and appointment confirmations."},
+{cat:"visa",q:"Can my attendant get a visa too?",a:"Yes. Attendants can apply for a <strong>Medical Attendant Visa</strong> which is linked to the patient's medical visa. We help with documentation for both the patient and attendant(s). Typically up to 2 attendants can accompany the patient."},
+{cat:"visa",q:"What about airport pickup and local transportation?",a:"We arrange complimentary <strong>airport pickup and drop</strong> for all patients. During your stay, we coordinate hospital transfers and can arrange local transportation as needed. Our on-ground team ensures you never feel lost in a foreign city."},
+{cat:"hospital",q:"How do you choose which hospitals to recommend?",a:"We evaluate hospitals on: <strong>accreditation status</strong> (JCI/NABH), surgeon experience and specialization, success rates for specific procedures, infrastructure and technology, patient reviews, and cost transparency. We only recommend hospitals we've personally vetted and where we have established relationships."},
+{cat:"hospital",q:"Can I choose my own hospital or doctor?",a:"Absolutely. If you have a specific hospital or doctor in mind, let us know and we'll coordinate directly with them. If you're unsure, we recommend 2–3 hospitals based on your condition, budget, and preferences, and you make the final choice."},
+{cat:"hospital",q:"Will there be a language barrier?",a:"Most top hospitals have <strong>international patient departments</strong> with multilingual staff. Doctors typically speak English fluently. For patients who prefer their native language, we arrange professional medical interpreters in Arabic, French, Russian, Swahili, Bengali, and many other languages."},
+{cat:"hospital",q:"What kind of rooms and amenities are available?",a:"Hospitals offer various room categories: <strong>General Ward</strong> (shared, most affordable), <strong>Semi-Private</strong> (2 beds, good value), <strong>Private Room</strong> (single occupancy with attached bathroom), and <strong>Suite/Deluxe</strong> (premium amenities, attendant bed). Most rooms include TV, WiFi, and meal service."},
+{cat:"recovery",q:"How long do I need to stay after surgery?",a:"Recovery time varies by procedure. General guidelines: <ul><li><strong>Day procedures</strong> (dental, minor cosmetic): 2–3 days total stay</li><li><strong>Moderate surgery</strong> (knee replacement, IVF): 7–14 days</li><li><strong>Major surgery</strong> (heart bypass, spinal): 14–21 days</li><li><strong>Cancer treatment</strong>: Varies by protocol, often multiple visits</li></ul>Our cost calculator shows estimated stay duration for each procedure."},
+{cat:"recovery",q:"Where do I stay during recovery after hospital discharge?",a:"We help arrange nearby accommodation based on your budget: <strong>service apartments</strong> (ideal for longer stays), <strong>hotels</strong> near the hospital (economy to premium), or <strong>patient guesthouses</strong> run by some hospitals. All recovery accommodation is chosen for proximity to the hospital for follow-up visits."},
+{cat:"recovery",q:"What about follow-up care after I return home?",a:"Before discharge, you receive a detailed <strong>post-treatment care plan</strong>, prescribed medications, and follow-up schedule. Our team coordinates virtual follow-ups with your surgeon via video call. We also help connect you with local doctors in your home country for ongoing monitoring. You can reach our support team anytime after returning home."},
+{cat:"recovery",q:"Will I get my medical records and reports?",a:"Yes. You receive a complete <strong>discharge summary</strong> including diagnosis, treatment details, medications, follow-up instructions, and all investigation reports (blood work, imaging, pathology). These are provided in English and can be shared with your local doctor."}
+];
+
+// Build FAQ HTML
+const container=document.getElementById('faqContainer');
+const cats={process:{icon:'🔄',title:'Getting Started & Process'},cost:{icon:'💰',title:'Costs & Payments'},safety:{icon:'🛡️',title:'Safety & Quality'},visa:{icon:'🛂',title:'Visa & Travel'},hospital:{icon:'🏥',title:'Hospitals & Doctors'},recovery:{icon:'🩹',title:'Recovery & Follow-up'}};
+let html='';
+Object.entries(cats).forEach(([key,{icon,title}])=>{
+    const items=faqs.filter(f=>f.cat===key);
+    html+=`<div class="faq-section" data-cat="${key}"><div class="faq-section__title"><span>${icon}</span>${title}</div>`;
+    items.forEach((f,i)=>{
+        html+=`<div class="faq-item" data-cat="${f.cat}"><div class="faq-q"><div class="faq-q__text">${f.q}</div><div class="faq-q__arrow">▼</div></div><div class="faq-a"><div class="faq-a__inner">${f.a}</div></div></div>`;
+    });
+    html+=`</div>`;
+});
+container.innerHTML=html;
+
+// Accordion
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{
+    const item=q.parentElement,a=item.querySelector('.faq-a'),inner=item.querySelector('.faq-a__inner');
+    const isOpen=item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-a').style.maxHeight='0'});
+    if(!isOpen){item.classList.add('open');a.style.maxHeight=inner.scrollHeight+20+'px'}
+})});
+
+// Category filter
+document.querySelectorAll('.cat-tab').forEach(tab=>{tab.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');
+    const cat=tab.dataset.cat;
+    document.querySelectorAll('.faq-section').forEach(s=>{s.style.display=(cat==='all'||s.dataset.cat===cat)?'block':'none'});
+    document.querySelectorAll('.faq-item.open').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-a').style.maxHeight='0'});
+    document.getElementById('noResults').style.display='none';
+    document.getElementById('searchInput').value='';
+    document.getElementById('searchCount').textContent='';
+})});
+
+// Search
+document.getElementById('searchInput').addEventListener('input',function(){
+    const q=this.value.toLowerCase().trim();
+    if(!q){
+        document.querySelectorAll('.faq-section,.faq-item').forEach(x=>x.style.display='');
+        document.getElementById('noResults').style.display='none';
+        document.getElementById('searchCount').textContent='';
+        document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+        document.querySelector('.cat-tab[data-cat="all"]').classList.add('active');
+        return;
+    }
+    let count=0;
+    document.querySelectorAll('.faq-item').forEach(item=>{
+        const text=(item.querySelector('.faq-q__text').textContent+' '+item.querySelector('.faq-a__inner').textContent).toLowerCase();
+        const match=text.includes(q);
+        item.style.display=match?'':'none';
+        if(match)count++;
+    });
+    document.querySelectorAll('.faq-section').forEach(s=>{
+        const vis=s.querySelectorAll('.faq-item[style=""], .faq-item:not([style])');
+        const hasVis=[...s.querySelectorAll('.faq-item')].some(i=>i.style.display!=='none');
+        s.style.display=hasVi

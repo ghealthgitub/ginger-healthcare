@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Naresh Trehan — Cardiac Surgeon, Medanta Gurugram | Ginger Healthcare</title>
+    <meta name="description" content="Dr. Naresh Trehan — India's most renowned cardiac surgeon. Chairman & MD, Medanta - The Medicity, Gurugram. 40+ years experience, 48,000+ cardiac surgeries. Book consultation via Ginger Healthcare.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#0B2545;--navy-light:#13315C;--ginger:#F26522;--ginger-light:#FF8A50;--ginger-dark:#D9531E;--teal:#0EA5A0;--teal-light:#14B8B3;--cream:#FFF8F0;--white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-sm:0 1px 2px rgba(11,37,69,.05);--shadow-md:0 4px 14px rgba(11,37,69,.08);--shadow-lg:0 10px 30px rgba(11,37,69,.10);--shadow-xl:0 20px 50px rgba(11,37,69,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:inherit;border:none}
+        .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.78rem;padding:8px 0}.topbar__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:rgba(255,255,255,.85)}.topbar a:hover{color:var(--ginger-light)}.topbar__contact{display:flex;gap:20px}
+        nav{background:var(--white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}nav.scrolled{box-shadow:var(--shadow-md)}.nav__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.35rem}.logo__icon{width:40px;height:40px;background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700}.logo__text span:first-child{color:var(--navy)}.logo__text span:last-child{color:var(--ginger)}
+        .nav__links{display:flex;align-items:center;gap:32px}.nav__link{font-size:.9rem;font-weight:500;color:var(--gray-600);transition:color .2s;position:relative}.nav__link:hover{color:var(--navy)}.nav__link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--ginger);transition:width .3s}.nav__link:hover::after{width:100%}.nav__link--active{color:var(--ginger)}.nav__link--active::after{width:100%}
+        .nav__cta{display:flex;align-items:center;gap:12px}.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:.88rem;transition:all .25s}.btn--primary{background:var(--ginger);color:#fff;box-shadow:0 2px 8px rgba(242,101,34,.25)}.btn--primary:hover{background:var(--ginger-dark);transform:translateY(-1px)}.btn--outline{background:transparent;color:var(--navy);border:1.5px solid var(--gray-300)}.btn--outline:hover{border-color:var(--navy);background:var(--gray-50)}.btn--white{background:#fff;color:var(--navy);box-shadow:var(--shadow-md)}.btn--white:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}.btn--large{padding:14px 32px;font-size:.95rem;border-radius:var(--radius-md)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:8px}.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+        .breadcrumb{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:14px 0}.breadcrumb__inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--gray-400)}.breadcrumb a{color:var(--gray-500)}.breadcrumb a:hover{color:var(--ginger)}.breadcrumb__current{color:var(--navy);font-weight:500}
+
+        .country-hero{position:relative;overflow:hidden;min-height:480px;display:flex;align-items:center}
+        .country-hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#FF9933 0%,#FFFFFF 35%,#138808 65%,#000080 100%)}
+        .country-hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,37,69,.88),rgba(11,37,69,.75));z-index:1}
+        .country-hero__inner{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;width:100%}
+        .country-hero__content{animation:fadeInUp .6s ease-out}
+        .country-hero__flag-row{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+        .country-hero__flag{font-size:3rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+        .country-hero__badge{padding:5px 14px;border-radius:50px;font-size:.75rem;font-weight:600;background:rgba(242,101,34,.2);color:var(--ginger-light)}
+        .country-hero h1{font-family:var(--font-display);font-size:2.8rem;font-weight:600;color:#fff;line-height:1.15;margin-bottom:14px}
+        .country-hero h1 em{font-style:normal;color:var(--ginger-light)}
+        .country-hero__desc{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:28px;max-width:560px}
+        .country-hero__actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+        .country-hero__stats{display:flex;gap:32px;flex-wrap:wrap}
+        .hero-stat__val{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#fff}
+        .hero-stat__label{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:2px}
+        .hero-sidebar{animation:fadeInUp .6s .15s ease-out both}
+        .hero-sidebar__card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:28px;backdrop-filter:blur(8px)}
+        .hero-sidebar__title{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:16px}
+        .hero-sidebar__hospitals{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+        .hero-hosp{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);transition:all .2s}
+        .hero-hosp:hover{background:rgba(255,255,255,.1);border-color:var(--ginger)}
+        .hero-hosp__icon{width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+        .hero-hosp__name{font-weight:600;font-size:.85rem;color:#fff}
+        .hero-hosp__loc{font-size:.72rem;color:rgba(255,255,255,.4)}
+        .hero-sidebar__accred{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+        .accred-badge{padding:5px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:50px;font-size:.72rem;color:rgba(255,255,255,.55);font-weight:500}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+        .container{max-width:1280px;margin:0 auto;padding:0 24px}section{padding:80px 0}
+        .section__label{font-size:.75rem;font-weight:700;color:var(--ginger);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+        .section__title{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:16px}
+        .section__desc{font-size:1rem;color:var(--gray-500);max-width:600px;line-height:1.7}
+        .section__header{margin-bottom:48px}.section__header--center{text-align:center}.section__header--center .section__desc{margin:0 auto}
+        .section__header--row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+        .why-country{background:var(--white)}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .why-card{padding:28px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);transition:all .3s}
+        .why-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .why-card__icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+        .why-card:nth-child(6n+1) .why-card__icon{background:#FFF1F2}.why-card:nth-child(6n+2) .why-card__icon{background:#EFF6FF}.why-card:nth-child(6n+3) .why-card__icon{background:#F0FDF4}
+        .why-card:nth-child(6n+4) .why-card__icon{background:#FFF7ED}.why-card:nth-child(6n+5) .why-card__icon{background:#FAF5FF}.why-card:nth-child(6n) .why-card__icon{background:#F0FDFA}
+        .why-card__title{font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:8px}
+        .why-card__desc{font-size:.84rem;color:var(--gray-500);line-height:1.65}
+
+        .hospitals-section{background:var(--gray-50)}.hospital-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .hosp-card{background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s}
+        .hosp-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .hosp-card__visual{height:180px;position:relative;overflow:hidden}
+        .hosp-card__img{position:absolute;inset:0;transition:transform .5s}
+        .hosp-card:hover .hosp-card__img{transform:scale(1.08)}
+        .hosp-card:nth-child(1) .hosp-card__img{background:linear-gradient(135deg,#7f1d1d 0%,#dc2626 40%,#f87171 100%)}
+        .hosp-card:nth-child(2) .hosp-card__img{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 40%,#60a5fa 100%)}
+        .hosp-card:nth-child(3) .hosp-card__img{background:linear-gradient(135deg,#14532d 0%,#16a34a 40%,#4ade80 100%)}
+        .hosp-card:nth-child(4) .hosp-card__img{background:linear-gradient(135deg,#4a1d96 0%,#7c3aed 40%,#c084fc 100%)}
+        .hosp-card:nth-child(5) .hosp-card__img{background:linear-gradient(135deg,#78350f 0%,#d97706 40%,#fbbf24 100%)}
+        .hosp-card:nth-child(6) .hosp-card__img{background:linear-gradient(135deg,#134e4a 0%,#0d9488 40%,#5eead4 100%)}
+        .hosp-card__img::before{content:'';position:absolute;bottom:0;left:0;right:0;height:70%;background:linear-gradient(to top,rgba(0,0,0,.18),transparent)}
+        .hosp-card__img::after{content:'🏥';position:absolute;top:16px;right:16px;font-size:2.2rem;opacity:.25;filter:grayscale(1) brightness(3)}
+        .hosp-card__gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,37,69,.85) 0%,rgba(11,37,69,.3) 50%,rgba(11,37,69,.05) 100%);z-index:1}
+        .hosp-card__visual-content{position:relative;z-index:2;padding:20px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+        .hosp-card__name{font-family:var(--font-display);font-size:1.1rem;font-weight:600}
+        .hosp-card__city{font-size:.78rem;color:rgba(255,255,255,.6)}
+        .hosp-card__badges{display:flex;gap:6px;margin-top:8px}
+        .hosp-card__badge{padding:3px 10px;background:rgba(255,255,255,.15);border-radius:50px;font-size:.68rem;font-weight:600}
+        .hosp-card__body{padding:20px}
+        .hosp-card__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+        .hosp-card__stat{text-align:center;padding:8px;background:var(--gray-50);border-radius:6px}
+        .hosp-card__stat-val{font-weight:700;font-size:.9rem;color:var(--navy)}
+        .hosp-card__stat-label{font-size:.65rem;color:var(--gray-400)}
+        .hosp-card__specialties{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px}
+        .hosp-card__spec{padding:3px 10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:50px;font-size:.72rem;color:var(--gray-500)}
+        .hosp-card:hover .hosp-card__spec{background:#FFF7ED;border-color:#FFE4CC;color:var(--ginger-dark)}
+        .hosp-card__link{font-size:.85rem;font-weight:600;color:var(--ginger);display:flex;align-items:center;gap:4px}
+
+        .cost-section{background:var(--white)}.cost-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+        .cost-table thead th{background:var(--navy);color:#fff;padding:14px 18px;font-size:.82rem;font-weight:600;text-align:left}
+        .cost-table td{padding:13px 18px;font-size:.88rem;border-bottom:1px solid var(--gray-100)}.cost-table tr:last-child td{border-bottom:none}.cost-table tbody tr:hover{background:var(--cream)}
+        .cost-hl{color:var(--teal);font-weight:600}.cost-savings{display:inline-block;background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600}
+
+        .spec-section{background:var(--gray-50)}.spec-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+        .spec-mini{display:flex;align-items:center;gap:12px;padding:16px;background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);transition:all .25s}
+        .spec-mini:hover{border-color:var(--ginger);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+        .spec-mini__icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--gray-50);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+        .spec-mini:hover .spec-mini__icon{background:#FFF7ED}
+        .spec-mini__name{font-weight:600;font-size:.84rem;color:var(--navy)}.spec-mini__count{font-size:.72rem;color:var(--gray-400)}
+
+        .travel-section{background:var(--white)}.travel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .travel-card{padding:24px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-align:center;transition:all .25s}
+        .travel-card:hover{border-color:var(--ginger);transform:translateY(-3px)}
+        .travel-card__icon{font-size:2rem;margin-bottom:12px}.travel-card__title{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
+        .travel-card__desc{font-size:.82rem;color:var(--gray-500);line-height:1.6}
+
+        .testimonials-section{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+        .testimonials-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 100%,rgba(242,101,34,.1) 0%,transparent 50%)}
+        .testimonials-section .container{position:relative;z-index:1}.testimonials-section .section__label{color:var(--ginger-light)}.testimonials-section .section__title{color:#fff}
+        .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .test-card{padding:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-lg);transition:all .3s}
+        .test-card:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
+        .test-card__stars{color:#FFC107;font-size:.85rem;margin-bottom:12px;letter-spacing:2px}
+        .test-card__text{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px;font-style:italic}
+        .test-card__author{display:flex;align-items:center;gap:12px}
+        .test-card__avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--ginger-light)}
+        .test-card__name{font-weight:600;font-size:.85rem}.test-card__meta{font-size:.72rem;color:rgba(255,255,255,.4)}
+
+        .faq-section{background:var(--gray-50)}.faq-list{display:flex;flex-direction:column;gap:8px;max-width:820px;margin:0 auto}
+        .faq-item{border:1.5px solid var(--gray-200);border-radius:var(--radius-md);overflow:hidden;background:#fff;transition:border-color .2s}
+        .faq-item:hover{border-color:var(--gray-300)}.faq-item.active{border-color:var(--ginger)}
+        .faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--navy);transition:background .2s}
+        .faq-q:hover{background:var(--gray-50)}.faq-q svg{width:18px;height:18px;color:var(--gray-400);transition:transform .3s;flex-shrink:0}
+        .faq-item.active .faq-q svg{transform:rotate(180deg);color:var(--ginger)}
+        .faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+        .faq-item.active .faq-a{max-height:500px;padding:0 20px 20px}.faq-a p{font-size:.88rem;line-height:1.7;color:var(--gray-600)}
+
+        .other-dest{background:var(--white)}.other-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .other-card{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:all .3s}
+        .other-card:hover{border-color:var(--ginger);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .other-card__flag{font-size:2.4rem;margin-bottom:10px}.other-card__name{font-weight:600;font-size:1rem;color:var(--navy);margin-bottom:4px}
+        .other-card__meta{font-size:.78rem;color:var(--gray-400);margin-bottom:14px}
+        .other-card__link{font-size:.82rem;font-weight:600;color:var(--ginger);display:inline-flex;align-items:center;gap:4px}.other-card:hover .other-card__link{gap:8px}
+
+        .cta-section{background:linear-gradient(135deg,var(--ginger),var(--ginger-dark));padding:64px 0;text-align:center;color:#fff;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,.1) 0%,transparent 50%)}
+        .cta-section .container{position:relative;z-index:1}.cta-section h2{font-family:var(--font-display);font-size:2.2rem;font-weight:600;margin-bottom:12px}
+        .cta-section p{font-size:1.05rem;opacity:.85;max-width:540px;margin:0 auto 28px}.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        footer{background:var(--navy);color:rgba(255,255,255,.7);padding:64px 0 0}
+        .footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+        .footer__brand .logo{margin-bottom:16px}.footer__brand .logo__text span:first-child{color:#fff}.footer__brand .logo__text span:last-child{color:var(--ginger-light)}
+        .footer__desc{font-size:.85rem;line-height:1.7;margin-bottom:20px;color:rgba(255,255,255,.5)}
+        .footer__social{display:flex;gap:12px}.footer__social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:background .2s}.footer__social a:hover{background:var(--ginger)}
+        .footer__col h4{color:#fff;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+        .footer__col a{display:block;font-size:.85rem;padding:5px 0;color:rgba(255,255,255,.5);transition:color .2s}.footer__col a:hover{color:var(--ginger-light)}
+        .footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer__bottom p,.footer__bottom a{font-size:.78rem;color:rgba(255,255,255,.35)}.footer__legal{display:flex;gap:24px}
+
+        @media(max-width:1024px){.country-hero__inner{grid-template-columns:1fr;gap:32px}.hero-sidebar{display:none}.hospital-grid{grid-template-columns:repeat(2,1fr)}.spec-mini-grid{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.travel-grid{grid-template-columns:repeat(2,1fr)}.test-grid{grid-template-columns:repeat(2,1fr)}.other-grid{grid-template-columns:repeat(2,1fr)}.footer__grid{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:768px){.topbar{display:none}.nav__links{display:none}.hamburger{display:flex}.country-hero{min-height:auto;padding:48px 0}.country-hero h1{font-size:2rem}.country-hero__stats{gap:20px}.hospital-grid{grid-template-columns:1fr}.spec-mini-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.travel-grid{grid-template-columns:1fr 1fr}.test-grid{grid-template-columns:1fr}.other-grid{grid-template-columns:1fr 1fr}.cost-table{display:block;overflow-x:auto}.footer__grid{grid-template-columns:1fr 1fr}.footer__bottom{flex-direction:column;text-align:center}}
+        @media(max-width:480px){.spec-mini-grid{grid-template-columns:1fr}.travel-grid{grid-template-columns:1fr}.other-grid{grid-template-columns:1fr}}
+    
+        /* DOCTOR PROFILE PAGE */
+        .doc-hero{position:relative;overflow:hidden;min-height:400px;display:flex;align-items:center}
+        .doc-hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%)}
+        .doc-hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,37,69,.95),rgba(19,49,92,.85));z-index:1}
+        .doc-hero__inner{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2;width:100%;display:grid;grid-template-columns:280px 1fr 340px;gap:40px;align-items:center}
+        .doc-hero__photo{width:240px;height:280px;border-radius:var(--radius-xl);overflow:hidden;border:3px solid rgba(255,255,255,.1);box-shadow:0 20px 50px rgba(0,0,0,.3);position:relative}
+        .doc-hero__photo-inner{width:100%;height:100%;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);display:flex;align-items:center;justify-content:center;font-size:5rem}
+        .doc-hero__photo-badge{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);padding:5px 16px;background:var(--ginger);color:#fff;border-radius:50px;font-size:.7rem;font-weight:600;white-space:nowrap}
+        .doc-hero__info{animation:fadeInUp .6s ease-out}
+        .doc-hero__badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+        .doc-hero__badge{padding:5px 14px;border-radius:50px;font-size:.72rem;font-weight:600}
+        .doc-hero__badge--spec{background:rgba(242,101,34,.15);color:var(--ginger-light)}
+        .doc-hero__badge--exp{background:rgba(14,165,160,.15);color:var(--teal-light)}
+        .doc-hero__badge--rating{background:rgba(255,215,0,.12);color:#fbbf24}
+        .doc-hero h1{font-family:var(--font-display);font-size:2.4rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:4px}
+        .doc-hero__designation{font-size:1.05rem;color:var(--ginger-light);font-weight:500;margin-bottom:6px}
+        .doc-hero__meta{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:20px}
+        .doc-hero__meta span{color:rgba(255,255,255,.7)}
+        .doc-hero__tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+        .doc-hero__tag{padding:5px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50px;font-size:.75rem;color:rgba(255,255,255,.5)}
+        .doc-hero__actions{display:flex;gap:12px;flex-wrap:wrap}
+
+        .doc-hero__sidebar{animation:fadeInUp .6s .15s ease-out both}
+        .quick-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:24px;backdrop-filter:blur(8px)}
+        .quick-card__title{font-family:var(--font-display);font-size:1rem;font-weight:600;color:#fff;margin-bottom:16px}
+        .quick-card__row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.82rem}
+        .quick-card__row:last-child{border-bottom:none}
+        .quick-card__label{color:rgba(255,255,255,.35)}
+        .quick-card__val{color:#fff;font-weight:500}
+        .quick-card__btn{width:100%;padding:12px;background:var(--ginger);color:#fff;border:none;border-radius:var(--radius-sm);font-weight:600;font-size:.88rem;cursor:pointer;transition:background .2s;margin-top:16px;display:block;text-align:center}
+        .quick-card__btn:hover{background:var(--ginger-dark)}
+        .quick-card__btn--outline{background:transparent;border:1.5px solid rgba(255,255,255,.2);margin-top:8px}
+        .quick-card__btn--outline:hover{background:rgba(255,255,255,.08)}
+
+        .profile-section{background:var(--white)}
+        .profile-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start}
+        .profile-main h3{font-family:var(--font-display);font-size:1.2rem;color:var(--navy);margin-bottom:12px;margin-top:32px}
+        .profile-main h3:first-child{margin-top:0}
+        .profile-main p{font-size:.9rem;color:var(--gray-600);line-height:1.75;margin-bottom:12px}
+        .profile-main ul{list-style:none;padding:0}
+        .profile-main li{padding:8px 0;font-size:.88rem;color:var(--gray-600);border-bottom:1px solid var(--gray-100);display:flex;align-items:flex-start;gap:8px}
+        .profile-main li::before{content:'✓';color:var(--teal);font-weight:700;font-size:.85rem;flex-shrink:0;margin-top:1px}
+
+        .profile-sidebar-sticky{position:sticky;top:92px}
+        .sidebar-card{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:24px;margin-bottom:20px}
+        .sidebar-card__title{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--gray-200)}
+        .sidebar-card__item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--gray-100);font-size:.84rem;color:var(--gray-600)}
+        .sidebar-card__item:last-child{border-bottom:none}
+        .sidebar-card__icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+        .sidebar-card__link{display:block;padding:10px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);margin-top:8px;font-size:.84rem;color:var(--navy);font-weight:500;text-align:center;transition:all .2s}
+        .sidebar-card__link:hover{border-color:var(--ginger);color:var(--ginger)}
+
+        .treats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+        .treat-chip{padding:12px 16px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);text-align:center;transition:all .2s;font-size:.84rem;color:var(--navy);font-weight:500}
+        .treat-chip:hover{border-color:var(--ginger);background:#FFF7ED;color:var(--ginger-dark)}
+        .treat-chip__price{display:block;font-size:.72rem;color:var(--gray-400);font-weight:400;margin-top:2px}
+
+        @media(max-width:1024px){.doc-hero__inner{grid-template-columns:1fr;text-align:center}.doc-hero__photo{margin:0 auto}.doc-hero__sidebar{display:none}.doc-hero__badges{justify-content:center}.doc-hero__tags{justify-content:center}.doc-hero__actions{justify-content:center}.profile-grid{grid-template-columns:1fr}.treats-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.doc-hero{min-height:auto;padding:48px 0}.doc-hero h1{font-size:2rem}.doc-hero__photo{width:180px;height:210px}.treats-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.treats-grid{grid-template-columns:1fr}}
+
+    </style>
+</head>
+<body>
+    <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#50393e363f1037393e3735227e3835313c243833312235">✉ <span class="__cf_email__" data-cfemail="ef86818980af888681888a9dc1878a8e839b878c8e9d8a">[email&#160;protected]</span></a> <a href="tel:+911234567890">☎ +91 123 456 7890</a> <a href="#">💬 WhatsApp</a></div><div>🌐 <a href="#" style="color:rgba(255,255,255,.85)">English</a></div></div></div>
+    <nav id="mainNav"><div class="nav__inner"><a href="/" class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></a><div class="nav__links"><a href="/destinations/" class="nav__link nav__link--active">Destinations</a><a href="/specialties/" class="nav__link">Specialties</a><a href="/how-it-works/" class="nav__link">How It Works</a><a href="/cost-calculator/" class="nav__link">Cost Calculator</a><a href="/blog/" class="nav__link">Articles</a><a href="/testimonials/" class="nav__link">Reviews</a></div><div class="nav__cta"><a href="/get-quote/" class="btn btn--primary">Get Free Quote</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></nav>
+    <div class="breadcrumb"><div class="breadcrumb__inner"><a href="/">Home</a> <span>›</span> <a href="/destinations/">Destinations</a> <span>›</span> <a href="/destinations/india/">India</a> <span>›</span> <a href="/destinations/india/doctors/">Doctors</a> <span>›</span> <span class="breadcrumb__current">Dr. Naresh Trehan</span></div></div>
+
+    <!-- HERO -->
+    <section class="doc-hero">
+        <div class="doc-hero__bg"></div>
+        <div class="doc-hero__overlay"></div>
+        <div class="doc-hero__inner">
+            <div class="doc-hero__photo">
+                <div class="doc-hero__photo-inner">👨‍⚕️</div>
+                <div class="doc-hero__photo-badge">Chairman & Managing Director</div>
+            </div>
+            <div class="doc-hero__info">
+                <div class="doc-hero__badges">
+                    <span class="doc-hero__badge doc-hero__badge--spec">❤️ Cardiac Surgery</span>
+                    <span class="doc-hero__badge doc-hero__badge--exp">40+ Years Experience</span>
+                    <span class="doc-hero__badge doc-hero__badge--rating">⭐ 5.0 Rating</span>
+                </div>
+                <h1>Dr. Naresh Trehan</h1>
+                <div class="doc-hero__designation">Chairman & Managing Director — Cardiac Surgery (CTVS)</div>
+                <p class="doc-hero__meta">
+                    🏥 <span>Medanta — The Medicity</span> &nbsp;·&nbsp; 📍 <span>Gurugram, India</span><br>
+                    🎓 <span>MBBS, All India Institute of Medical Sciences (AIIMS)</span><br>
+                    🎓 <span>Fellowship in Cardiovascular Surgery, NYU Medical Center, USA</span>
+                </p>
+                <div class="doc-hero__tags">
+                    <span class="doc-hero__tag">CABG</span>
+                    <span class="doc-hero__tag">Valve Replacement</span>
+                    <span class="doc-hero__tag">TAVR / TAVI</span>
+                    <span class="doc-hero__tag">Minimally Invasive</span>
+                    <span class="doc-hero__tag">Aortic Surgery</span>
+                    <span class="doc-hero__tag">Heart Failure</span>
+                </div>
+                <div class="doc-hero__actions">
+                    <a href="/get-quote/?doctor=naresh-trehan" class="btn btn--primary btn--large">Book Consultation →</a>
+                    <a href="#treatments" class="btn btn--large" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.15)">View Treatments ↓</a>
+                </div>
+            </div>
+            <div class="doc-hero__sidebar">
+                <div class="quick-card">
+                    <div class="quick-card__title">📋 Quick Facts</div>
+                    <div class="quick-card__row"><span class="quick-card__label">Experience</span><span class="quick-card__val">40+ Years</span></div>
+                    <div class="quick-card__row"><span class="quick-card__label">Surgeries</span><span class="quick-card__val">48,000+</span></div>
+                    <div class="quick-card__row"><span class="quick-card__label">Specialty</span><span class="quick-card__val">Cardiac Surgery</span></div>
+                    <div class="quick-card__row"><span class="quick-card__label">Hospital</span><span class="quick-card__val">Medanta, Gurugram</span></div>
+                    <div class="quick-card__row"><span class="quick-card__label">Languages</span><span class="quick-card__val">English, Hindi</span></div>
+                    <div class="quick-card__row"><span class="quick-card__label">Consult Fee</span><span class="quick-card__val">₹2,500 (~$30)</span></div>
+                    <a href="/get-quote/?doctor=naresh-trehan" class="quick-card__btn">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE CONTENT -->
+    <section class="profile-section"><div class="container">
+        <div class="profile-grid">
+            <div class="profile-main">
+                <h3>About Dr. Naresh Trehan</h3>
+                <p>Dr. Naresh Trehan is India's most renowned cardiac surgeon and the founder of Medanta — The Medicity, one of India's largest multi-super-speciality hospitals. With over 40 years of experience and more than 48,000 cardiac surgeries, he is recognised globally as a pioneer in cardiovascular and cardiothoracic surgery.</p>
+                <p>Before founding Medanta in 2009, Dr. Trehan served as the Executive Director and Chief Cardiac Surgeon at Escorts Heart Institute, New Delhi, which he built into one of Asia's top cardiac centres. He trained at NYU Medical Center in New York and practiced in the US for several years before returning to India.</p>
+                <p>Dr. Trehan is known for performing complex, high-risk surgeries including redo CABG, valve repairs, aortic root replacements, TAVR/TAVI procedures, and surgery on elderly and comorbid patients. He has been conferred the Padma Bhushan (2001) and Padma Shri (1991) by the Government of India for his contribution to medicine.</p>
+
+                <h3>Education & Training</h3>
+                <ul>
+                    <li>MBBS — All India Institute of Medical Sciences (AIIMS), New Delhi</li>
+                    <li>Residency in General Surgery — AIIMS, New Delhi</li>
+                    <li>Fellowship in Cardiovascular Surgery — NYU Medical Center, New York, USA</li>
+                    <li>Fellowship in Thoracic Surgery — NYU Medical Center, New York, USA</li>
+                </ul>
+
+                <h3>Areas of Expertise</h3>
+                <ul>
+                    <li>Coronary Artery Bypass Grafting (CABG) — beating heart & conventional</li>
+                    <li>Heart Valve Repair & Replacement (mitral, aortic, tricuspid)</li>
+                    <li>TAVR / TAVI — Transcatheter Aortic Valve Replacement</li>
+                    <li>Minimally Invasive Cardiac Surgery (MICS)</li>
+                    <li>Aortic Surgery — aneurysm repair, dissection</li>
+                    <li>Redo / Revision Cardiac Surgery</li>
+                    <li>Heart Failure Surgery & LVAD implantation</li>
+                    <li>Congenital Heart Disease Surgery (adult)</li>
+                </ul>
+
+                <h3>Awards & Recognition</h3>
+                <ul>
+                    <li>Padma Bhushan — Government of India (2001)</li>
+                    <li>Padma Shri — Government of India (1991)</li>
+                    <li>Dr. B.C. Roy Award — Indian Medical Council</li>
+                    <li>Lal Bahadur Shastri National Award for Excellence</li>
+                    <li>International College of Surgeons — Honorary Fellow</li>
+                </ul>
+
+                <h3>Professional Memberships</h3>
+                <ul>
+                    <li>Society of Thoracic Surgeons (STS), USA</li>
+                    <li>American College of Cardiology (FACC)</li>
+                    <li>International Society for Minimally Invasive Cardiothoracic Surgery</li>
+                    <li>National Academy of Medical Sciences, India (FAMS)</li>
+                </ul>
+
+                <h3 id="treatments">Treatments & Indicative Costs</h3>
+                <p>Below are the key procedures performed by Dr. Trehan. Costs are indicative — share your reports for exact estimates.</p>
+                <div class="treats-grid">
+                    <a href="/destinations/india/cardiac-surgery/cabg/" class="treat-chip">CABG (Bypass)<span class="treat-chip__price">From $4,500</span></a>
+                    <a href="/destinations/india/cardiac-surgery/valve-replacement/" class="treat-chip">Valve Replacement<span class="treat-chip__price">From $5,500</span></a>
+                    <a href="/destinations/india/cardiac-surgery/tavr/" class="treat-chip">TAVR / TAVI<span class="treat-chip__price">From $18,000</span></a>
+                    <a href="/destinations/india/cardiac-surgery/mics/" class="treat-chip">Minimally Invasive<span class="treat-chip__price">From $6,000</span></a>
+                    <a href="/destinations/india/cardiac-surgery/aortic-surgery/" class="treat-chip">Aortic Surgery<span class="treat-chip__price">From $8,000</span></a>
+                    <a href="/destinations/india/cardiac-surgery/redo-cabg/" class="treat-chip">Redo / Revision<span class="treat-chip__price">From $7,000</span></a>
+                </div>
+            </div>
+
+            <div class="profile-sidebar-sticky">
+                <!-- Hospital Card -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card__title">🏥 Hospital</div>
+                    <div class="sidebar-card__item"><span class="sidebar-card__icon">🏥</span><div><strong>Medanta — The Medicity</strong><br>Sector 38, Gurugram, Haryana, India</div></div>
+                    <div class="sidebar-card__item"><span class="sidebar-card__icon">🛏️</span><div>2,600 beds · 22 super-specialties</div></div>
+                    <div class="sidebar-card__item"><span class="sidebar-card__icon">🏅</span><div>JCI Accredited · NABH</div></div>
+                    <a href="/destinations/india/hospitals/medanta/" class="sidebar-card__link">View Hospital Profile →</a>
+                </div>
+
+                <!-- Other Cardiac Surgeons -->
+                <div class="sidebar-card">
+                    <div class="sidebar-card__title">👨‍⚕️ Other Cardiac Surgeons</div>
+                    <div class="sidebar-card__item"><span class="sidebar-card__icon">👨‍⚕️</span><div><strong>Dr. Rajesh Sharma</strong><br>Apollo, Delhi · 25+ yrs</div></div>
+                    <div class="sidebar-card__item"><span class="sidebar-card__icon">👨‍⚕️</span><div><strong>Dr. Sunil Prakash</strong><br>BLK-Max, Delhi · 28+ yrs</div></div>
+                    <div class="sidebar-card__item"><span class="sidebar-card__icon">👨‍⚕️</span><div><strong>Dr. Rajneesh Kapoor</strong><br>Medanta · Interventional · 25+ yrs</div></div>
+                    <a href="/destinations/india/doctors/?spec=cardiac" class="sidebar-card__link">View All Cardiac Surgeons →</a>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="sidebar-card" style="background:var(--navy);border-color:var(--navy)">
+                    <div class="sidebar-card__title" style="color:#fff;border-color:rgba(255,255,255,.1)">📩 Consult Dr. Trehan</div>
+                    <p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:14px">Share your reports and get a personalised opinion from Dr. Trehan's team within 48 hours.</p>
+                    <a href="/get-quote/?doctor=naresh-trehan" class="sidebar-card__link" style="background:var(--ginger);color:#fff;border-color:var(--ginger);font-weight:600">Get Free Quote →</a>
+                </div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- PATIENT REVIEWS -->
+    <section class="testimonials-section"><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">Patient Reviews</div><h2 class="section__title">What Patients Say About Dr. Trehan</h2></div>
+        <div class="test-grid">
+            <div class="test-card"><div class="test-card__stars">★★★★★</div><p class="test-card__text">"Dr. Trehan performed triple bypass surgery on my father. At 72, we were told in the UK it was too risky. Dr. Trehan's team saved his life. We can't thank Ginger Healthcare enough for connecting us."</p><div class="test-card__author"><div class="test-card__avatar">AH</div><div><div class="test-card__name">Ahmed Hassan</div><div class="test-card__meta">🇴🇲 Oman · CABG Surgery · Medanta</div></div></div></div>
+            <div class="test-card"><div class="test-card__stars">★★★★★</div><p class="test-card__text">"I needed aortic valve replacement and chose Dr. Trehan after extensive research. The surgery was minimally invasive. I was walking in 3 days and flew home in 2 weeks. World-class in every sense."</p><div class="test-card__author"><div class="test-card__avatar">DM</div><div><div class="test-card__name">David Mensah</div><div class="test-card__meta">🇬🇭 Ghana · Valve Replacement · Medanta</div></div></div></div>
+            <div class="test-card"><div class="test-card__stars">★★★★★</div><p class="test-card__text">"My mother needed a redo CABG — her second bypass in 15 years. Dr. Trehan handled the complexity brilliantly. The cost was $7,000 versus $90,000 quoted in the US. Exceptional outcome."</p><div class="test-card__author"><div class="test-card__avatar">SK</div><div><div class="test-card__name">Sarah Khan</div><div class="test-card__meta">🇺🇸 USA · Redo CABG · Medanta</div></div></div></div>
+        </div>
+    </div></section>
+
+    <!-- FAQ -->
+    <section class="faq-section"><div class="container">
+        <div class="section__header section__header--center"><div class="section__label">Common Questions</div><h2 class="section__title">FAQs About Dr. Naresh Trehan</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How do I book a consultation with Dr. Trehan?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Submit your medical reports through Ginger Healthcare's free quote form. Our team will coordinate with Dr. Trehan's office, provide a cost estimate, and help you schedule an in-person consultation. The process takes 24–48 hours.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">What is Dr. Trehan's consultation fee?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Dr. Trehan's in-person consultation fee is approximately ₹2,500 (~$30 USD). Ginger Healthcare coordinates all scheduling.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How many surgeries has Dr. Trehan performed?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Dr. Trehan has performed over 48,000 cardiac surgeries over a 40+ year career, making him one of the highest-volume cardiac surgeons in the world. His success rates are consistently among the best globally.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">Does Dr. Trehan treat international patients?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Yes. Dr. Trehan and Medanta receive thousands of international patients annually from the Middle East, Africa, Central Asia, and beyond. Medanta has a full international patient wing with visa support, translators, and concierge services.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How much does heart surgery with Dr. Trehan cost?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div><div class="faq-a"><p>Costs depend on the procedure. CABG starts from ~$4,500, valve replacement from ~$5,500, TAVR from ~$18,000. These are significantly lower than the US ($70,000–$150,000). Ginger Healthcare provides a free, personalised cost estimate based on your specific case.</p></div></div>
+        </div>
+    </div></section>
+
+    <!-- CTA -->
+    <section class="cta-section"><div class="container"><h2>Ready to Consult Dr. Naresh Trehan?</h2><p>Share your medical reports and get a personalised treatment plan with costs — within 48 hours.</p><div class="cta-actions"><a href="/get-quote/?doctor=naresh-trehan" class="btn btn--white btn--large">Get Free Quote</a><a href="/book-consultation/" class="btn btn--large" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3)">Talk to a Care Manager</a></div></div></section>
+
+    <footer><div class="container"><div class="footer__grid"><div class="footer__brand"><div class="logo"><div class="logo__icon">G</div><div class="logo__text"><span>Ginger</span> <span>Healthcare</span></div></div><p class="footer__desc">Ginger Healthcare is a medical tourism company based in New Delhi, India. We guide, advise, and assist international patients seeking world-class medical treatment at affordable prices.</p><div class="footer__social"><a href="#">f</a><a href="#">in</a><a href="#">tw</a><a href="#">yt</a></div></div><div class="footer__col"><h4>Destinations</h4><a href="/destinations/india/">🇮🇳 India</a><a href="/destinations/turkey/">🇹🇷 Turkey</a><a href="/destinations/thailand/">🇹🇭 Thailand</a><a href="/destinations/uae/">🇦🇪 UAE</a><a href="/destinations/singapore/">🇸🇬 Singapore</a></div><div class="footer__col"><h4>Top Specialties</h4><a href="/specialties/cardiac-surgery/">Cardiac Surgery</a><a href="/specialties/orthopedics/">Orthopedics</a><a href="/specialties/cosmetic-surgery/">Cosmetic Surgery</a><a href="/specialties/dentistry/">Dentistry</a><a href="/specialties/fertility/">Fertility & IVF</a></div><div class="footer__col"><h4>Tools</h4><a href="/cost-calculator/">Cost Calculator</a><a href="/get-quote/">Get Free Quote</a><a href="/book-consultation/">Book Consultation</a><a href="/compare-hospitals/">Compare Hospitals</a></div><div class="footer__col"><h4>Company</h4><a href="/about/">About Us</a><a href="/how-it-works/">How It Works</a><a href="/testimonials/">Testimonials</a><a href="/blog/">Blog</a><a href="/contact/">Contact Us</a></div></div><div class="footer__bottom"><p>&copy; 2025 Ginger Healthcare. All rights reserved.</p><div class="footer__legal"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms of Service</a><a href="/disclaimer/">Medical Disclaimer</a></div></div></div></footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity="1";x.target.style.transform="translateY(0)"}})},{threshold:.05});document.querySelectorAll(".trea
