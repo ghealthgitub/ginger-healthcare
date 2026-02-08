@@ -206,9 +206,7 @@
         .footer__bottom a{color:rgba(255,255,255,.4);margin-left:16px}.footer__bottom a:hover{color:#fff}
 
         /* ============== ANIMATIONS ============== */
-        .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-        .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
-        <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+        
 
         /* ============== RESPONSIVE ============== */
         @media(max-width:1024px){.hero h1{font-size:2.5rem}.hero__inner{grid-template-columns:1fr;gap:32px}.hero__visual{height:280px}.dest-grid{grid-template-columns:repeat(3,1fr)}.spec-scroll{grid-template-columns:repeat(4,1fr)}.treat-grid--dark{grid-template-columns:repeat(2,1fr)}.treat-grid{grid-template-columns:repeat(2,1fr)}.footer__grid{grid-template-columns:repeat(3,1fr)}}
@@ -297,7 +295,7 @@
 
     <!-- ============== HOW IT WORKS ============== -->
     <div class="hiw-bg">
-        <div class="section reveal">
+        <div class="section">
             <div class="sec-header"><div class="sec-header__label">Simple Process</div><h2>How It <em>Works</em></h2><p>From enquiry to recovery — we manage every detail so you can focus on getting better</p></div>
             <div class="hiw-grid">
                 <div class="hiw-step"><div class="hiw-step__num" style="background:linear-gradient(135deg,var(--ginger),var(--ginger-dark))">1</div><span class="hiw-step__icon">📝</span><div class="hiw-step__title">Share Your Reports</div><div class="hiw-step__desc">Upload medical details — takes just 5 minutes</div></div>
@@ -311,7 +309,7 @@
     </div>
 
     <!-- ============== DESTINATIONS ============== -->
-    <div class="section reveal">
+    <div class="section">
         <div class="sec-header"><div class="sec-header__label">5 Countries</div><h2>Treatment <em>Destinations</em></h2><p>Hand-picked hospitals across the world's leading medical tourism destinations</p></div>
         <div class="dest-grid">
             <a href="/destinations/india/" class="dest-card"><div class="dest-card__bg" style="background:linear-gradient(135deg,#1a5276,#0B2545)"></div><div class="dest-card__overlay"></div><div class="dest-card__tag">Most Popular</div><div class="dest-card__body"><span class="dest-card__flag">🇮🇳</span><div class="dest-card__name">India</div><div class="dest-card__count">30+ hospitals · 150+ doctors</div></div></a>
@@ -324,7 +322,7 @@
 
     <!-- ============== SPECIALTIES ============== -->
     <div class="spec-bg">
-        <div class="section reveal">
+        <div class="section">
             <div class="sec-header"><div class="sec-header__label">28 Specialties</div><h2>Medical <em>Specialties</em></h2><p>From routine procedures to the most complex surgeries — our network covers it all</p></div>
             <div class="spec-scroll">
                 <a href="/specialties/cardiac-surgery/" class="spec-card"><span class="spec-card__icon">❤️</span><div class="spec-card__name">Cardiac Surgery</div></a>
@@ -363,7 +361,7 @@
     <section class="cost-section">
         <div class="cost-section__bg"></div>
         <div class="cost-section__grid"></div>
-        <div class="cost-inner reveal">
+        <div class="cost-inner">
             <div class="cost-header"><div class="cost-header__label">Popular Treatments</div><h2>Featured Treatments</h2><p>Most sought-after procedures by international patients — at a fraction of the cost</p></div>
             <div class="treat-grid treat-grid--dark">
                 <a href="/treatments/cabg-heart-bypass/" class="treat-card treat-card--dark">
@@ -436,7 +434,7 @@
     </section>
 
     <!-- ============== TESTIMONIALS ============== -->
-    <div class="section reveal">
+    <div class="section">
         <div class="sec-header"><div class="sec-header__label">Patient Stories</div><h2>Real Patients. <em>Real Results.</em></h2><p>Don't take our word for it — hear from the people we've helped</p></div>
         <div class="test-grid">
             <div class="test-card"><div class="test-card__quote-mark">❝</div><div class="test-card__stars">★★★★★</div><div class="test-card__text">"I was quoted $123,000 for heart surgery in New York. Ginger found me a world-class surgeon in Delhi for $7,000 including flights and hotel. The care was extraordinary."</div><div class="test-card__author"><div class="test-card__avatar" style="background:linear-gradient(135deg,#2563EB,#1E40AF)">JM</div><div><div class="test-card__name">James M.</div><div class="test-card__meta">🇺🇸 USA · Cardiac Surgery · India</div></div></div></div>
@@ -448,7 +446,7 @@
 
     <!-- ============== BLOG ============== -->
     <div class="blog-bg">
-        <div class="section reveal">
+        <div class="section">
             <div class="sec-header"><div class="sec-header__label">From Our Blog</div><h2>Health & <em>Travel Insights</em></h2><p>Expert guides, patient stories, and tips for your medical journey</p></div>
             <div class="blog-grid">
                 <a href="/blog/complete-guide-medical-tourism-india-2025/" class="blog-card"><div class="blog-card__img" style="background:linear-gradient(135deg,#134e6f,#0B2545)"><span>🇮🇳</span><div class="blog-card__badge" style="background:var(--teal)">Guide</div></div><div class="blog-card__body"><div class="blog-card__title">The Complete Guide to Medical Tourism in India (2025)</div><div class="blog-card__excerpt">Everything you need to know — hospitals, costs, visa, what to expect.</div><div class="blog-card__footer"><span>📅 Jan 15 · ⏱️ 18 min</span><span class="blog-card__read">Read →</span></div></div></a>
@@ -511,11 +509,6 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Sticky nav
 window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>10));
-
-// Scroll reveal
-if('IntersectionObserver' in window){const revealObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}})},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
-// Fallback: make all visible after 2s in case observer fails
-setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))},2000);
 
 // Hero Image Slider
 (function(){
