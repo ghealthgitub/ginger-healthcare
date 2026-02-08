@@ -229,7 +229,7 @@
 <div style="margin-top:48px;font-size:.8rem;color:rgba(255,255,255,.25)">© 2025 Ginger Healthcare · New Delhi, India</div>
 </div></div>
 <script>
-(async()=>{try{const r=await fetch('https://ginger-admin.onrender.com/api/public/maintenance');const d=await r.json();if(d.maintenance){document.getElementById('maintenancePage').style.display='flex';document.body.style.overflow='hidden'}}catch(e){}})();
+(async()=>{try{const r=await fetch('https://enter.ginger.healthcare/api/public/maintenance');const d=await r.json();if(d.maintenance){document.getElementById('maintenancePage').style.display='flex';document.body.style.overflow='hidden'}}catch(e){try{const r2=await fetch('https://ginger-admin.onrender.com/api/public/maintenance');const d2=await r2.json();if(d2.maintenance){document.getElementById('maintenancePage').style.display='flex';document.body.style.overflow='hidden'}}catch(e2){}}})();
 </script>
     <!-- TOPBAR -->
     <div class="topbar"><div class="topbar__inner"><div class="topbar__contact"><a href="/cdn-cgi/l/email-protection#f0999e969fb097999e979582de9895919c849893918295">✉ <span class="__cf_email__" data-cfemail="6d04030b022d0a04030a081f4305080c0119050e0c1f08">[email&#160;protected]</span></a><a href="#">💬 WhatsApp Us</a></div><div>🌐 English</div></div></div>
