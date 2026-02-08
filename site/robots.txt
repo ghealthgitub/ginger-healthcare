@@ -1,6 +1,10 @@
 User-agent: *
-Allow: /
-Disallow: /assets/includes/
-Disallow: /admin/
+Disallow: /
 
-Sitemap: https://ginger.healthcare/sitemap.xml
+# Block all crawlers until site has real content
+# When ready to launch, change to:
+# User-agent: *
+# Allow: /
+# Disallow: /assets/includes/
+# Disallow: /admin/
+# Sitemap: https://ginger.healthcare/sitemap.xml
